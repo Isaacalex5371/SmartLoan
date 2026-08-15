@@ -36,6 +36,42 @@
             "related": ".pdb;.xml"
           }
         }
+      },
+      "SmartLoan.Application/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "dependencies": {
+          "SmartLoan.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/SmartLoan.Application.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SmartLoan.Application.dll": {}
+        }
+      },
+      "SmartLoan.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "compile": {
+          "bin/placeholder/SmartLoan.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SmartLoan.Domain.dll": {}
+        }
+      },
+      "SmartLoan.Infrastructure/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "dependencies": {
+          "SmartLoan.Application": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/SmartLoan.Infrastructure.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SmartLoan.Infrastructure.dll": {}
+        }
       }
     }
   },
@@ -75,11 +111,28 @@
         "microsoft.openapi.2.7.5.nupkg.sha512",
         "microsoft.openapi.nuspec"
       ]
+    },
+    "SmartLoan.Application/1.0.0": {
+      "type": "project",
+      "path": "../SmartLoan.Application/SmartLoan.Application.csproj",
+      "msbuildProject": "../SmartLoan.Application/SmartLoan.Application.csproj"
+    },
+    "SmartLoan.Domain/1.0.0": {
+      "type": "project",
+      "path": "../SmartLoan.Domain/SmartLoan.Domain.csproj",
+      "msbuildProject": "../SmartLoan.Domain/SmartLoan.Domain.csproj"
+    },
+    "SmartLoan.Infrastructure/1.0.0": {
+      "type": "project",
+      "path": "../SmartLoan.Infrastructure/SmartLoan.Infrastructure.csproj",
+      "msbuildProject": "../SmartLoan.Infrastructure/SmartLoan.Infrastructure.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net10.0": [
-      "Microsoft.AspNetCore.OpenApi >= 10.0.11"
+      "Microsoft.AspNetCore.OpenApi >= 10.0.11",
+      "SmartLoan.Application >= 1.0.0",
+      "SmartLoan.Infrastructure >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -115,7 +168,14 @@
         "net10.0": {
           "framework": "net10.0",
           "targetAlias": "net10.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "D:\\isaac\\educational purpose only\\.net\\kyas pro\\SmartLoanTracker\\SmartLoan.Application\\SmartLoan.Application.csproj": {
+              "projectPath": "D:\\isaac\\educational purpose only\\.net\\kyas pro\\SmartLoanTracker\\SmartLoan.Application\\SmartLoan.Application.csproj"
+            },
+            "D:\\isaac\\educational purpose only\\.net\\kyas pro\\SmartLoanTracker\\SmartLoan.Infrastructure\\SmartLoan.Infrastructure.csproj": {
+              "projectPath": "D:\\isaac\\educational purpose only\\.net\\kyas pro\\SmartLoanTracker\\SmartLoan.Infrastructure\\SmartLoan.Infrastructure.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

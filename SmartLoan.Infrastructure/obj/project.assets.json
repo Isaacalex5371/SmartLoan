@@ -1,11 +1,48 @@
 {
   "version": 4,
   "targets": {
-    "net10.0": {}
+    "net10.0": {
+      "SmartLoan.Application/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "dependencies": {
+          "SmartLoan.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/SmartLoan.Application.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SmartLoan.Application.dll": {}
+        }
+      },
+      "SmartLoan.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "compile": {
+          "bin/placeholder/SmartLoan.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SmartLoan.Domain.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "SmartLoan.Application/1.0.0": {
+      "type": "project",
+      "path": "../SmartLoan.Application/SmartLoan.Application.csproj",
+      "msbuildProject": "../SmartLoan.Application/SmartLoan.Application.csproj"
+    },
+    "SmartLoan.Domain/1.0.0": {
+      "type": "project",
+      "path": "../SmartLoan.Domain/SmartLoan.Domain.csproj",
+      "msbuildProject": "../SmartLoan.Domain/SmartLoan.Domain.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net10.0": []
+    "net10.0": [
+      "SmartLoan.Application >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\isaac\\.nuget\\packages\\": {},
@@ -40,7 +77,11 @@
         "net10.0": {
           "framework": "net10.0",
           "targetAlias": "net10.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "D:\\isaac\\educational purpose only\\.net\\kyas pro\\SmartLoanTracker\\SmartLoan.Application\\SmartLoan.Application.csproj": {
+              "projectPath": "D:\\isaac\\educational purpose only\\.net\\kyas pro\\SmartLoanTracker\\SmartLoan.Application\\SmartLoan.Application.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

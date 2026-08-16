@@ -2,11 +2,11 @@ namespace SmartLoan.Domain.Entities;
 
 public class Payment
 {
+    public int Id { get; init; }
+    public int LoanApplicationId { get; set; }
+    public required decimal Amount { get; set; }
+    public DateTime PaymentDate { get; init; } = DateTime.UtcNow;
 
-public int Id {get;init;}
-public int LoanApplicationId { get; set; }
-public required decimal Amount { get; set; }
-public DateTime PaymentDate {get;init;} = DateTime.UtcNow;
-
-public LoanApplication? LoanApplication {get;set;}
+    // Navigation Property
+    public LoanApplication? LoanApplication { get; set; }
 }

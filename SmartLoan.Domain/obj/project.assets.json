@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\isaac\\educational purpose only\\.net\\kyas pro\\SmartLoanTracker\\SmartLoan.Domain\\SmartLoan.Domain.csproj",
+      "projectUniqueName": "d:\\isaac\\educational purpose only\\.net\\kyas pro\\SmartLoanTracker\\SmartLoan.Domain\\SmartLoan.Domain.csproj",
       "projectName": "SmartLoan.Domain",
-      "projectPath": "D:\\isaac\\educational purpose only\\.net\\kyas pro\\SmartLoanTracker\\SmartLoan.Domain\\SmartLoan.Domain.csproj",
+      "projectPath": "d:\\isaac\\educational purpose only\\.net\\kyas pro\\SmartLoanTracker\\SmartLoan.Domain\\SmartLoan.Domain.csproj",
       "packagesPath": "C:\\Users\\isaac\\.nuget\\packages\\",
-      "outputPath": "D:\\isaac\\educational purpose only\\.net\\kyas pro\\SmartLoanTracker\\SmartLoan.Domain\\obj\\",
+      "outputPath": "d:\\isaac\\educational purpose only\\.net\\kyas pro\\SmartLoanTracker\\SmartLoan.Domain\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

@@ -1,4 +1,4 @@
-@SmartLoan.Api_HostAddress = http://localhost:5176
+@SmartLoan.Api_HostAddress = http://localhost:5432
 
 GET {{SmartLoan.Api_HostAddress}}/weatherforecast/
 Accept: application/json

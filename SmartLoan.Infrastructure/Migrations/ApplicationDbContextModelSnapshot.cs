@@ -57,21 +57,30 @@ namespace SmartLoan.Infrastructure.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
-                    b.Property<decimal>("Amount")
-                        .HasColumnType("numeric");
-
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("timestamp with time zone");
 
                     b.Property<int>("CustomerId")
                         .HasColumnType("integer");
 
-                    b.Property<int>("DurationInMonths")
+                    b.Property<decimal>("DailyAmount")
+                        .HasColumnType("numeric");
+
+                    b.Property<int>("EligibilityDays")
                         .HasColumnType("integer");
+
+                    b.Property<decimal>("LoanAmount")
+                        .HasColumnType("numeric");
+
+                    b.Property<decimal>("ServiceFee")
+                        .HasColumnType("numeric");
 
                     b.Property<string>("Status")
                         .IsRequired()
                         .HasColumnType("text");
+
+                    b.Property<int>("TotalDays")
+                        .HasColumnType("integer");
 
                     b.HasKey("Id");
 

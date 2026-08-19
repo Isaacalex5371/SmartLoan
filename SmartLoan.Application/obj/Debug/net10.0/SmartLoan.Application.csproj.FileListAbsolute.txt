@@ -1,4 +1,5 @@
 D:\isaac\educational purpose only\.net\kyas pro\SmartLoanTracker\SmartLoan.Application\bin\Debug\net10.0\SmartLoan.Application.deps.json
+D:\isaac\educational purpose only\.net\kyas pro\SmartLoanTracker\SmartLoan.Application\bin\Debug\net10.0\SmartLoan.Application.runtimeconfig.json
 D:\isaac\educational purpose only\.net\kyas pro\SmartLoanTracker\SmartLoan.Application\bin\Debug\net10.0\SmartLoan.Application.dll
 D:\isaac\educational purpose only\.net\kyas pro\SmartLoanTracker\SmartLoan.Application\bin\Debug\net10.0\SmartLoan.Application.pdb
 D:\isaac\educational purpose only\.net\kyas pro\SmartLoanTracker\SmartLoan.Application\bin\Debug\net10.0\SmartLoan.Domain.dll
@@ -13,4 +14,5 @@ D:\isaac\educational purpose only\.net\kyas pro\SmartLoanTracker\SmartLoan.Appli
 D:\isaac\educational purpose only\.net\kyas pro\SmartLoanTracker\SmartLoan.Application\obj\Debug\net10.0\SmartLoan.Application.dll
 D:\isaac\educational purpose only\.net\kyas pro\SmartLoanTracker\SmartLoan.Application\obj\Debug\net10.0\refint\SmartLoan.Application.dll
 D:\isaac\educational purpose only\.net\kyas pro\SmartLoanTracker\SmartLoan.Application\obj\Debug\net10.0\SmartLoan.Application.pdb
+D:\isaac\educational purpose only\.net\kyas pro\SmartLoanTracker\SmartLoan.Application\obj\Debug\net10.0\SmartLoan.Application.genruntimeconfig.cache
 D:\isaac\educational purpose only\.net\kyas pro\SmartLoanTracker\SmartLoan.Application\obj\Debug\net10.0\ref\SmartLoan.Application.dll

@@ -1,11 +1,12 @@
 using Microsoft.EntityFrameworkCore;
+using SmartLoan.Application.Common.Interfaces;
 using SmartLoan.Domain.Entities;
 
 namespace SmartLoan.Infrastructure.Persistence;
 
 // Notice the Primary Constructor (C# 14/10 feature)
 public class ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
-    : DbContext(options)
+    : DbContext(options),IApplicationDbContext
 {
     // These DbSets are your Tables
     public DbSet<Customer> Customers => Set<Customer>();

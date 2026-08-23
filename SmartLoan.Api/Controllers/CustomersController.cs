@@ -1,5 +1,6 @@
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using SmartLoan.Application.Common;
 using SmartLoan.Application.Customers;
 using SmartLoan.Application.Customers.Commands.CreateCustomer;
 
@@ -19,10 +20,11 @@ public class CustomersController(IMediator mediator) : ControllerBase
         return CreatedAtAction(nameof(Create), new { id = customerId }, customerId);
     }
     [HttpGet]
-    public async Task<List<CustomerListDto>> GetAll()
+    public async Task<ActionResult<PagedResponse<CustomerDetailsDto>>> GetAll([FromQuery] PagedRequest request)
     {
-        return await mediator.Send(new GetAllCustomersQuery());
+        return await mediator.Send(new GetCustomersQuery(request));
     }
+
 
     [HttpGet("{id}")]
     public async Task<ActionResult<CustomerDetailsDto>> Get(int id)

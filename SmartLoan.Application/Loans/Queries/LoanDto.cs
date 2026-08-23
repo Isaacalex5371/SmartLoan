@@ -1,3 +1,5 @@
+using SmartLoan.Application.Common;
+
 namespace SmartLoan.Application.Loans.Queries;
 
 public record LoanDto(
@@ -7,4 +9,5 @@ public record LoanDto(
     decimal LoanAmount, // Renamed
     decimal ServiceFee, // Added
     string Status,
-    DateTime CreatedAt);
+    DateTime CreatedAt,
+    List<LinkDto> Links);

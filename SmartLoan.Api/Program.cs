@@ -1,10 +1,16 @@
+using FluentValidation;
 using Microsoft.EntityFrameworkCore;
 using Scalar.AspNetCore;
+using SmartLoan.Api.Middleware;
 using SmartLoan.Application.Common.Interfaces;
 using SmartLoan.Infrastructure.Persistence;
 
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddValidatorsFromAssembly(typeof(SmartLoan.Application.Common.Interfaces.IApplicationDbContext)
+    .Assembly);
 
+builder.Services.AddProblemDetails();
+builder.Services.AddExceptionHandler<GlobalExeptionHandle>();
 // Add services to the container.
 builder.Services.AddControllers();
 
@@ -20,6 +26,7 @@ builder.Services.AddMediatR(cfg =>
     cfg.RegisterServicesFromAssemblies(
         typeof(SmartLoan.Application.Customers.Commands.CreateCustomer.CreateCustomerCommand).Assembly));
 var app = builder.Build();
+app.UseExceptionHandler();
 // Configure the HTTP request pipeline.
 if  (app.Environment.IsDevelopment())
 

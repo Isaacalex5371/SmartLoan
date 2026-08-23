@@ -23,7 +23,8 @@ public record LoanProgressDto(
             .AsNoTracking()
             .FirstOrDefaultAsync(l => l.Id == request.LoanId, cancellationToken);
         if (loan == null) throw new Exception("Loan Not found");
-        int daysSaved = loan.Payments.Count();
+        decimal totalSaved = loan.Payments.Sum(p => p.Amount);
+        int daysSaved = (int)(totalSaved / loan.DailyAmount);
         int dayRemaining = 45 - daysSaved;
         if (dayRemaining < 0) dayRemaining = 0;
 
@@ -33,7 +34,7 @@ public record LoanProgressDto(
             daysSaved,
             dayRemaining,
             daysSaved >= 45,
-            loan.Payments.Sum(p => p.Amount)
+            totalSaved
         );
 
     }

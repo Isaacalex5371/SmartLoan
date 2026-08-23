@@ -20,6 +20,7 @@ public class ApplicationDbContext(DbContextOptions<ApplicationDbContext> options
 
         // This line tells EF to look in this project and find 
         // all our Configuration files automatically!
+        modelBuilder.Entity<Customer>().HasQueryFilter(c => !c.IsDeleted);
         modelBuilder.ApplyConfigurationsFromAssembly(typeof(ApplicationDbContext).Assembly);
     }
 }

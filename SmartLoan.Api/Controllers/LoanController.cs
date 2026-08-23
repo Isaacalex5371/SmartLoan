@@ -1,5 +1,6 @@
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using SmartLoan.Application.Loans;
 using SmartLoan.Application.Loans.Commands.SubmitLoan;
 using SmartLoan.Application.Loans.GetLoans;
 using SmartLoan.Application.Loans.Queries;
@@ -30,5 +31,11 @@ public async Task<ActionResult<LoanProgressDto>> GetProgress(int id)
     return await mediator.Send(new GetLoanProgressQuery(id));
 }
 
+[HttpPost ("{id}/approve")]
+public async Task<IActionResult> Approve(int id)
+{
+    var result = await mediator.Send(new ApproveLoanCammand(id));
+    return Ok(new { message = result });
+}
 
 }

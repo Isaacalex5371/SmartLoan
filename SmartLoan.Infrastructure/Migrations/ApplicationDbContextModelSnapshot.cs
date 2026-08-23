@@ -40,6 +40,9 @@ namespace SmartLoan.Infrastructure.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("character varying(100)");
 
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("boolean");
+
                     b.Property<string>("Phone")
                         .IsRequired()
                         .HasColumnType("text");

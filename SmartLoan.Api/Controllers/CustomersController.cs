@@ -1,5 +1,6 @@
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using SmartLoan.Application.Customers;
 using SmartLoan.Application.Customers.Commands.CreateCustomer;
 
 namespace SmartLoan.Api.Controllers;
@@ -16,5 +17,39 @@ public class CustomersController(IMediator mediator) : ControllerBase
 
         // Returns 201 Created
         return CreatedAtAction(nameof(Create), new { id = customerId }, customerId);
+    }
+    [HttpGet]
+    public async Task<List<CustomerListDto>> GetAll()
+    {
+        return await mediator.Send(new GetAllCustomersQuery());
+    }
+
+    [HttpGet("{id}")]
+    public async Task<ActionResult<CustomerDetailsDto>> Get(int id)
+    {
+        var customer=  await mediator.Send(new GetCustomerByIdQuery(id));
+        if(customer== null)
+        {
+            return NotFound(new
+            {
+                message = "customer not found"
+            });
+        }
+
+        return Ok(customer);
+    }
+
+    [HttpPut("{id}")]
+    public async Task<IActionResult> Update(int id,UpdateCustomerCommand command)
+    {
+        if (id != command.Id) return BadRequest();
+        await mediator.Send(command);
+        return NoContent();
+    }
+    [HttpDelete("{id}")]
+    public async Task<IActionResult> Delete(int id)
+    {
+        await mediator.Send(new DeleteCustomerCommand(id));
+        return NoContent();
     }
 }

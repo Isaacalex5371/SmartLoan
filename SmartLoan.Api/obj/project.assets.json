@@ -501,6 +501,22 @@
           }
         }
       },
+      "Microsoft.Extensions.Caching.Hybrid/10.9.0": {
+        "type": "package",
+        "compile": {
+          "lib/net10.0/Microsoft.Extensions.Caching.Hybrid.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/Microsoft.Extensions.Caching.Hybrid.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net8.0/_._": {}
+        }
+      },
       "Microsoft.Extensions.DependencyModel/10.0.11": {
         "type": "package",
         "compile": {
@@ -837,6 +853,7 @@
         "framework": ".NETCoreApp,Version=v10.0",
         "dependencies": {
           "Microsoft.EntityFrameworkCore": "10.0.11",
+          "Microsoft.Extensions.Caching.Hybrid": "10.9.0",
           "Npgsql.EntityFrameworkCore.PostgreSQL": "10.0.3",
           "SmartLoan.Application": "1.0.0"
         },
@@ -2109,6 +2126,33 @@
         "lib/net10.0/Microsoft.EntityFrameworkCore.Relational.xml",
         "microsoft.entityframeworkcore.relational.10.0.11.nupkg.sha512",
         "microsoft.entityframeworkcore.relational.nuspec"
+      ]
+    },
+    "Microsoft.Extensions.Caching.Hybrid/10.9.0": {
+      "sha512": "D0tHRbUCliInxTfPgN9K6RxrCVaWu9kyIT66vbIJ/YwA6BV2xa8vTqoE3JQXA2Rf2vRdgd29+HR6Ay6KmzDslw==",
+      "type": "package",
+      "path": "microsoft.extensions.caching.hybrid/10.9.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "README.md",
+        "buildTransitive/net462/Microsoft.Extensions.Caching.Hybrid.targets",
+        "buildTransitive/net8.0/_._",
+        "lib/net10.0/Microsoft.Extensions.Caching.Hybrid.dll",
+        "lib/net10.0/Microsoft.Extensions.Caching.Hybrid.xml",
+        "lib/net462/Microsoft.Extensions.Caching.Hybrid.dll",
+        "lib/net462/Microsoft.Extensions.Caching.Hybrid.xml",
+        "lib/net8.0/Microsoft.Extensions.Caching.Hybrid.dll",
+        "lib/net8.0/Microsoft.Extensions.Caching.Hybrid.xml",
+        "lib/net9.0/Microsoft.Extensions.Caching.Hybrid.dll",
+        "lib/net9.0/Microsoft.Extensions.Caching.Hybrid.xml",
+        "lib/netstandard2.0/Microsoft.Extensions.Caching.Hybrid.dll",
+        "lib/netstandard2.0/Microsoft.Extensions.Caching.Hybrid.xml",
+        "lib/netstandard2.1/Microsoft.Extensions.Caching.Hybrid.dll",
+        "lib/netstandard2.1/Microsoft.Extensions.Caching.Hybrid.xml",
+        "microsoft.extensions.caching.hybrid.10.9.0.nupkg.sha512",
+        "microsoft.extensions.caching.hybrid.nuspec"
       ]
     },
     "Microsoft.Extensions.DependencyModel/10.0.11": {

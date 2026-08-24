@@ -406,6 +406,14 @@
           }
         }
       },
+      "Microsoft.Extensions.Caching.Hybrid/10.9.0": {
+        "runtime": {
+          "lib/net10.0/Microsoft.Extensions.Caching.Hybrid.dll": {
+            "assemblyVersion": "10.9.0.0",
+            "fileVersion": "10.900.26.41116"
+          }
+        }
+      },
       "Microsoft.Extensions.DependencyModel/10.0.11": {
         "runtime": {
           "lib/net10.0/Microsoft.Extensions.DependencyModel.dll": {
@@ -613,6 +621,7 @@
       "SmartLoan.Infrastructure/1.0.0": {
         "dependencies": {
           "Microsoft.EntityFrameworkCore": "10.0.11",
+          "Microsoft.Extensions.Caching.Hybrid": "10.9.0",
           "Npgsql.EntityFrameworkCore.PostgreSQL": "10.0.3",
           "SmartLoan.Application": "1.0.0"
         },
@@ -742,6 +751,13 @@
       "sha512": "sha512-grznnTJgEYxaWpdKAsTzg6j+89jHgCXWYp+QGtlX5O92+w/VuhWM6JLPYb+uw8M9VhGUvOTsO76dYOy9vNPd5Q==",
       "path": "microsoft.entityframeworkcore.relational/10.0.11",
       "hashPath": "microsoft.entityframeworkcore.relational.10.0.11.nupkg.sha512"
+    },
+    "Microsoft.Extensions.Caching.Hybrid/10.9.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-D0tHRbUCliInxTfPgN9K6RxrCVaWu9kyIT66vbIJ/YwA6BV2xa8vTqoE3JQXA2Rf2vRdgd29+HR6Ay6KmzDslw==",
+      "path": "microsoft.extensions.caching.hybrid/10.9.0",
+      "hashPath": "microsoft.extensions.caching.hybrid.10.9.0.nupkg.sha512"
     },
     "Microsoft.Extensions.DependencyModel/10.0.11": {
       "type": "package",

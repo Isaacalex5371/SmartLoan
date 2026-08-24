@@ -136,3 +136,4 @@ D:\isaac\educational purpose only\.net\kyas pro\SmartLoanTracker\SmartLoan.Api\b
 D:\isaac\educational purpose only\.net\kyas pro\SmartLoanTracker\SmartLoan.Api\obj\Debug\net10.0\SmartLoa.CF4FFE39.Up2Date
 D:\isaac\educational purpose only\.net\kyas pro\SmartLoanTracker\SmartLoan.Api\obj\Debug\net10.0\SmartLoan.Api.genruntimeconfig.cache
 D:\isaac\educational purpose only\.net\kyas pro\SmartLoanTracker\SmartLoan.Api\obj\Debug\net10.0\ref\SmartLoan.Api.dll
+D:\isaac\educational purpose only\.net\kyas pro\SmartLoanTracker\SmartLoan.Api\bin\Debug\net10.0\Microsoft.Extensions.Caching.Hybrid.dll

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "tM0zAtOL/JM=",
+  "dgSpecHash": "L4bxIJi0/bs=",
   "success": true,
   "projectFilePath": "D:\\isaac\\educational purpose only\\.net\\kyas pro\\SmartLoanTracker\\SmartLoan.Api\\SmartLoan.Api.csproj",
   "expectedPackageFiles": [
@@ -22,6 +22,7 @@
     "C:\\Users\\isaac\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\10.0.11\\microsoft.entityframeworkcore.analyzers.10.0.11.nupkg.sha512",
     "C:\\Users\\isaac\\.nuget\\packages\\microsoft.entityframeworkcore.design\\10.0.11\\microsoft.entityframeworkcore.design.10.0.11.nupkg.sha512",
     "C:\\Users\\isaac\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\10.0.11\\microsoft.entityframeworkcore.relational.10.0.11.nupkg.sha512",
+    "C:\\Users\\isaac\\.nuget\\packages\\microsoft.extensions.caching.hybrid\\10.9.0\\microsoft.extensions.caching.hybrid.10.9.0.nupkg.sha512",
     "C:\\Users\\isaac\\.nuget\\packages\\microsoft.extensions.dependencymodel\\10.0.11\\microsoft.extensions.dependencymodel.10.0.11.nupkg.sha512",
     "C:\\Users\\isaac\\.nuget\\packages\\microsoft.identitymodel.abstractions\\8.14.0\\microsoft.identitymodel.abstractions.8.14.0.nupkg.sha512",
     "C:\\Users\\isaac\\.nuget\\packages\\microsoft.identitymodel.jsonwebtokens\\8.14.0\\microsoft.identitymodel.jsonwebtokens.8.14.0.nupkg.sha512",

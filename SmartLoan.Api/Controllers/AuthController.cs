@@ -12,12 +12,18 @@ namespace SmartLoan.Api.Controllers;
 [Route("api/v{version:apiVersion}/[controller]")]
 public class AuthController(IMediator mediator): ControllerBase
 {
-[AllowAnonymous]
-[EnableRateLimiting("login-policy")]
-[HttpPost("login")]
-public async Task<ActionResult<LoginResponse>> Login(LoginCommand command)
-{
-    var result = await mediator.Send(command);
-    return Ok(result);
-} 
+    [AllowAnonymous]
+    [EnableRateLimiting("login-policy")]
+    [HttpPost("login")]
+    public async Task<ActionResult<LoginResponse>> Login(LoginCommand command)
+    {
+        var result = await mediator.Send(command);
+        return Ok(result);
+    }
+    [HttpPost("refresh")]
+public async Task<ActionResult> Refresh(RefreshTokenRequest command)
+    {
+        var result = await mediator.Send(command);
+        return Ok(result);
+    }
 }

@@ -1,7 +1,9 @@
 using Asp.Versioning;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using SmartLoan.Application.Payments;
+using SmartLoan.Application.Payments.GetRecentPayments;
 
 namespace SmartLoan.Api.Controllers;
 
@@ -15,6 +17,12 @@ public class PaymentsController(IMediator mediator):ControllerBase
     {
         var paymentId = await mediator.Send(command);
         return Ok(paymentId);
+    }
+    [HttpGet("recent")]
+    [Authorize(Roles = "Administrator")]
+    public async Task<ActionResult<List<RecentPaymentDto>>> GetRecent()
+    {
+        return await mediator.Send(new GetRecentPaymentsQuery());
     }
 
 }

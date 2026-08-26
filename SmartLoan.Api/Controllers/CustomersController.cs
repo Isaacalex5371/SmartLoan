@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using SmartLoan.Application.Common;
 using SmartLoan.Application.Customers;
 using SmartLoan.Application.Customers.Commands.CreateCustomer;
+using SmartLoan.Application.Loans.Queries;
 
 namespace SmartLoan.Api.Controllers;
 
@@ -32,8 +33,8 @@ public class CustomersController(IMediator mediator) : ControllerBase
     [HttpGet("{id}")]
     public async Task<ActionResult<CustomerDetailsDto>> Get(int id)
     {
-        var customer=  await mediator.Send(new GetCustomerByIdQuery(id));
-        if(customer== null)
+        var customer = await mediator.Send(new GetCustomerByIdQuery(id));
+        if (customer == null)
         {
             return NotFound(new
             {
@@ -42,6 +43,11 @@ public class CustomersController(IMediator mediator) : ControllerBase
         }
 
         return Ok(customer);
+    }
+    [HttpGet("{id}/loans")]
+    public async Task<ActionResult<List<LoanDto>>> GetCustomerLoans(int id)
+    {
+        return await mediator.Send(new GetCustomerLoansQuery(id));
     }
 
     [HttpPut("{id}")]

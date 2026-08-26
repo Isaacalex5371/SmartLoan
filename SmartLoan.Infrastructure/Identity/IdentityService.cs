@@ -7,7 +7,7 @@ using SmartLoan.Application.Common.Interfaces;
 
 namespace SmartLoan.Infrastructure.Identity;
 
-public class IdentityService(IConfiguration config):IIdentityService
+public class IdentityService(IConfiguration config) : IIdentityService
 {
     public string GenerateToken(int userId, string fullName, string email, string role)
     {
@@ -36,4 +36,13 @@ public class IdentityService(IConfiguration config):IIdentityService
         rng.GetBytes(randomNumber);
         return Convert.ToBase64String(randomNumber);
     }
+
+    public string HashPassword(string password) => BCrypt.Net.BCrypt.HashPassword(password);
+
+    public bool VerifyPassword(string password, string hash)
+    {
+        return BCrypt.Net.BCrypt.Verify(password, hash);
+    }
+
 }
+

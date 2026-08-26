@@ -60,9 +60,15 @@ public async Task<IActionResult> Delete(int id)
     await mediator.Send(new DeleteLoanCommand(id));
     return NoContent();
 }
-[HttpGet("{id}/payments")]
-public async Task<ActionResult<List<PaymentDto>>> GetPaymentS(int id)
-{
-    return await mediator.Send(new GetPaymentHistoryQuery(id));
-} 
+    [HttpGet("{id}/payments")]
+    public async Task<ActionResult<List<PaymentDto>>> GetPaymentS(int id)
+    {
+        return await mediator.Send(new GetPaymentHistoryQuery(id));
+    }
+    [HttpPost("{id}/reject")]
+public async Task<IActionResult> Reject(int id , [FromBody] string reason)
+    {
+        await mediator.Send(new RejectLoanCommand(id, reason));
+        return NoContent();
+    }
 }

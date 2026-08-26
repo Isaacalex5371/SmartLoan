@@ -12,10 +12,8 @@ public class LoginHandler(IApplicationDbContext context ,IIdentityService identi
 {
     public async Task<LoginResponse> Handle(LoginCommand request, CancellationToken ct)
     {
-        var user = await context.Users.FirstOrDefaultAsync(
-            u => u.Email == request.Email && u.PasswordHash == request.Password, ct);
-
-        if (user == null) throw new BusinessRuleException("Invalid email or password.");
+       var user = await context.Users.FirstOrDefaultAsync(u => u.Email == request.Email, ct);
+        if (user == null || !identityService.VerifyPassword(request.Password, user.PasswordHash)) throw new BusinessRuleException("Invalid email or password.");
         var token = identityService.GenerateToken(user.Id, user.FullName, user.Email, user.Role);
         var refreshToken = identityService.GenerateRefreshToken();
         user.RefreshToken = refreshToken;

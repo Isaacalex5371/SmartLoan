@@ -1,13 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "MzPJ5HRe4xQ=",
+  "dgSpecHash": "aTahcyGFcw4=",
   "success": true,
-  "projectFilePath": "d:\\isaac\\educational purpose only\\.net\\kyas pro\\SmartLoanTracker\\SmartLoan.Api\\SmartLoan.Api.csproj",
+  "projectFilePath": "D:\\isaac\\educational purpose only\\.net\\kyas pro\\SmartLoanTracker\\SmartLoan.Api\\SmartLoan.Api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\isaac\\.nuget\\packages\\asp.versioning.abstractions\\10.2.1\\asp.versioning.abstractions.10.2.1.nupkg.sha512",
     "C:\\Users\\isaac\\.nuget\\packages\\asp.versioning.http\\10.2.3\\asp.versioning.http.10.2.3.nupkg.sha512",
     "C:\\Users\\isaac\\.nuget\\packages\\asp.versioning.mvc\\10.2.1\\asp.versioning.mvc.10.2.1.nupkg.sha512",
     "C:\\Users\\isaac\\.nuget\\packages\\asp.versioning.mvc.apiexplorer\\10.2.1\\asp.versioning.mvc.apiexplorer.10.2.1.nupkg.sha512",
+    "C:\\Users\\isaac\\.nuget\\packages\\bcrypt.net-next\\4.2.0\\bcrypt.net-next.4.2.0.nupkg.sha512",
     "C:\\Users\\isaac\\.nuget\\packages\\fluentvalidation\\12.1.1\\fluentvalidation.12.1.1.nupkg.sha512",
     "C:\\Users\\isaac\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\12.1.1\\fluentvalidation.dependencyinjectionextensions.12.1.1.nupkg.sha512",
     "C:\\Users\\isaac\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",

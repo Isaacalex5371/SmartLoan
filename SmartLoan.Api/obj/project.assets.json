@@ -72,6 +72,15 @@
           }
         }
       },
+      "BCrypt.Net-Next/4.2.0": {
+        "type": "package",
+        "compile": {
+          "lib/net10.0/BCrypt-Net-Next.dll": {}
+        },
+        "runtime": {
+          "lib/net10.0/BCrypt-Net-Next.dll": {}
+        }
+      },
       "FluentValidation/12.1.1": {
         "type": "package",
         "compile": {
@@ -1056,6 +1065,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v10.0",
         "dependencies": {
+          "BCrypt.Net-Next": "4.2.0",
           "Microsoft.EntityFrameworkCore": "10.0.11",
           "Microsoft.Extensions.Caching.Hybrid": "10.9.0",
           "Npgsql.EntityFrameworkCore.PostgreSQL": "10.0.3",
@@ -1145,6 +1155,31 @@
         "icon.png",
         "lib/net10.0/Asp.Versioning.Mvc.ApiExplorer.dll",
         "lib/net10.0/Asp.Versioning.Mvc.ApiExplorer.xml"
+      ]
+    },
+    "BCrypt.Net-Next/4.2.0": {
+      "sha512": "gwLD2KfCuwQesP17aVh4h6lpiMPEVt5Lbpndo0ej903hNUUTtyxt3ARdDjmuydBRTAUICc7OVKVbaOvc6SQYXA==",
+      "type": "package",
+      "path": "bcrypt.net-next/4.2.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "bcrypt.net-next.4.2.0.nupkg.sha512",
+        "bcrypt.net-next.nuspec",
+        "ico.png",
+        "lib/net10.0/BCrypt-Net-Next.dll",
+        "lib/net10.0/BCrypt.Net-Next.xml",
+        "lib/net462/BCrypt-Net-Next.dll",
+        "lib/net462/BCrypt.Net-Next.xml",
+        "lib/net472/BCrypt-Net-Next.dll",
+        "lib/net472/BCrypt.Net-Next.xml",
+        "lib/net48/BCrypt-Net-Next.dll",
+        "lib/net48/BCrypt.Net-Next.xml",
+        "lib/netstandard2.0/BCrypt-Net-Next.dll",
+        "lib/netstandard2.0/BCrypt.Net-Next.xml",
+        "lib/netstandard2.1/BCrypt-Net-Next.dll",
+        "lib/netstandard2.1/BCrypt.Net-Next.xml",
+        "readme.md"
       ]
     },
     "FluentValidation/12.1.1": {
@@ -3123,11 +3158,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "d:\\isaac\\educational purpose only\\.net\\kyas pro\\SmartLoanTracker\\SmartLoan.Api\\SmartLoan.Api.csproj",
+      "projectUniqueName": "D:\\isaac\\educational purpose only\\.net\\kyas pro\\SmartLoanTracker\\SmartLoan.Api\\SmartLoan.Api.csproj",
       "projectName": "SmartLoan.Api",
-      "projectPath": "d:\\isaac\\educational purpose only\\.net\\kyas pro\\SmartLoanTracker\\SmartLoan.Api\\SmartLoan.Api.csproj",
+      "projectPath": "D:\\isaac\\educational purpose only\\.net\\kyas pro\\SmartLoanTracker\\SmartLoan.Api\\SmartLoan.Api.csproj",
       "packagesPath": "C:\\Users\\isaac\\.nuget\\packages\\",
-      "outputPath": "d:\\isaac\\educational purpose only\\.net\\kyas pro\\SmartLoanTracker\\SmartLoan.Api\\obj\\",
+      "outputPath": "D:\\isaac\\educational purpose only\\.net\\kyas pro\\SmartLoanTracker\\SmartLoan.Api\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -3150,11 +3185,11 @@
           "framework": "net10.0",
           "targetAlias": "net10.0",
           "projectReferences": {
-            "d:\\isaac\\educational purpose only\\.net\\kyas pro\\SmartLoanTracker\\SmartLoan.Application\\SmartLoan.Application.csproj": {
-              "projectPath": "d:\\isaac\\educational purpose only\\.net\\kyas pro\\SmartLoanTracker\\SmartLoan.Application\\SmartLoan.Application.csproj"
+            "D:\\isaac\\educational purpose only\\.net\\kyas pro\\SmartLoanTracker\\SmartLoan.Application\\SmartLoan.Application.csproj": {
+              "projectPath": "D:\\isaac\\educational purpose only\\.net\\kyas pro\\SmartLoanTracker\\SmartLoan.Application\\SmartLoan.Application.csproj"
             },
-            "d:\\isaac\\educational purpose only\\.net\\kyas pro\\SmartLoanTracker\\SmartLoan.Infrastructure\\SmartLoan.Infrastructure.csproj": {
-              "projectPath": "d:\\isaac\\educational purpose only\\.net\\kyas pro\\SmartLoanTracker\\SmartLoan.Infrastructure\\SmartLoan.Infrastructure.csproj"
+            "D:\\isaac\\educational purpose only\\.net\\kyas pro\\SmartLoanTracker\\SmartLoan.Infrastructure\\SmartLoan.Infrastructure.csproj": {
+              "projectPath": "D:\\isaac\\educational purpose only\\.net\\kyas pro\\SmartLoanTracker\\SmartLoan.Infrastructure\\SmartLoan.Infrastructure.csproj"
             }
           }
         }

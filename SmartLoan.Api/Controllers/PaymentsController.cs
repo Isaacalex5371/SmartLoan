@@ -1,3 +1,4 @@
+using Asp.Versioning;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using SmartLoan.Application.Payments;
@@ -5,7 +6,8 @@ using SmartLoan.Application.Payments;
 namespace SmartLoan.Api.Controllers;
 
 [ApiController]
-[Route("api/v1/[controller]")]
+[ApiVersion("1.0")]
+[Route("api/v{version:apiVersion}/[controller]")]
 public class PaymentsController(IMediator mediator):ControllerBase
 {
     [HttpPost]

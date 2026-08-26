@@ -10,10 +10,11 @@
 using System;
 using System.Reflection;
 
+[assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("f2beed15-e3de-457b-9008-a0ac39775fed")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("SmartLoan.Api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+20c510a5e1e9f449922d438e52254abbf8d0390e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8fbc645d9afc847f8ac414f16f55a891ac92307b")]
 [assembly: System.Reflection.AssemblyProductAttribute("SmartLoan.Api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SmartLoan.Api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

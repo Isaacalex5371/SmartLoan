@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SmartLoan.Infrastructure")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+20c510a5e1e9f449922d438e52254abbf8d0390e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8fbc645d9afc847f8ac414f16f55a891ac92307b")]
 [assembly: System.Reflection.AssemblyProductAttribute("SmartLoan.Infrastructure")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SmartLoan.Infrastructure")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

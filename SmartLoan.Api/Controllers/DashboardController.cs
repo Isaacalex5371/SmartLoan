@@ -1,11 +1,15 @@
+using Asp.Versioning;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using SmartLoan.Application.Dashboard;
 using SmartLoan.Application.Dashboard.Queries;
 
 namespace SmartLoan.Api.Controllers;
 [ApiController]
-[Route("api/v1/[controller]")]
+[ApiVersion("1.0")]
+[Route("api/v{version:apiVersion}/[controller]")]
+[Authorize(Roles = "Administrator")]
 public class DashboardController(IMediator mediator) : ControllerBase 
 {
 [HttpGet]

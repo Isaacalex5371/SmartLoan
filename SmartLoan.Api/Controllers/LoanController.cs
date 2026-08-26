@@ -1,4 +1,6 @@
+using Asp.Versioning;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using SmartLoan.Application.Common;
 using SmartLoan.Application.Loans;
@@ -13,7 +15,10 @@ using SmartLoan.Application.Payments.GetPaymentHistory;
 namespace SmartLoan.Api.Controllers;
 
 [ApiController]
-[Route("api/v1/[controller]")]
+
+[ApiVersion("1.0")]
+[Route("api/v{version:apiVersion}/[controller]")]
+[Authorize]
 public class LoanController(IMediator mediator): ControllerBase
 {
     [HttpPost ]
@@ -36,6 +41,7 @@ public async Task<ActionResult<LoanProgressDto>> GetProgress(int id)
 }
 
 [HttpPost ("{id}/approve")]
+[Authorize(Roles = "Administrator")]
 public async Task<IActionResult> Approve(int id)
 {
     var result = await mediator.Send(new ApproveLoanCammand(id));

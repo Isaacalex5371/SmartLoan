@@ -9,6 +9,7 @@ public class CorrelationIdMiddleware(RequestDelegate next)
         var correlationId = context.Request.Headers["X-Correlation-ID"].FirstOrDefault() ?? Guid.NewGuid().ToString();
         context.Response.Headers["X-Correlation-ID"] = correlationId;
         using (MappedDiagnosticsContext.SetScoped("CorrelationId", correlationId))
+        
         {
             await next(context);
         }

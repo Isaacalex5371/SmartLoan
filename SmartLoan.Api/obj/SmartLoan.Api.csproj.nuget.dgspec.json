@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\isaac\\educational purpose only\\.net\\kyas pro\\SmartLoanTracker\\SmartLoan.Api\\SmartLoan.Api.csproj": {}
+    "D:\\isaac\\educational purpose only\\.net\\kyas pro\\SmartLoanTracker\\smartloan.api\\SmartLoan.Api.csproj": {}
   },
   "projects": {
-    "D:\\isaac\\educational purpose only\\.net\\kyas pro\\SmartLoanTracker\\SmartLoan.Api\\SmartLoan.Api.csproj": {
+    "D:\\isaac\\educational purpose only\\.net\\kyas pro\\SmartLoanTracker\\smartloan.api\\SmartLoan.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\isaac\\educational purpose only\\.net\\kyas pro\\SmartLoanTracker\\SmartLoan.Api\\SmartLoan.Api.csproj",
+        "projectUniqueName": "D:\\isaac\\educational purpose only\\.net\\kyas pro\\SmartLoanTracker\\smartloan.api\\SmartLoan.Api.csproj",
         "projectName": "SmartLoan.Api",
-        "projectPath": "D:\\isaac\\educational purpose only\\.net\\kyas pro\\SmartLoanTracker\\SmartLoan.Api\\SmartLoan.Api.csproj",
+        "projectPath": "D:\\isaac\\educational purpose only\\.net\\kyas pro\\SmartLoanTracker\\smartloan.api\\SmartLoan.Api.csproj",
         "packagesPath": "C:\\Users\\isaac\\.nuget\\packages\\",
-        "outputPath": "D:\\isaac\\educational purpose only\\.net\\kyas pro\\SmartLoanTracker\\SmartLoan.Api\\obj\\",
+        "outputPath": "D:\\isaac\\educational purpose only\\.net\\kyas pro\\SmartLoanTracker\\smartloan.api\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -85,6 +85,10 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[10.0.11, )"
+            },
+            "Microsoft.OpenApi": {
+              "target": "Package",
+              "version": "[2.7.5, )"
             },
             "NLog": {
               "target": "Package",

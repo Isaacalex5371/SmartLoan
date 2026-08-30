@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "aTahcyGFcw4=",
+  "dgSpecHash": "AifTj5X+JgQ=",
   "success": true,
-  "projectFilePath": "D:\\isaac\\educational purpose only\\.net\\kyas pro\\SmartLoanTracker\\SmartLoan.Api\\SmartLoan.Api.csproj",
+  "projectFilePath": "D:\\isaac\\educational purpose only\\.net\\kyas pro\\SmartLoanTracker\\smartloan.api\\SmartLoan.Api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\isaac\\.nuget\\packages\\asp.versioning.abstractions\\10.2.1\\asp.versioning.abstractions.10.2.1.nupkg.sha512",
     "C:\\Users\\isaac\\.nuget\\packages\\asp.versioning.http\\10.2.3\\asp.versioning.http.10.2.3.nupkg.sha512",

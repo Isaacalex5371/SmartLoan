@@ -3,5 +3,5 @@ using MediatR;
 namespace SmartLoan.Application.Payments;
 
 public record RecordPaymentCommand(
-    int LoanAplicationId,
+    int LoanApplicationId,
     decimal Amount) : IRequest<int>;

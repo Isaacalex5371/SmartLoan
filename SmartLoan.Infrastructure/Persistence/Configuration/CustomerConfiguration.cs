@@ -1,7 +1,8 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using SmartLoan.Domain.Entities;
-namespace SmartLoan.Infrastructure.Persistence.Configurations;
+
+namespace SmartLoan.Infrastructure.Persistence.Configuration;
 
 public class CustomerConfiguration : IEntityTypeConfiguration<Customer>
 {

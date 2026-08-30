@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.RateLimiting;
 using SmartLoan.Application.Users;
+using SmartLoan.Application.Users.Commands.RefreshToken;
 
 namespace SmartLoan.Api.Controllers;
 
@@ -21,9 +22,16 @@ public class AuthController(IMediator mediator): ControllerBase
         return Ok(result);
     }
     [HttpPost("refresh")]
-public async Task<ActionResult> Refresh(RefreshTokenRequest command)
+    public async Task<ActionResult> Refresh(RefreshTokenRequest command)
     {
         var result = await mediator.Send(command);
         return Ok(result);
+    }
+    [HttpPost("register")]
+    [Authorize(Roles = "Administrator")] 
+    public async Task<ActionResult<int>> Register(RegisterUserCommand command)
+    {
+        var userId = await mediator.Send(command);
+        return Ok(userId);
     }
 }

@@ -24,7 +24,7 @@ public class IdentityService(IConfiguration config) : IIdentityService
             issuer: config["Jwt:Issuer"],
             audience: config["Jwt:Audience"],
             claims: claims,
-            expires: DateTime.Now.AddHours(8),
+            expires: DateTime.UtcNow.AddMinutes(15),
             signingCredentials: credentials);
         return new JwtSecurityTokenHandler().WriteToken(token);
     }

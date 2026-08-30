@@ -4,7 +4,7 @@ using SmartLoan.Application.Common.Interfaces;
 
 namespace SmartLoan.Application.Dashboard.Queries.GetLoanSummary;
 
-public class LoanSummaryDto(decimal TotalMoneyCollected, decimal TotalProjectdProfit, int ActiveSavingLoans, int TotalApprovedLoans);
+public record LoanSummaryDto(decimal TotalMoneyCollected, decimal TotalProjectdProfit, int ActiveSavingLoans, int TotalApprovedLoans);
 public record GetLoansummatyQuery : IRequest<LoanSummaryDto>;
 public class GetLoanSummaryHandler(IApplicationDbContext context) : IRequestHandler<GetLoansummatyQuery, LoanSummaryDto>
 {

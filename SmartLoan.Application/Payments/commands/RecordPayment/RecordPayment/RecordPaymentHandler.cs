@@ -11,7 +11,7 @@ public class RecordPaymentHandler(IApplicationDbContext context) :IRequestHandle
     public async Task<int> Handle(RecordPaymentCommand request, CancellationToken cancellationToken)
     {
         var loan = await context.LoanApplications.FirstOrDefaultAsync(l =>
-            l.Id == request.LoanAplicationId, cancellationToken);
+            l.Id == request.LoanApplicationId, cancellationToken);
         if (loan == null)
         {
             throw new Exception("loan application not found.");
@@ -38,7 +38,7 @@ public class RecordPaymentHandler(IApplicationDbContext context) :IRequestHandle
 
         var payment = new Payment
             {
-                LoanApplicationId = request.LoanAplicationId,
+                LoanApplicationId = request.LoanApplicationId,
                 Amount =  request.Amount,
                 PaymentDate = DateTime.UtcNow
             };

@@ -15,8 +15,6 @@ public class SecurityHeadersMiddleware(RequestDelegate next,IWebHostEnvironment 
         context.Response.Headers.Append("X-Frame-Options", "DENY");
         context.Response.Headers.Append("X-Content-Type-Options", "nosniff");
 
-        // ONLY apply strict CSP if we are NOT in development
-        // This allows Scalar/Swagger to work while you code!
         if (!env.IsDevelopment())
         {
             context.Response.Headers.Append("Content-Security-Policy", "default-src 'self';");

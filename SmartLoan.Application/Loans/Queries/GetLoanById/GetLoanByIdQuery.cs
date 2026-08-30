@@ -16,7 +16,7 @@ public class GetLoanByIdHandler(IApplicationDbContext context)
             .AsNoTracking()
             .Include(l => l.Customer)
             .Include(l=>l.Payments) // Load the name
-            .FirstOrDefaultAsync(cancellationToken);
+            .FirstOrDefaultAsync(l => l.Id == request.Id,cancellationToken);
 
         if (loan == null) throw new NotFoundException($"Loan with ID {request.Id} not found.");
 

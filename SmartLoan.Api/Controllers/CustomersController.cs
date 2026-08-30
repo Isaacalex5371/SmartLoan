@@ -1,26 +1,30 @@
 using Asp.Versioning;
 using MediatR;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using SmartLoan.Application.Common;
 using SmartLoan.Application.Customers;
 using SmartLoan.Application.Customers.Commands.CreateCustomer;
+using SmartLoan.Application.Customers.Commands.UpdateCustomer;
 using SmartLoan.Application.Loans.Queries;
 
 namespace SmartLoan.Api.Controllers;
-
+[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
 [ApiController]
 [ApiVersion("1.0")]
 
-[Route("api/v{version:apiVersion}/[controller]")] // Versioning starts here!
+
+[Route("api/v{version:apiVersion}/[controller]")] 
 public class CustomersController(IMediator mediator) : ControllerBase
 {
     [HttpPost]
     public async Task<IActionResult> Create(CreateCustomerCommand command)
     {
-        // Messenger just sends the command and waits for the ID
+      
         var customerId = await mediator.Send(command);
 
-        // Returns 201 Created
+      
         return CreatedAtAction(nameof(Create), new { id = customerId }, customerId);
     }
     [HttpGet]

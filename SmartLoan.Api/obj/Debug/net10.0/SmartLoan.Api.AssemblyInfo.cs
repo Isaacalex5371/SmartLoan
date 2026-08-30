@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SmartLoan.Api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7c0cfc64fb3067823c3947393bd15e05a6d32373")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a87fd59d2fd28196872f6ad378038b93674c88c7")]
 [assembly: System.Reflection.AssemblyProductAttribute("SmartLoan.Api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SmartLoan.Api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

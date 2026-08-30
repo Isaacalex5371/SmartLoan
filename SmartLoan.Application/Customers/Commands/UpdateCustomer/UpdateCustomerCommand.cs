@@ -1,7 +1,7 @@
 using MediatR;
 using SmartLoan.Application.Common.Interfaces;
 
-namespace SmartLoan.Application.Customers;
+namespace SmartLoan.Application.Customers.Commands.UpdateCustomer;
 
 public record UpdateCustomerCommand(int Id, string FullName, string Phone, string Address) :IRequest;
 

@@ -1082,3 +1082,9 @@ WHERE "Id" = @p2;
 2026-08-26 00:56:01.8062|Info|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|CorrelationId=443d6be7-983e-44a2-a79b-cf3792e509d2|Executed action SmartLoan.Api.Controllers.AuthController.Login (SmartLoan.Api) in 343.5692ms 
 2026-08-26 00:56:01.8062|Info|Microsoft.AspNetCore.Routing.EndpointMiddleware|CorrelationId=443d6be7-983e-44a2-a79b-cf3792e509d2|Executed endpoint 'SmartLoan.Api.Controllers.AuthController.Login (SmartLoan.Api)' 
 2026-08-26 00:56:01.8115|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request finished HTTP/1.1 POST http://localhost:5176/api/v1/Auth/login - 200 - application/json;+charset=utf-8 361.3997ms 
+2026-08-26 23:54:05.3826|Info|Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager|CorrelationId=|User profile is available. Using 'C:\Users\isaac\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest. 
+2026-08-26 23:54:05.4134|Info|SmartLoan.Infrastructure.BackgroundJobs.ReportWorker|CorrelationId=|Report Worker is starting... 
+2026-08-26 23:54:05.5306|Info|Microsoft.Hosting.Lifetime|CorrelationId=|Now listening on: http://localhost:5176 
+2026-08-26 23:54:05.5306|Info|Microsoft.Hosting.Lifetime|CorrelationId=|Application started. Press Ctrl+C to shut down. 
+2026-08-26 23:54:05.5306|Info|Microsoft.Hosting.Lifetime|CorrelationId=|Hosting environment: Development 
+2026-08-26 23:54:05.5306|Info|Microsoft.Hosting.Lifetime|CorrelationId=|Content root path: D:\isaac\educational purpose only\.net\kyas pro\SmartLoanTracker\SmartLoan.Api 

@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using SmartLoan.Application.Common.Exceptions;
 using SmartLoan.Application.Common.Interfaces;
 
-namespace SmartLoan.Application.Users;
+namespace SmartLoan.Application.Users.Commands.RefreshToken;
 public record RefreshTokenRequest(string Token, string RefreshToken) : IRequest<LoginResponse>;
 
 public class RefreshTokenHandler(IApplicationDbContext context, IIdentityService identityService)
@@ -11,14 +11,18 @@ public class RefreshTokenHandler(IApplicationDbContext context, IIdentityService
 {
     public async Task<LoginResponse> Handle(RefreshTokenRequest request, CancellationToken ct)
     {
-        // 1. Find the user with this refresh token
+        if (string.IsNullOrWhiteSpace(request.RefreshToken))
+        {
+            throw new BusinessRuleException("Refresh token is missing from the request.");
+        }
+        
         var user = await context.Users.FirstOrDefaultAsync(u => u.RefreshToken == request.RefreshToken, ct);
 
-        // 2. Security Check: Does the token match and is it still valid?
+       
         if (user == null || user.RefreshTokenExpiryTime <= DateTime.UtcNow)
             throw new BusinessRuleException("Session expired. Please login again.");
 
-        // 3. Generate NEW pair (Rotation)
+       
         var newToken = identityService.GenerateToken(user.Id, user.FullName, user.Email, user.Role);
         var newRefreshToken = identityService.GenerateRefreshToken();
 

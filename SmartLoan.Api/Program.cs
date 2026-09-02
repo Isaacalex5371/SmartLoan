@@ -1,11 +1,16 @@
+using System.Collections.Generic;
 using System.Text;
 using System.Text.Json;
 using Asp.Versioning;
 using FluentValidation;
 using MediatR;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.RateLimiting;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi;
 using NLog;
@@ -31,6 +36,7 @@ LogManager.Setup()
 // ============================================================
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddAntiforgery(opt => { opt.HeaderName = "X-XSRF-TOKEN"; });
 
 // 4. LOGGING
 // ============================================================
@@ -100,29 +106,39 @@ builder.Services.AddScoped<IIdentityService, IdentityService>();
 
 builder.Services
     .AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-    .AddJwtBearer(options =>
+   .AddJwtBearer(options =>
     {
-        options.TokenValidationParameters =
-            new TokenValidationParameters
+        options.TokenValidationParameters = new TokenValidationParameters
+        {
+            ValidateIssuer = true,
+            ValidateAudience = true,
+            ValidateLifetime = true,
+            ValidateIssuerSigningKey = true,
+            ValidIssuer = builder.Configuration["Jwt:Issuer"],
+            ValidAudience = builder.Configuration["Jwt:Audience"],
+            IssuerSigningKey = new SymmetricSecurityKey(
+                Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]!)),
+            ClockSkew = TimeSpan.Zero
+        };
+
+
+      
+
+        // 
+        options.Events = new JwtBearerEvents
+        {
+            OnMessageReceived = context =>
             {
-                ValidateIssuer = true,
-                ValidateAudience = true,
-                ValidateLifetime = true,
-                ValidateIssuerSigningKey = true,
+                var accessToken = context.Request.Cookies["X-Access-Token"];
 
-                ValidIssuer =
-                    builder.Configuration["Jwt:Issuer"],
+                if (!string.IsNullOrEmpty(accessToken))
+                {
+                    context.Token = accessToken;
+                }
 
-                ValidAudience =
-                    builder.Configuration["Jwt:Audience"],
-
-                IssuerSigningKey =
-                    new SymmetricSecurityKey(
-                        Encoding.UTF8.GetBytes(
-                            builder.Configuration["Jwt:Key"]!)),
-
-                ClockSkew = TimeSpan.Zero
-            };
+                return Task.CompletedTask;
+            }
+        };
     });
 
 
@@ -273,7 +289,7 @@ app.UseRateLimiter();
 app.UseAuthentication();
 
 app.UseAuthorization();
-
+app.UseAntiforgery();
 
 
 // 23. DEVELOPMENT TOOLS

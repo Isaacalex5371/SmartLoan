@@ -1,13 +1,14 @@
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using SmartLoan.Application.Common.Interfaces;
 
 namespace SmartLoan.Infrastructure.Identity;
 
-public class IdentityService(IConfiguration config) : IIdentityService
+public class IdentityService(IConfiguration config,IApplicationDbContext context) : IIdentityService
 {
     public string GenerateToken(int userId, string fullName, string email, string role)
     {
@@ -44,5 +45,15 @@ public class IdentityService(IConfiguration config) : IIdentityService
         return BCrypt.Net.BCrypt.Verify(password, hash);
     }
 
+    public async Task RevokeRefreshToken(int userId)
+    {
+        var user = await context.Users.FirstOrDefaultAsync(u => u.Id == userId);
+        if (user != null)
+        {
+            user.RefreshToken = null;
+            user.RefreshTokenExpiryTime = null;
+            await context.SaveChangesAsync(default);
+        }
+    }
 }
 

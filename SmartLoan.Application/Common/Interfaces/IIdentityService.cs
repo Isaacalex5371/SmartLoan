@@ -6,4 +6,5 @@ public interface IIdentityService
     string GenerateRefreshToken();
     public string HashPassword(string password);
     public bool VerifyPassword(string password, string hash);
+    Task RevokeRefreshToken(int userId);
 }

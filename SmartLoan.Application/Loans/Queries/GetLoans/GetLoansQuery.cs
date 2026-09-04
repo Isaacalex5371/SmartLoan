@@ -27,7 +27,14 @@ public class GetLoansHandler(IApplicationDbContext context)
             .Skip((request.Request.PageNumber - 1) * request.Request.PageSize)
             .Take(request.Request.PageSize)
             .Select(l => new LoanDto(
-                l.Id, l.Customer!.FullName, l.DailyAmount, l.LoanAmount, l.ServiceFee, l.Status, l.CreatedAt,
+                l.Id,
+                l.Customer!.
+                    FullName, 
+                l.DailyAmount, 
+                l.LoanAmount,
+                l.ServiceFee,
+                l.Status,
+                l.CreatedAt,(int)(l.Payments.Sum(p => p.Amount) / l.DailyAmount),
                 new List<LinkDto>
                 {
                     new(

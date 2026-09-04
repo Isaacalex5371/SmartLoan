@@ -10,4 +10,5 @@ public record LoanDto(
     decimal ServiceFee, // Added
     string Status,
     DateTime CreatedAt,
+    int DaysSaved,
     List<LinkDto> Links);

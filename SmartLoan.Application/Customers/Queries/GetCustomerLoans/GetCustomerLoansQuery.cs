@@ -22,7 +22,7 @@ l.DailyAmount,
  l.LoanAmount,
   l.ServiceFee,
   l.Status,
-  l.CreatedAt,
+  l.CreatedAt,(int)(l.Payments.Sum(p => p.Amount) / l.DailyAmount),
    new List<LinkDto> { new($"/api/v1/loans/{l.Id}", "self", "GET") }
         )).ToListAsync(ct);
     }

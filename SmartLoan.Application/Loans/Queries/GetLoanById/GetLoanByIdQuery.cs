@@ -37,7 +37,13 @@ public class GetLoanByIdHandler(IApplicationDbContext context)
             links.Add(new ($"/api/v1/loans/{loan.Id}", "delete", "DELETE"));
         }
 
-        return new LoanDto(loan.Id, loan.Customer!.FullName, loan.DailyAmount, loan.LoanAmount, loan.ServiceFee,
-            loan.Status, loan.CreatedAt, links);
+        return new LoanDto(loan.Id,
+            loan.Customer!.FullName,
+            loan.DailyAmount, 
+            loan.LoanAmount, 
+            loan.ServiceFee,
+            loan.Status,
+            loan.CreatedAt,
+            (int)(loan.Payments.Sum(p => p.Amount) / loan.DailyAmount),links);
     }
 }

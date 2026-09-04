@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using SmartLoan.Application.Common;
 using SmartLoan.Application.Loans;
 using SmartLoan.Application.Loans.Commands.SubmitLoan;
+using SmartLoan.Application.Loans.Commands.UpdateLoan;
 using SmartLoan.Application.Loans.GetLoans;
 using SmartLoan.Application.Loans.Queries;
 using SmartLoan.Application.Loans.Queries.GetLoanById;
@@ -71,4 +72,12 @@ public async Task<IActionResult> Reject(int id , [FromBody] string reason)
         await mediator.Send(new RejectLoanCommand(id, reason));
         return NoContent();
     }
+[HttpPut("{id}")]
+[Authorize(Roles = "Administrator")]
+public async Task<IActionResult> Update(int id, UpdateLoanCommand command)
+{
+    if (id != command.Id) return BadRequest();
+    await mediator.Send(command);
+    return NoContent();
+}
 }

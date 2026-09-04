@@ -1,16 +1,11 @@
-using System.Collections.Generic;
 using System.Text;
 using System.Text.Json;
 using Asp.Versioning;
 using FluentValidation;
 using MediatR;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.RateLimiting;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi;
 using NLog;
@@ -278,7 +273,9 @@ app.UseMiddleware<CorrelationIdMiddleware>();
 
 app.UseMiddleware<SecurityHeadersMiddleware>();
 
-app.UseHttpsRedirection();
+// app.UseHttpsRedirection();
+
+
 
 app.UseRouting();
 
@@ -305,6 +302,10 @@ if (app.Environment.IsDevelopment())
             .WithTheme(
                 ScalarTheme.BluePlanet);
     });
+}
+else
+{
+    app.UseHttpsRedirection();
 }
 
 

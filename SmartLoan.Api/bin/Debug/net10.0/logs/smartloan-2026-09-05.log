@@ -1,0 +1,928 @@
+2026-09-05 04:52:08.0472|Warn|Microsoft.EntityFrameworkCore.Model.Validation|CorrelationId=|Entity 'LoanApplication' has a global query filter defined and is the required end of a relationship with the entity 'Payment'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information. 
+2026-09-05 04:52:09.4740|Info|Microsoft.EntityFrameworkCore.Database.Command|CorrelationId=|Executed DbCommand (57ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId"; 
+2026-09-05 04:52:09.9552|Info|Microsoft.EntityFrameworkCore.Database.Command|CorrelationId=|Executed DbCommand (16ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT 1 
+2026-09-05 04:52:10.1190|Info|Microsoft.EntityFrameworkCore.Database.Command|CorrelationId=|Executed DbCommand (10ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE IF NOT EXISTS "__EFMigrationsHistory" (
+    "MigrationId" character varying(150) NOT NULL,
+    "ProductVersion" character varying(32) NOT NULL,
+    CONSTRAINT "PK___EFMigrationsHistory" PRIMARY KEY ("MigrationId")
+); 
+2026-09-05 04:52:10.1598|Info|Microsoft.EntityFrameworkCore.Database.Command|CorrelationId=|Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+LOCK TABLE "__EFMigrationsHistory" IN ACCESS EXCLUSIVE MODE 
+2026-09-05 04:52:10.1740|Info|Microsoft.EntityFrameworkCore.Database.Command|CorrelationId=|Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId"; 
+2026-09-05 04:52:10.1942|Info|Microsoft.EntityFrameworkCore.Migrations|CorrelationId=|No migrations were applied. The database is already up to date. 
+2026-09-05 04:52:10.8204|Info|Microsoft.EntityFrameworkCore.Database.Command|CorrelationId=|Executed DbCommand (6ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Users" AS u
+    WHERE u."Email" = 'admin@loan.com') 
+2026-09-05 04:52:10.9375|Info|Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager|CorrelationId=|User profile is available. Using 'C:\Users\isaac\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest. 
+2026-09-05 04:52:11.3516|Info|SmartLoan.Infrastructure.BackgroundJobs.ReportWorker|CorrelationId=|Report Worker is starting... 
+2026-09-05 04:52:11.4805|Info|Microsoft.Hosting.Lifetime|CorrelationId=|Now listening on: http://localhost:5176 
+2026-09-05 04:52:11.4805|Info|Microsoft.Hosting.Lifetime|CorrelationId=|Application started. Press Ctrl+C to shut down. 
+2026-09-05 04:52:11.4805|Info|Microsoft.Hosting.Lifetime|CorrelationId=|Hosting environment: Development 
+2026-09-05 04:52:11.4805|Info|Microsoft.Hosting.Lifetime|CorrelationId=|Content root path: D:\isaac\educational purpose only\.net\kyas pro\SmartLoanTracker\smartloan.api 
+2026-09-05 04:56:06.9825|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request starting HTTP/1.1 GET http://localhost:5176/api/v1/Auth/me - - - 
+2026-09-05 04:56:11.9964|Info|Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler|CorrelationId=d02c86fa-b5b3-4771-864a-54ffb9858bd0|Failed to validate the token. Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '9/4/2026 8:41:31 PM', Current time (UTC): '9/5/2026 1:56:11 AM'.
+   at Microsoft.IdentityModel.Tokens.ValidatorUtilities.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2026-09-05 04:56:12.0301|Info|Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler|CorrelationId=d02c86fa-b5b3-4771-864a-54ffb9858bd0|Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '9/4/2026 8:41:31 PM', Current time (UTC): '9/5/2026 1:56:11 AM'. 
+2026-09-05 04:56:12.0595|Info|Microsoft.AspNetCore.Authorization.DefaultAuthorizationService|CorrelationId=d02c86fa-b5b3-4771-864a-54ffb9858bd0|Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user. 
+2026-09-05 04:56:12.0883|Info|Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler|CorrelationId=d02c86fa-b5b3-4771-864a-54ffb9858bd0|AuthenticationScheme: Bearer was challenged. 
+2026-09-05 04:56:12.1215|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request finished HTTP/1.1 GET http://localhost:5176/api/v1/Auth/me - 401 0 - 5145.5818ms 
+2026-09-05 04:56:12.1344|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request starting HTTP/1.1 GET http://localhost:5176/api/v1/Auth/me - - - 
+2026-09-05 04:56:12.1518|Info|Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler|CorrelationId=20f3152f-3e74-4609-99bb-5f02f53a9bad|Failed to validate the token. Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '9/4/2026 8:41:31 PM', Current time (UTC): '9/5/2026 1:56:12 AM'.
+   at Microsoft.IdentityModel.Tokens.ValidatorUtilities.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2026-09-05 04:56:12.1813|Info|Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler|CorrelationId=20f3152f-3e74-4609-99bb-5f02f53a9bad|Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '9/4/2026 8:41:31 PM', Current time (UTC): '9/5/2026 1:56:12 AM'. 
+2026-09-05 04:56:12.1813|Info|Microsoft.AspNetCore.Authorization.DefaultAuthorizationService|CorrelationId=20f3152f-3e74-4609-99bb-5f02f53a9bad|Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user. 
+2026-09-05 04:56:12.1813|Info|Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler|CorrelationId=20f3152f-3e74-4609-99bb-5f02f53a9bad|AuthenticationScheme: Bearer was challenged. 
+2026-09-05 04:56:12.1813|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request finished HTTP/1.1 GET http://localhost:5176/api/v1/Auth/me - 401 0 - 58.3487ms 
+2026-09-05 04:56:20.0588|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request starting HTTP/1.1 POST http://localhost:5176/api/v1/auth/login - application/json 49 
+2026-09-05 04:56:20.0588|Info|Microsoft.AspNetCore.Cors.Infrastructure.CorsService|CorrelationId=6db9f954-7613-4d1f-9294-c27414b2bd5f|CORS policy execution successful. 
+2026-09-05 04:56:20.0978|Info|Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler|CorrelationId=6db9f954-7613-4d1f-9294-c27414b2bd5f|Failed to validate the token. Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '9/4/2026 8:41:31 PM', Current time (UTC): '9/5/2026 1:56:20 AM'.
+   at Microsoft.IdentityModel.Tokens.ValidatorUtilities.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2026-09-05 04:56:20.0978|Info|Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler|CorrelationId=6db9f954-7613-4d1f-9294-c27414b2bd5f|Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '9/4/2026 8:41:31 PM', Current time (UTC): '9/5/2026 1:56:20 AM'. 
+2026-09-05 04:56:20.1052|Info|Microsoft.AspNetCore.Routing.EndpointMiddleware|CorrelationId=6db9f954-7613-4d1f-9294-c27414b2bd5f|Executing endpoint 'SmartLoan.Api.Controllers.AuthController.Login (SmartLoan.Api)' 
+2026-09-05 04:56:20.1810|Info|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|CorrelationId=6db9f954-7613-4d1f-9294-c27414b2bd5f|Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] Login(SmartLoan.Application.Users.LoginCommand) on controller SmartLoan.Api.Controllers.AuthController (SmartLoan.Api). 
+2026-09-05 04:56:20.2038|Warn|LuckyPennySoftware.MediatR.License|CorrelationId=6db9f954-7613-4d1f-9294-c27414b2bd5f|You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license. 
+2026-09-05 04:56:20.3127|Info|SmartLoan.Application.Common.Behaviors.LoggingBehavior|CorrelationId=6db9f954-7613-4d1f-9294-c27414b2bd5f|smartloan Request:LoginCommand starting... 
+2026-09-05 04:56:20.6005|Info|Microsoft.EntityFrameworkCore.Database.Command|CorrelationId=6db9f954-7613-4d1f-9294-c27414b2bd5f|Executed DbCommand (29ms) [Parameters=[@request_Email='?'], CommandType='Text', CommandTimeout='30']
+SELECT u."Id", u."Email", u."FullName", u."PasswordHash", u."RefreshToken", u."RefreshTokenExpiryTime", u."Role"
+FROM "Users" AS u
+WHERE u."Email" = @request_Email
+LIMIT 1 
+2026-09-05 04:56:22.1904|Info|Microsoft.EntityFrameworkCore.Database.Command|CorrelationId=6db9f954-7613-4d1f-9294-c27414b2bd5f|Executed DbCommand (16ms) [Parameters=[@p2='?' (DbType = Int32), @p0='?', @p1='?' (DbType = DateTime)], CommandType='Text', CommandTimeout='30']
+UPDATE "Users" SET "RefreshToken" = @p0, "RefreshTokenExpiryTime" = @p1
+WHERE "Id" = @p2; 
+2026-09-05 04:56:22.2169|Info|SmartLoan.Application.Common.Behaviors.LoggingBehavior|CorrelationId=6db9f954-7613-4d1f-9294-c27414b2bd5f|Smarloan Request:LoginCommand finished in 1904ms 
+2026-09-05 04:56:22.2451|Info|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|CorrelationId=6db9f954-7613-4d1f-9294-c27414b2bd5f|Executing OkObjectResult, writing value of type '<>f__AnonymousType0`2[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'. 
+2026-09-05 04:56:22.3016|Info|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|CorrelationId=6db9f954-7613-4d1f-9294-c27414b2bd5f|Executed action SmartLoan.Api.Controllers.AuthController.Login (SmartLoan.Api) in 2097.2712ms 
+2026-09-05 04:56:22.3016|Info|Microsoft.AspNetCore.Routing.EndpointMiddleware|CorrelationId=6db9f954-7613-4d1f-9294-c27414b2bd5f|Executed endpoint 'SmartLoan.Api.Controllers.AuthController.Login (SmartLoan.Api)' 
+2026-09-05 04:56:22.3177|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request finished HTTP/1.1 POST http://localhost:5176/api/v1/auth/login - 200 - application/json;+charset=utf-8 2258.9572ms 
+2026-09-05 04:58:08.9401|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request starting HTTP/1.1 GET http://localhost:5176/api/v1/Auth/me - - - 
+2026-09-05 04:58:09.0043|Info|Microsoft.AspNetCore.Routing.EndpointMiddleware|CorrelationId=ecd7ddd9-1253-4347-b3b9-dd0b15eed1bf|Executing endpoint 'SmartLoan.Api.Controllers.AuthController.GetCurrentUser (SmartLoan.Api)' 
+2026-09-05 04:58:09.0130|Info|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|CorrelationId=ecd7ddd9-1253-4347-b3b9-dd0b15eed1bf|Route matched with {action = "GetCurrentUser", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetCurrentUser() on controller SmartLoan.Api.Controllers.AuthController (SmartLoan.Api). 
+2026-09-05 04:58:09.0303|Info|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|CorrelationId=ecd7ddd9-1253-4347-b3b9-dd0b15eed1bf|Executing OkObjectResult, writing value of type '<>f__AnonymousType0`2[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'. 
+2026-09-05 04:58:09.0303|Info|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|CorrelationId=ecd7ddd9-1253-4347-b3b9-dd0b15eed1bf|Executed action SmartLoan.Api.Controllers.AuthController.GetCurrentUser (SmartLoan.Api) in 18.1662ms 
+2026-09-05 04:58:09.0303|Info|Microsoft.AspNetCore.Routing.EndpointMiddleware|CorrelationId=ecd7ddd9-1253-4347-b3b9-dd0b15eed1bf|Executed endpoint 'SmartLoan.Api.Controllers.AuthController.GetCurrentUser (SmartLoan.Api)' 
+2026-09-05 04:58:09.0303|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request finished HTTP/1.1 GET http://localhost:5176/api/v1/Auth/me - 200 - application/json;+charset=utf-8 95.1045ms 
+2026-09-05 04:58:09.0419|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request starting HTTP/1.1 GET http://localhost:5176/api/v1/Auth/me - - - 
+2026-09-05 04:58:09.0419|Info|Microsoft.AspNetCore.Routing.EndpointMiddleware|CorrelationId=ba9b0ada-30fd-4677-9683-128fffc8efc5|Executing endpoint 'SmartLoan.Api.Controllers.AuthController.GetCurrentUser (SmartLoan.Api)' 
+2026-09-05 04:58:09.0419|Info|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|CorrelationId=ba9b0ada-30fd-4677-9683-128fffc8efc5|Route matched with {action = "GetCurrentUser", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetCurrentUser() on controller SmartLoan.Api.Controllers.AuthController (SmartLoan.Api). 
+2026-09-05 04:58:09.0599|Info|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|CorrelationId=ba9b0ada-30fd-4677-9683-128fffc8efc5|Executing OkObjectResult, writing value of type '<>f__AnonymousType0`2[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'. 
+2026-09-05 04:58:09.0599|Info|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|CorrelationId=ba9b0ada-30fd-4677-9683-128fffc8efc5|Executed action SmartLoan.Api.Controllers.AuthController.GetCurrentUser (SmartLoan.Api) in 13.2764ms 
+2026-09-05 04:58:09.0599|Info|Microsoft.AspNetCore.Routing.EndpointMiddleware|CorrelationId=ba9b0ada-30fd-4677-9683-128fffc8efc5|Executed endpoint 'SmartLoan.Api.Controllers.AuthController.GetCurrentUser (SmartLoan.Api)' 
+2026-09-05 04:58:09.0599|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request finished HTTP/1.1 GET http://localhost:5176/api/v1/Auth/me - 200 - application/json;+charset=utf-8 19.1505ms 
+2026-09-05 04:58:32.5029|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request starting HTTP/1.1 GET http://localhost:5176/api/v1/Dashboard/summary - - - 
+2026-09-05 04:58:32.5029|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request starting HTTP/1.1 GET http://localhost:5176/api/v1/Loan?pageNumber=1&pageSize=5&search= - - - 
+2026-09-05 04:58:32.5029|Info|Microsoft.AspNetCore.Routing.EndpointMiddleware|CorrelationId=552aaac6-5a6b-417f-be1a-6da73ce6f3cb|Executing endpoint 'SmartLoan.Api.Controllers.LoanController.GetAll (SmartLoan.Api)' 
+2026-09-05 04:58:32.5029|Info|Microsoft.AspNetCore.Routing.EndpointMiddleware|CorrelationId=cb5a2a2e-55e5-43ae-8455-2a2d96159839|Executing endpoint 'SmartLoan.Api.Controllers.DashboardController.GetSummary (SmartLoan.Api)' 
+2026-09-05 04:58:32.5169|Info|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|CorrelationId=cb5a2a2e-55e5-43ae-8455-2a2d96159839|Route matched with {action = "GetSummary", controller = "Dashboard"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SmartLoan.Application.Dashboard.Queries.GetLoanSummary.LoanSummaryDto]] GetSummary() on controller SmartLoan.Api.Controllers.DashboardController (SmartLoan.Api). 
+2026-09-05 04:58:32.5169|Info|SmartLoan.Application.Common.Behaviors.LoggingBehavior|CorrelationId=cb5a2a2e-55e5-43ae-8455-2a2d96159839|smartloan Request:GetLoansummatyQuery starting... 
+2026-09-05 04:58:32.5169|Info|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|CorrelationId=552aaac6-5a6b-417f-be1a-6da73ce6f3cb|Route matched with {action = "GetAll", controller = "Loan"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SmartLoan.Application.Common.PagedResponse`1[SmartLoan.Application.Loans.Queries.LoanDto]]] GetAll(SmartLoan.Application.Common.PagedRequest) on controller SmartLoan.Api.Controllers.LoanController (SmartLoan.Api). 
+2026-09-05 04:58:32.5440|Info|SmartLoan.Application.Common.Behaviors.LoggingBehavior|CorrelationId=552aaac6-5a6b-417f-be1a-6da73ce6f3cb|smartloan Request:GetLoansQuery starting... 
+2026-09-05 04:58:32.9199|Info|Microsoft.EntityFrameworkCore.Database.Command|CorrelationId=cb5a2a2e-55e5-43ae-8455-2a2d96159839|Executed DbCommand (31ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COALESCE(sum(p."Amount"), 0.0)
+FROM "Payments" AS p 
+2026-09-05 04:58:32.9199|Info|Microsoft.EntityFrameworkCore.Database.Command|CorrelationId=552aaac6-5a6b-417f-be1a-6da73ce6f3cb|Executed DbCommand (27ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT count(*)::int
+FROM "LoanApplications" AS l
+WHERE NOT (l."IsDeleted") 
+2026-09-05 04:58:32.9541|Info|Microsoft.EntityFrameworkCore.Database.Command|CorrelationId=cb5a2a2e-55e5-43ae-8455-2a2d96159839|Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COALESCE(sum(l."ServiceFee"), 0.0)
+FROM "LoanApplications" AS l
+WHERE NOT (l."IsDeleted") AND l."Status" = 'Approved' 
+2026-09-05 04:58:32.9730|Info|Microsoft.EntityFrameworkCore.Database.Command|CorrelationId=cb5a2a2e-55e5-43ae-8455-2a2d96159839|Executed DbCommand (7ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT count(*)::int
+FROM "LoanApplications" AS l
+WHERE NOT (l."IsDeleted") AND l."Status" = 'Saving' 
+2026-09-05 04:58:32.9841|Info|Microsoft.EntityFrameworkCore.Database.Command|CorrelationId=cb5a2a2e-55e5-43ae-8455-2a2d96159839|Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT count(*)::int
+FROM "LoanApplications" AS l
+WHERE NOT (l."IsDeleted") AND l."Status" = 'Approved' 
+2026-09-05 04:58:32.9841|Info|SmartLoan.Application.Common.Behaviors.LoggingBehavior|CorrelationId=cb5a2a2e-55e5-43ae-8455-2a2d96159839|Smarloan Request:GetLoansummatyQuery finished in 465ms 
+2026-09-05 04:58:32.9841|Info|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|CorrelationId=cb5a2a2e-55e5-43ae-8455-2a2d96159839|Executing ObjectResult, writing value of type 'SmartLoan.Application.Dashboard.Queries.GetLoanSummary.LoanSummaryDto'. 
+2026-09-05 04:58:33.0170|Info|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|CorrelationId=cb5a2a2e-55e5-43ae-8455-2a2d96159839|Executed action SmartLoan.Api.Controllers.DashboardController.GetSummary (SmartLoan.Api) in 499.7138ms 
+2026-09-05 04:58:33.0170|Info|Microsoft.AspNetCore.Routing.EndpointMiddleware|CorrelationId=cb5a2a2e-55e5-43ae-8455-2a2d96159839|Executed endpoint 'SmartLoan.Api.Controllers.DashboardController.GetSummary (SmartLoan.Api)' 
+2026-09-05 04:58:33.0170|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request finished HTTP/1.1 GET http://localhost:5176/api/v1/Dashboard/summary - 200 - application/json;+charset=utf-8 515.3479ms 
+2026-09-05 04:58:33.2229|Info|Microsoft.EntityFrameworkCore.Database.Command|CorrelationId=552aaac6-5a6b-417f-be1a-6da73ce6f3cb|Executed DbCommand (21ms) [Parameters=[@p1='?' (DbType = Int32), @p='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT l0."Id", c0."FullName", l0."DailyAmount", l0."LoanAmount", l0."ServiceFee", l0."Status", l0."CreatedAt", CAST((
+    SELECT COALESCE(sum(p."Amount"), 0.0)
+    FROM "Payments" AS p
+    WHERE l0."Id" = p."LoanApplicationId") / l0."DailyAmount" AS integer)
+FROM (
+    SELECT l."Id", l."CreatedAt", l."CustomerId", l."DailyAmount", l."LoanAmount", l."ServiceFee", l."Status"
+    FROM "LoanApplications" AS l
+    WHERE NOT (l."IsDeleted")
+    ORDER BY l."CreatedAt" DESC
+    LIMIT @p1 OFFSET @p
+) AS l0
+INNER JOIN (
+    SELECT c."Id", c."FullName"
+    FROM "Customers" AS c
+    WHERE NOT (c."IsDeleted")
+) AS c0 ON l0."CustomerId" = c0."Id"
+ORDER BY l0."CreatedAt" DESC 
+2026-09-05 04:58:33.2299|Info|SmartLoan.Application.Common.Behaviors.LoggingBehavior|CorrelationId=552aaac6-5a6b-417f-be1a-6da73ce6f3cb|Smarloan Request:GetLoansQuery finished in 685ms 
+2026-09-05 04:58:33.2299|Info|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|CorrelationId=552aaac6-5a6b-417f-be1a-6da73ce6f3cb|Executing ObjectResult, writing value of type 'SmartLoan.Application.Common.PagedResponse`1[[SmartLoan.Application.Loans.Queries.LoanDto, SmartLoan.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'. 
+2026-09-05 04:58:33.2923|Info|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|CorrelationId=552aaac6-5a6b-417f-be1a-6da73ce6f3cb|Executed action SmartLoan.Api.Controllers.LoanController.GetAll (SmartLoan.Api) in 770.6153ms 
+2026-09-05 04:58:33.2923|Info|Microsoft.AspNetCore.Routing.EndpointMiddleware|CorrelationId=552aaac6-5a6b-417f-be1a-6da73ce6f3cb|Executed endpoint 'SmartLoan.Api.Controllers.LoanController.GetAll (SmartLoan.Api)' 
+2026-09-05 04:58:33.2941|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request finished HTTP/1.1 GET http://localhost:5176/api/v1/Loan?pageNumber=1&pageSize=5&search= - 200 - application/json;+charset=utf-8 790.7475ms 
+2026-09-05 04:59:19.0852|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request starting HTTP/1.1 GET http://localhost:5176/api/v1/Loan?pageNumber=2&pageSize=5&search= - - - 
+2026-09-05 04:59:19.0912|Info|Microsoft.AspNetCore.Routing.EndpointMiddleware|CorrelationId=3d59e337-13f4-4169-a0f1-a7aed4b5f33b|Executing endpoint 'SmartLoan.Api.Controllers.LoanController.GetAll (SmartLoan.Api)' 
+2026-09-05 04:59:19.0912|Info|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|CorrelationId=3d59e337-13f4-4169-a0f1-a7aed4b5f33b|Route matched with {action = "GetAll", controller = "Loan"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SmartLoan.Application.Common.PagedResponse`1[SmartLoan.Application.Loans.Queries.LoanDto]]] GetAll(SmartLoan.Application.Common.PagedRequest) on controller SmartLoan.Api.Controllers.LoanController (SmartLoan.Api). 
+2026-09-05 04:59:19.0912|Info|SmartLoan.Application.Common.Behaviors.LoggingBehavior|CorrelationId=3d59e337-13f4-4169-a0f1-a7aed4b5f33b|smartloan Request:GetLoansQuery starting... 
+2026-09-05 04:59:19.1285|Info|Microsoft.EntityFrameworkCore.Database.Command|CorrelationId=3d59e337-13f4-4169-a0f1-a7aed4b5f33b|Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT count(*)::int
+FROM "LoanApplications" AS l
+WHERE NOT (l."IsDeleted") 
+2026-09-05 04:59:19.1762|Info|Microsoft.EntityFrameworkCore.Database.Command|CorrelationId=3d59e337-13f4-4169-a0f1-a7aed4b5f33b|Executed DbCommand (4ms) [Parameters=[@p='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT l0."Id", c0."FullName", l0."DailyAmount", l0."LoanAmount", l0."ServiceFee", l0."Status", l0."CreatedAt", CAST((
+    SELECT COALESCE(sum(p."Amount"), 0.0)
+    FROM "Payments" AS p
+    WHERE l0."Id" = p."LoanApplicationId") / l0."DailyAmount" AS integer)
+FROM (
+    SELECT l."Id", l."CreatedAt", l."CustomerId", l."DailyAmount", l."LoanAmount", l."ServiceFee", l."Status"
+    FROM "LoanApplications" AS l
+    WHERE NOT (l."IsDeleted")
+    ORDER BY l."CreatedAt" DESC
+    LIMIT @p OFFSET @p
+) AS l0
+INNER JOIN (
+    SELECT c."Id", c."FullName"
+    FROM "Customers" AS c
+    WHERE NOT (c."IsDeleted")
+) AS c0 ON l0."CustomerId" = c0."Id"
+ORDER BY l0."CreatedAt" DESC 
+2026-09-05 04:59:19.1762|Info|SmartLoan.Application.Common.Behaviors.LoggingBehavior|CorrelationId=3d59e337-13f4-4169-a0f1-a7aed4b5f33b|Smarloan Request:GetLoansQuery finished in 76ms 
+2026-09-05 04:59:19.1762|Info|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|CorrelationId=3d59e337-13f4-4169-a0f1-a7aed4b5f33b|Executing ObjectResult, writing value of type 'SmartLoan.Application.Common.PagedResponse`1[[SmartLoan.Application.Loans.Queries.LoanDto, SmartLoan.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'. 
+2026-09-05 04:59:19.1762|Info|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|CorrelationId=3d59e337-13f4-4169-a0f1-a7aed4b5f33b|Executed action SmartLoan.Api.Controllers.LoanController.GetAll (SmartLoan.Api) in 87.7769ms 
+2026-09-05 04:59:19.1813|Info|Microsoft.AspNetCore.Routing.EndpointMiddleware|CorrelationId=3d59e337-13f4-4169-a0f1-a7aed4b5f33b|Executed endpoint 'SmartLoan.Api.Controllers.LoanController.GetAll (SmartLoan.Api)' 
+2026-09-05 04:59:19.1813|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request finished HTTP/1.1 GET http://localhost:5176/api/v1/Loan?pageNumber=2&pageSize=5&search= - 200 - application/json;+charset=utf-8 98.3233ms 
+2026-09-05 04:59:21.1309|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request starting HTTP/1.1 GET http://localhost:5176/api/v1/Loan?pageNumber=1&pageSize=5&search= - - - 
+2026-09-05 04:59:21.1353|Info|Microsoft.AspNetCore.Routing.EndpointMiddleware|CorrelationId=d9975aca-e8ff-4770-a47a-1c14ac356e55|Executing endpoint 'SmartLoan.Api.Controllers.LoanController.GetAll (SmartLoan.Api)' 
+2026-09-05 04:59:21.1353|Info|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|CorrelationId=d9975aca-e8ff-4770-a47a-1c14ac356e55|Route matched with {action = "GetAll", controller = "Loan"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SmartLoan.Application.Common.PagedResponse`1[SmartLoan.Application.Loans.Queries.LoanDto]]] GetAll(SmartLoan.Application.Common.PagedRequest) on controller SmartLoan.Api.Controllers.LoanController (SmartLoan.Api). 
+2026-09-05 04:59:21.1353|Info|SmartLoan.Application.Common.Behaviors.LoggingBehavior|CorrelationId=d9975aca-e8ff-4770-a47a-1c14ac356e55|smartloan Request:GetLoansQuery starting... 
+2026-09-05 04:59:21.1353|Info|Microsoft.EntityFrameworkCore.Database.Command|CorrelationId=d9975aca-e8ff-4770-a47a-1c14ac356e55|Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT count(*)::int
+FROM "LoanApplications" AS l
+WHERE NOT (l."IsDeleted") 
+2026-09-05 04:59:21.1614|Info|Microsoft.EntityFrameworkCore.Database.Command|CorrelationId=d9975aca-e8ff-4770-a47a-1c14ac356e55|Executed DbCommand (4ms) [Parameters=[@p1='?' (DbType = Int32), @p='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT l0."Id", c0."FullName", l0."DailyAmount", l0."LoanAmount", l0."ServiceFee", l0."Status", l0."CreatedAt", CAST((
+    SELECT COALESCE(sum(p."Amount"), 0.0)
+    FROM "Payments" AS p
+    WHERE l0."Id" = p."LoanApplicationId") / l0."DailyAmount" AS integer)
+FROM (
+    SELECT l."Id", l."CreatedAt", l."CustomerId", l."DailyAmount", l."LoanAmount", l."ServiceFee", l."Status"
+    FROM "LoanApplications" AS l
+    WHERE NOT (l."IsDeleted")
+    ORDER BY l."CreatedAt" DESC
+    LIMIT @p1 OFFSET @p
+) AS l0
+INNER JOIN (
+    SELECT c."Id", c."FullName"
+    FROM "Customers" AS c
+    WHERE NOT (c."IsDeleted")
+) AS c0 ON l0."CustomerId" = c0."Id"
+ORDER BY l0."CreatedAt" DESC 
+2026-09-05 04:59:21.1614|Info|SmartLoan.Application.Common.Behaviors.LoggingBehavior|CorrelationId=d9975aca-e8ff-4770-a47a-1c14ac356e55|Smarloan Request:GetLoansQuery finished in 22ms 
+2026-09-05 04:59:21.1614|Info|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|CorrelationId=d9975aca-e8ff-4770-a47a-1c14ac356e55|Executing ObjectResult, writing value of type 'SmartLoan.Application.Common.PagedResponse`1[[SmartLoan.Application.Loans.Queries.LoanDto, SmartLoan.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'. 
+2026-09-05 04:59:21.1677|Info|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|CorrelationId=d9975aca-e8ff-4770-a47a-1c14ac356e55|Executed action SmartLoan.Api.Controllers.LoanController.GetAll (SmartLoan.Api) in 30.1935ms 
+2026-09-05 04:59:21.1677|Info|Microsoft.AspNetCore.Routing.EndpointMiddleware|CorrelationId=d9975aca-e8ff-4770-a47a-1c14ac356e55|Executed endpoint 'SmartLoan.Api.Controllers.LoanController.GetAll (SmartLoan.Api)' 
+2026-09-05 04:59:21.1677|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request finished HTTP/1.1 GET http://localhost:5176/api/v1/Loan?pageNumber=1&pageSize=5&search= - 200 - application/json;+charset=utf-8 38.2889ms 
+2026-09-05 04:59:35.7912|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request starting HTTP/1.1 GET http://localhost:5176/api/v1/Loan?pageNumber=1&pageSize=5&search= - - - 
+2026-09-05 04:59:35.7912|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request starting HTTP/1.1 GET http://localhost:5176/api/v1/Dashboard/summary - - - 
+2026-09-05 04:59:35.7940|Info|Microsoft.AspNetCore.Routing.EndpointMiddleware|CorrelationId=f2f80c76-4502-4e4b-b5a2-152812df4b95|Executing endpoint 'SmartLoan.Api.Controllers.LoanController.GetAll (SmartLoan.Api)' 
+2026-09-05 04:59:35.7940|Info|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|CorrelationId=f2f80c76-4502-4e4b-b5a2-152812df4b95|Route matched with {action = "GetAll", controller = "Loan"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SmartLoan.Application.Common.PagedResponse`1[SmartLoan.Application.Loans.Queries.LoanDto]]] GetAll(SmartLoan.Application.Common.PagedRequest) on controller SmartLoan.Api.Controllers.LoanController (SmartLoan.Api). 
+2026-09-05 04:59:35.7940|Info|SmartLoan.Application.Common.Behaviors.LoggingBehavior|CorrelationId=f2f80c76-4502-4e4b-b5a2-152812df4b95|smartloan Request:GetLoansQuery starting... 
+2026-09-05 04:59:35.7940|Info|Microsoft.AspNetCore.Routing.EndpointMiddleware|CorrelationId=a00724d8-2757-4718-8d00-b24326ab6845|Executing endpoint 'SmartLoan.Api.Controllers.DashboardController.GetSummary (SmartLoan.Api)' 
+2026-09-05 04:59:35.7940|Info|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|CorrelationId=a00724d8-2757-4718-8d00-b24326ab6845|Route matched with {action = "GetSummary", controller = "Dashboard"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SmartLoan.Application.Dashboard.Queries.GetLoanSummary.LoanSummaryDto]] GetSummary() on controller SmartLoan.Api.Controllers.DashboardController (SmartLoan.Api). 
+2026-09-05 04:59:35.7940|Info|Microsoft.EntityFrameworkCore.Database.Command|CorrelationId=f2f80c76-4502-4e4b-b5a2-152812df4b95|Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT count(*)::int
+FROM "LoanApplications" AS l
+WHERE NOT (l."IsDeleted") 
+2026-09-05 04:59:35.7940|Info|SmartLoan.Application.Common.Behaviors.LoggingBehavior|CorrelationId=a00724d8-2757-4718-8d00-b24326ab6845|smartloan Request:GetLoansummatyQuery starting... 
+2026-09-05 04:59:35.8141|Info|Microsoft.EntityFrameworkCore.Database.Command|CorrelationId=f2f80c76-4502-4e4b-b5a2-152812df4b95|Executed DbCommand (6ms) [Parameters=[@p1='?' (DbType = Int32), @p='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT l0."Id", c0."FullName", l0."DailyAmount", l0."LoanAmount", l0."ServiceFee", l0."Status", l0."CreatedAt", CAST((
+    SELECT COALESCE(sum(p."Amount"), 0.0)
+    FROM "Payments" AS p
+    WHERE l0."Id" = p."LoanApplicationId") / l0."DailyAmount" AS integer)
+FROM (
+    SELECT l."Id", l."CreatedAt", l."CustomerId", l."DailyAmount", l."LoanAmount", l."ServiceFee", l."Status"
+    FROM "LoanApplications" AS l
+    WHERE NOT (l."IsDeleted")
+    ORDER BY l."CreatedAt" DESC
+    LIMIT @p1 OFFSET @p
+) AS l0
+INNER JOIN (
+    SELECT c."Id", c."FullName"
+    FROM "Customers" AS c
+    WHERE NOT (c."IsDeleted")
+) AS c0 ON l0."CustomerId" = c0."Id"
+ORDER BY l0."CreatedAt" DESC 
+2026-09-05 04:59:35.8141|Info|SmartLoan.Application.Common.Behaviors.LoggingBehavior|CorrelationId=f2f80c76-4502-4e4b-b5a2-152812df4b95|Smarloan Request:GetLoansQuery finished in 20ms 
+2026-09-05 04:59:35.8141|Info|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|CorrelationId=f2f80c76-4502-4e4b-b5a2-152812df4b95|Executing ObjectResult, writing value of type 'SmartLoan.Application.Common.PagedResponse`1[[SmartLoan.Application.Loans.Queries.LoanDto, SmartLoan.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'. 
+2026-09-05 04:59:35.8141|Info|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|CorrelationId=f2f80c76-4502-4e4b-b5a2-152812df4b95|Executed action SmartLoan.Api.Controllers.LoanController.GetAll (SmartLoan.Api) in 25.5085ms 
+2026-09-05 04:59:35.8141|Info|Microsoft.AspNetCore.Routing.EndpointMiddleware|CorrelationId=f2f80c76-4502-4e4b-b5a2-152812df4b95|Executed endpoint 'SmartLoan.Api.Controllers.LoanController.GetAll (SmartLoan.Api)' 
+2026-09-05 04:59:35.8141|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request finished HTTP/1.1 GET http://localhost:5176/api/v1/Loan?pageNumber=1&pageSize=5&search= - 200 - application/json;+charset=utf-8 31.3557ms 
+2026-09-05 04:59:35.8245|Info|Microsoft.EntityFrameworkCore.Database.Command|CorrelationId=a00724d8-2757-4718-8d00-b24326ab6845|Executed DbCommand (14ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COALESCE(sum(p."Amount"), 0.0)
+FROM "Payments" AS p 
+2026-09-05 04:59:35.8245|Info|Microsoft.EntityFrameworkCore.Database.Command|CorrelationId=a00724d8-2757-4718-8d00-b24326ab6845|Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COALESCE(sum(l."ServiceFee"), 0.0)
+FROM "LoanApplications" AS l
+WHERE NOT (l."IsDeleted") AND l."Status" = 'Approved' 
+2026-09-05 04:59:35.8245|Info|Microsoft.EntityFrameworkCore.Database.Command|CorrelationId=a00724d8-2757-4718-8d00-b24326ab6845|Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT count(*)::int
+FROM "LoanApplications" AS l
+WHERE NOT (l."IsDeleted") AND l."Status" = 'Saving' 
+2026-09-05 04:59:35.8407|Info|Microsoft.EntityFrameworkCore.Database.Command|CorrelationId=a00724d8-2757-4718-8d00-b24326ab6845|Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT count(*)::int
+FROM "LoanApplications" AS l
+WHERE NOT (l."IsDeleted") AND l."Status" = 'Approved' 
+2026-09-05 04:59:35.8407|Info|SmartLoan.Application.Common.Behaviors.LoggingBehavior|CorrelationId=a00724d8-2757-4718-8d00-b24326ab6845|Smarloan Request:GetLoansummatyQuery finished in 38ms 
+2026-09-05 04:59:35.8407|Info|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|CorrelationId=a00724d8-2757-4718-8d00-b24326ab6845|Executing ObjectResult, writing value of type 'SmartLoan.Application.Dashboard.Queries.GetLoanSummary.LoanSummaryDto'. 
+2026-09-05 04:59:35.8407|Info|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|CorrelationId=a00724d8-2757-4718-8d00-b24326ab6845|Executed action SmartLoan.Api.Controllers.DashboardController.GetSummary (SmartLoan.Api) in 44.0594ms 
+2026-09-05 04:59:35.8407|Info|Microsoft.AspNetCore.Routing.EndpointMiddleware|CorrelationId=a00724d8-2757-4718-8d00-b24326ab6845|Executed endpoint 'SmartLoan.Api.Controllers.DashboardController.GetSummary (SmartLoan.Api)' 
+2026-09-05 04:59:35.8407|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request finished HTTP/1.1 GET http://localhost:5176/api/v1/Dashboard/summary - 200 - application/json;+charset=utf-8 54.9582ms 
+2026-09-05 05:00:00.5337|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request starting HTTP/1.1 POST http://localhost:5176/api/v1/Auth/logout - application/json 2 
+2026-09-05 05:00:00.5337|Info|Microsoft.AspNetCore.Cors.Infrastructure.CorsService|CorrelationId=36bc1216-be53-4c89-a4e4-eb8c1bc68dcc|CORS policy execution successful. 
+2026-09-05 05:00:00.5337|Info|Microsoft.AspNetCore.Routing.EndpointMiddleware|CorrelationId=36bc1216-be53-4c89-a4e4-eb8c1bc68dcc|Executing endpoint 'SmartLoan.Api.Controllers.AuthController.Logout (SmartLoan.Api)' 
+2026-09-05 05:00:00.6613|Info|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|CorrelationId=36bc1216-be53-4c89-a4e4-eb8c1bc68dcc|Route matched with {action = "Logout", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Logout() on controller SmartLoan.Api.Controllers.AuthController (SmartLoan.Api). 
+2026-09-05 05:00:00.7230|Info|Microsoft.EntityFrameworkCore.Database.Command|CorrelationId=36bc1216-be53-4c89-a4e4-eb8c1bc68dcc|Executed DbCommand (5ms) [Parameters=[@userId='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT u."Id", u."Email", u."FullName", u."PasswordHash", u."RefreshToken", u."RefreshTokenExpiryTime", u."Role"
+FROM "Users" AS u
+WHERE u."Id" = @userId
+LIMIT 1 
+2026-09-05 05:00:00.7458|Info|Microsoft.EntityFrameworkCore.Database.Command|CorrelationId=36bc1216-be53-4c89-a4e4-eb8c1bc68dcc|Executed DbCommand (8ms) [Parameters=[@p2='?' (DbType = Int32), @p0='?', @p1='?' (DbType = DateTime)], CommandType='Text', CommandTimeout='30']
+UPDATE "Users" SET "RefreshToken" = @p0, "RefreshTokenExpiryTime" = @p1
+WHERE "Id" = @p2; 
+2026-09-05 05:00:00.7654|Info|Microsoft.AspNetCore.Mvc.StatusCodeResult|CorrelationId=36bc1216-be53-4c89-a4e4-eb8c1bc68dcc|Executing StatusCodeResult, setting HTTP status code 204 
+2026-09-05 05:00:00.7654|Info|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|CorrelationId=36bc1216-be53-4c89-a4e4-eb8c1bc68dcc|Executed action SmartLoan.Api.Controllers.AuthController.Logout (SmartLoan.Api) in 91.4015ms 
+2026-09-05 05:00:00.7654|Info|Microsoft.AspNetCore.Routing.EndpointMiddleware|CorrelationId=36bc1216-be53-4c89-a4e4-eb8c1bc68dcc|Executed endpoint 'SmartLoan.Api.Controllers.AuthController.Logout (SmartLoan.Api)' 
+2026-09-05 05:00:00.7654|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request finished HTTP/1.1 POST http://localhost:5176/api/v1/Auth/logout - 204 - - 239.2900ms 
+2026-09-05 05:00:14.1969|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request starting HTTP/1.1 GET http://localhost:5176/api/v1/Auth/me - - - 
+2026-09-05 05:00:14.1981|Info|Microsoft.AspNetCore.Authorization.DefaultAuthorizationService|CorrelationId=a509c5d6-411d-430f-92a6-0cbb675869d9|Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user. 
+2026-09-05 05:00:14.1981|Info|Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler|CorrelationId=a509c5d6-411d-430f-92a6-0cbb675869d9|AuthenticationScheme: Bearer was challenged. 
+2026-09-05 05:00:14.1981|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request finished HTTP/1.1 GET http://localhost:5176/api/v1/Auth/me - 401 0 - 1.7850ms 
+2026-09-05 05:00:14.1981|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request starting HTTP/1.1 GET http://localhost:5176/api/v1/Auth/me - - - 
+2026-09-05 05:00:14.2226|Info|Microsoft.AspNetCore.Authorization.DefaultAuthorizationService|CorrelationId=7131555b-08af-4afd-87df-bb35c7e36132|Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user. 
+2026-09-05 05:00:14.2371|Info|Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler|CorrelationId=7131555b-08af-4afd-87df-bb35c7e36132|AuthenticationScheme: Bearer was challenged. 
+2026-09-05 05:00:14.2371|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request finished HTTP/1.1 GET http://localhost:5176/api/v1/Auth/me - 401 0 - 31.3708ms 
+2026-09-05 05:00:14.5996|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request starting HTTP/1.1 GET http://localhost:5176/api/v1/Loan?pageNumber=1&pageSize=5&search= - - - 
+2026-09-05 05:00:14.6337|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request starting HTTP/1.1 GET http://localhost:5176/api/v1/Dashboard/summary - - - 
+2026-09-05 05:00:14.6345|Info|Microsoft.AspNetCore.Authorization.DefaultAuthorizationService|CorrelationId=07aa1b00-0f3c-42f9-9373-0f81ebe8f26b|Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user. 
+2026-09-05 05:00:14.6345|Info|Microsoft.AspNetCore.Authorization.DefaultAuthorizationService|CorrelationId=5551705c-1d33-498f-9728-a2dec0a18b54|Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Administrator)
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Administrator) 
+2026-09-05 05:00:14.6345|Info|Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler|CorrelationId=07aa1b00-0f3c-42f9-9373-0f81ebe8f26b|AuthenticationScheme: Bearer was challenged. 
+2026-09-05 05:00:14.6555|Info|Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler|CorrelationId=5551705c-1d33-498f-9728-a2dec0a18b54|AuthenticationScheme: Bearer was challenged. 
+2026-09-05 05:00:14.6555|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request finished HTTP/1.1 GET http://localhost:5176/api/v1/Loan?pageNumber=1&pageSize=5&search= - 401 0 - 56.5617ms 
+2026-09-05 05:00:14.6555|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request finished HTTP/1.1 GET http://localhost:5176/api/v1/Dashboard/summary - 401 0 - 26.4632ms 
+2026-09-05 05:00:14.7061|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request starting HTTP/1.1 POST http://localhost:5176/api/v1/Auth/refresh - application/json 2 
+2026-09-05 05:00:14.7200|Info|Microsoft.AspNetCore.Cors.Infrastructure.CorsService|CorrelationId=8e4f5d35-0c23-4656-8231-0fc7d4429462|CORS policy execution successful. 
+2026-09-05 05:00:14.7200|Info|Microsoft.AspNetCore.Routing.EndpointMiddleware|CorrelationId=8e4f5d35-0c23-4656-8231-0fc7d4429462|Executing endpoint 'SmartLoan.Api.Controllers.AuthController.Refresh (SmartLoan.Api)' 
+2026-09-05 05:00:14.7398|Info|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|CorrelationId=8e4f5d35-0c23-4656-8231-0fc7d4429462|Route matched with {action = "Refresh", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] Refresh(SmartLoan.Application.Users.Commands.RefreshToken.RefreshTokenRequest) on controller SmartLoan.Api.Controllers.AuthController (SmartLoan.Api). 
+2026-09-05 05:00:14.7620|Info|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|CorrelationId=8e4f5d35-0c23-4656-8231-0fc7d4429462|Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'. 
+2026-09-05 05:00:14.8083|Info|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|CorrelationId=8e4f5d35-0c23-4656-8231-0fc7d4429462|Executed action SmartLoan.Api.Controllers.AuthController.Refresh (SmartLoan.Api) in 67.6506ms 
+2026-09-05 05:00:14.8083|Info|Microsoft.AspNetCore.Routing.EndpointMiddleware|CorrelationId=8e4f5d35-0c23-4656-8231-0fc7d4429462|Executed endpoint 'SmartLoan.Api.Controllers.AuthController.Refresh (SmartLoan.Api)' 
+2026-09-05 05:00:14.8108|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request finished HTTP/1.1 POST http://localhost:5176/api/v1/Auth/refresh - 400 - application/problem+json;+charset=utf-8 104.6659ms 
+2026-09-05 05:00:23.0217|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request starting HTTP/1.1 POST http://localhost:5176/api/v1/auth/login - application/json 49 
+2026-09-05 05:00:23.0217|Info|Microsoft.AspNetCore.Cors.Infrastructure.CorsService|CorrelationId=67edbea8-7744-4c05-b225-d8e426ad2dcf|CORS policy execution successful. 
+2026-09-05 05:00:23.0252|Info|Microsoft.AspNetCore.Routing.EndpointMiddleware|CorrelationId=67edbea8-7744-4c05-b225-d8e426ad2dcf|Executing endpoint 'SmartLoan.Api.Controllers.AuthController.Login (SmartLoan.Api)' 
+2026-09-05 05:00:23.0252|Info|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|CorrelationId=67edbea8-7744-4c05-b225-d8e426ad2dcf|Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] Login(SmartLoan.Application.Users.LoginCommand) on controller SmartLoan.Api.Controllers.AuthController (SmartLoan.Api). 
+2026-09-05 05:00:23.0252|Info|SmartLoan.Application.Common.Behaviors.LoggingBehavior|CorrelationId=67edbea8-7744-4c05-b225-d8e426ad2dcf|smartloan Request:LoginCommand starting... 
+2026-09-05 05:00:23.0252|Info|Microsoft.EntityFrameworkCore.Database.Command|CorrelationId=67edbea8-7744-4c05-b225-d8e426ad2dcf|Executed DbCommand (2ms) [Parameters=[@request_Email='?'], CommandType='Text', CommandTimeout='30']
+SELECT u."Id", u."Email", u."FullName", u."PasswordHash", u."RefreshToken", u."RefreshTokenExpiryTime", u."Role"
+FROM "Users" AS u
+WHERE u."Email" = @request_Email
+LIMIT 1 
+2026-09-05 05:00:23.9215|Info|Microsoft.EntityFrameworkCore.Database.Command|CorrelationId=67edbea8-7744-4c05-b225-d8e426ad2dcf|Executed DbCommand (5ms) [Parameters=[@p2='?' (DbType = Int32), @p0='?', @p1='?' (DbType = DateTime)], CommandType='Text', CommandTimeout='30']
+UPDATE "Users" SET "RefreshToken" = @p0, "RefreshTokenExpiryTime" = @p1
+WHERE "Id" = @p2; 
+2026-09-05 05:00:23.9215|Info|SmartLoan.Application.Common.Behaviors.LoggingBehavior|CorrelationId=67edbea8-7744-4c05-b225-d8e426ad2dcf|Smarloan Request:LoginCommand finished in 891ms 
+2026-09-05 05:00:23.9215|Info|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|CorrelationId=67edbea8-7744-4c05-b225-d8e426ad2dcf|Executing OkObjectResult, writing value of type '<>f__AnonymousType0`2[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'. 
+2026-09-05 05:00:23.9215|Info|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|CorrelationId=67edbea8-7744-4c05-b225-d8e426ad2dcf|Executed action SmartLoan.Api.Controllers.AuthController.Login (SmartLoan.Api) in 899.9999ms 
+2026-09-05 05:00:23.9215|Info|Microsoft.AspNetCore.Routing.EndpointMiddleware|CorrelationId=67edbea8-7744-4c05-b225-d8e426ad2dcf|Executed endpoint 'SmartLoan.Api.Controllers.AuthController.Login (SmartLoan.Api)' 
+2026-09-05 05:00:23.9215|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request finished HTTP/1.1 POST http://localhost:5176/api/v1/auth/login - 200 - application/json;+charset=utf-8 905.5923ms 
+2026-09-05 05:00:27.5900|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request starting HTTP/1.1 GET http://localhost:5176/api/v1/Auth/me - - - 
+2026-09-05 05:00:27.5900|Info|Microsoft.AspNetCore.Routing.EndpointMiddleware|CorrelationId=63a43524-61fa-4dee-b2e3-94e42846d583|Executing endpoint 'SmartLoan.Api.Controllers.AuthController.GetCurrentUser (SmartLoan.Api)' 
+2026-09-05 05:00:27.5900|Info|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|CorrelationId=63a43524-61fa-4dee-b2e3-94e42846d583|Route matched with {action = "GetCurrentUser", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetCurrentUser() on controller SmartLoan.Api.Controllers.AuthController (SmartLoan.Api). 
+2026-09-05 05:00:27.5900|Info|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|CorrelationId=63a43524-61fa-4dee-b2e3-94e42846d583|Executing OkObjectResult, writing value of type '<>f__AnonymousType0`2[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'. 
+2026-09-05 05:00:27.5900|Info|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|CorrelationId=63a43524-61fa-4dee-b2e3-94e42846d583|Executed action SmartLoan.Api.Controllers.AuthController.GetCurrentUser (SmartLoan.Api) in 1.4601ms 
+2026-09-05 05:00:27.6063|Info|Microsoft.AspNetCore.Routing.EndpointMiddleware|CorrelationId=63a43524-61fa-4dee-b2e3-94e42846d583|Executed endpoint 'SmartLoan.Api.Controllers.AuthController.GetCurrentUser (SmartLoan.Api)' 
+2026-09-05 05:00:27.6063|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request finished HTTP/1.1 GET http://localhost:5176/api/v1/Auth/me - 200 - application/json;+charset=utf-8 17.8999ms 
+2026-09-05 05:00:27.6063|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request starting HTTP/1.1 GET http://localhost:5176/api/v1/Auth/me - - - 
+2026-09-05 05:00:27.6063|Info|Microsoft.AspNetCore.Routing.EndpointMiddleware|CorrelationId=7ff20c8a-3f44-4e60-b170-c1beb80d3193|Executing endpoint 'SmartLoan.Api.Controllers.AuthController.GetCurrentUser (SmartLoan.Api)' 
+2026-09-05 05:00:27.6063|Info|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|CorrelationId=7ff20c8a-3f44-4e60-b170-c1beb80d3193|Route matched with {action = "GetCurrentUser", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetCurrentUser() on controller SmartLoan.Api.Controllers.AuthController (SmartLoan.Api). 
+2026-09-05 05:00:27.6063|Info|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|CorrelationId=7ff20c8a-3f44-4e60-b170-c1beb80d3193|Executing OkObjectResult, writing value of type '<>f__AnonymousType0`2[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'. 
+2026-09-05 05:00:27.6063|Info|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|CorrelationId=7ff20c8a-3f44-4e60-b170-c1beb80d3193|Executed action SmartLoan.Api.Controllers.AuthController.GetCurrentUser (SmartLoan.Api) in 0.7383ms 
+2026-09-05 05:00:27.6063|Info|Microsoft.AspNetCore.Routing.EndpointMiddleware|CorrelationId=7ff20c8a-3f44-4e60-b170-c1beb80d3193|Executed endpoint 'SmartLoan.Api.Controllers.AuthController.GetCurrentUser (SmartLoan.Api)' 
+2026-09-05 05:00:27.6063|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request finished HTTP/1.1 GET http://localhost:5176/api/v1/Auth/me - 200 - application/json;+charset=utf-8 2.3849ms 
+2026-09-05 05:00:32.3925|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request starting HTTP/1.1 POST http://localhost:5176/api/v1/Auth/logout - application/json 2 
+2026-09-05 05:00:32.3925|Info|Microsoft.AspNetCore.Cors.Infrastructure.CorsService|CorrelationId=a4cf7afe-9f4b-494b-b50c-19ae950fad7c|CORS policy execution successful. 
+2026-09-05 05:00:32.3925|Info|Microsoft.AspNetCore.Routing.EndpointMiddleware|CorrelationId=a4cf7afe-9f4b-494b-b50c-19ae950fad7c|Executing endpoint 'SmartLoan.Api.Controllers.AuthController.Logout (SmartLoan.Api)' 
+2026-09-05 05:00:32.3925|Info|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|CorrelationId=a4cf7afe-9f4b-494b-b50c-19ae950fad7c|Route matched with {action = "Logout", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Logout() on controller SmartLoan.Api.Controllers.AuthController (SmartLoan.Api). 
+2026-09-05 05:00:32.4053|Info|Microsoft.EntityFrameworkCore.Database.Command|CorrelationId=a4cf7afe-9f4b-494b-b50c-19ae950fad7c|Executed DbCommand (3ms) [Parameters=[@userId='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT u."Id", u."Email", u."FullName", u."PasswordHash", u."RefreshToken", u."RefreshTokenExpiryTime", u."Role"
+FROM "Users" AS u
+WHERE u."Id" = @userId
+LIMIT 1 
+2026-09-05 05:00:32.4053|Info|Microsoft.EntityFrameworkCore.Database.Command|CorrelationId=a4cf7afe-9f4b-494b-b50c-19ae950fad7c|Executed DbCommand (3ms) [Parameters=[@p2='?' (DbType = Int32), @p0='?', @p1='?' (DbType = DateTime)], CommandType='Text', CommandTimeout='30']
+UPDATE "Users" SET "RefreshToken" = @p0, "RefreshTokenExpiryTime" = @p1
+WHERE "Id" = @p2; 
+2026-09-05 05:00:32.4053|Info|Microsoft.AspNetCore.Mvc.StatusCodeResult|CorrelationId=a4cf7afe-9f4b-494b-b50c-19ae950fad7c|Executing StatusCodeResult, setting HTTP status code 204 
+2026-09-05 05:00:32.4053|Info|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|CorrelationId=a4cf7afe-9f4b-494b-b50c-19ae950fad7c|Executed action SmartLoan.Api.Controllers.AuthController.Logout (SmartLoan.Api) in 15.208ms 
+2026-09-05 05:00:32.4053|Info|Microsoft.AspNetCore.Routing.EndpointMiddleware|CorrelationId=a4cf7afe-9f4b-494b-b50c-19ae950fad7c|Executed endpoint 'SmartLoan.Api.Controllers.AuthController.Logout (SmartLoan.Api)' 
+2026-09-05 05:00:32.4053|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request finished HTTP/1.1 POST http://localhost:5176/api/v1/Auth/logout - 204 - - 21.6922ms 
+2026-09-05 05:03:42.3156|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request starting HTTP/1.1 POST http://localhost:5176/api/v1/Auth/login - application/json 57 
+2026-09-05 05:03:42.3156|Info|Microsoft.AspNetCore.Cors.Infrastructure.CorsService|CorrelationId=4ee90078-402e-4466-a0af-de9d8d83fb9a|CORS policy execution failed. 
+2026-09-05 05:03:42.3156|Info|Microsoft.AspNetCore.Cors.Infrastructure.CorsService|CorrelationId=4ee90078-402e-4466-a0af-de9d8d83fb9a|Request origin http://localhost:5176 does not have permission to access the resource. 
+2026-09-05 05:03:42.3156|Info|Microsoft.AspNetCore.Routing.EndpointMiddleware|CorrelationId=4ee90078-402e-4466-a0af-de9d8d83fb9a|Executing endpoint 'SmartLoan.Api.Controllers.AuthController.Login (SmartLoan.Api)' 
+2026-09-05 05:03:42.3156|Info|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|CorrelationId=4ee90078-402e-4466-a0af-de9d8d83fb9a|Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] Login(SmartLoan.Application.Users.LoginCommand) on controller SmartLoan.Api.Controllers.AuthController (SmartLoan.Api). 
+2026-09-05 05:03:42.3244|Info|SmartLoan.Application.Common.Behaviors.LoggingBehavior|CorrelationId=4ee90078-402e-4466-a0af-de9d8d83fb9a|smartloan Request:LoginCommand starting... 
+2026-09-05 05:03:42.5051|Info|Microsoft.EntityFrameworkCore.Database.Command|CorrelationId=4ee90078-402e-4466-a0af-de9d8d83fb9a|Executed DbCommand (9ms) [Parameters=[@request_Email='?'], CommandType='Text', CommandTimeout='30']
+SELECT u."Id", u."Email", u."FullName", u."PasswordHash", u."RefreshToken", u."RefreshTokenExpiryTime", u."Role"
+FROM "Users" AS u
+WHERE u."Email" = @request_Email
+LIMIT 1 
+2026-09-05 05:03:42.9486|Info|Microsoft.EntityFrameworkCore.Database.Command|CorrelationId=4ee90078-402e-4466-a0af-de9d8d83fb9a|Executed DbCommand (7ms) [Parameters=[@p2='?' (DbType = Int32), @p0='?', @p1='?' (DbType = DateTime)], CommandType='Text', CommandTimeout='30']
+UPDATE "Users" SET "RefreshToken" = @p0, "RefreshTokenExpiryTime" = @p1
+WHERE "Id" = @p2; 
+2026-09-05 05:03:42.9486|Info|SmartLoan.Application.Common.Behaviors.LoggingBehavior|CorrelationId=4ee90078-402e-4466-a0af-de9d8d83fb9a|Smarloan Request:LoginCommand finished in 624ms 
+2026-09-05 05:03:42.9486|Info|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|CorrelationId=4ee90078-402e-4466-a0af-de9d8d83fb9a|Executing OkObjectResult, writing value of type '<>f__AnonymousType0`2[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'. 
+2026-09-05 05:03:42.9486|Info|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|CorrelationId=4ee90078-402e-4466-a0af-de9d8d83fb9a|Executed action SmartLoan.Api.Controllers.AuthController.Login (SmartLoan.Api) in 629.6414ms 
+2026-09-05 05:03:42.9486|Info|Microsoft.AspNetCore.Routing.EndpointMiddleware|CorrelationId=4ee90078-402e-4466-a0af-de9d8d83fb9a|Executed endpoint 'SmartLoan.Api.Controllers.AuthController.Login (SmartLoan.Api)' 
+2026-09-05 05:03:42.9486|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request finished HTTP/1.1 POST http://localhost:5176/api/v1/Auth/login - 200 - application/json;+charset=utf-8 635.7547ms 
+2026-09-05 05:04:02.7467|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request starting HTTP/1.1 GET http://localhost:5176/api/v1/Auth/me - - - 
+2026-09-05 05:04:02.7467|Info|Microsoft.AspNetCore.Routing.EndpointMiddleware|CorrelationId=50eb8e64-6dd8-4f6d-8740-0f59b7c4b105|Executing endpoint 'SmartLoan.Api.Controllers.AuthController.GetCurrentUser (SmartLoan.Api)' 
+2026-09-05 05:04:02.7653|Info|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|CorrelationId=50eb8e64-6dd8-4f6d-8740-0f59b7c4b105|Route matched with {action = "GetCurrentUser", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetCurrentUser() on controller SmartLoan.Api.Controllers.AuthController (SmartLoan.Api). 
+2026-09-05 05:04:02.8334|Info|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|CorrelationId=50eb8e64-6dd8-4f6d-8740-0f59b7c4b105|Executing OkObjectResult, writing value of type '<>f__AnonymousType0`2[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'. 
+2026-09-05 05:04:02.8416|Info|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|CorrelationId=50eb8e64-6dd8-4f6d-8740-0f59b7c4b105|Executed action SmartLoan.Api.Controllers.AuthController.GetCurrentUser (SmartLoan.Api) in 8.8815ms 
+2026-09-05 05:04:02.8416|Info|Microsoft.AspNetCore.Routing.EndpointMiddleware|CorrelationId=50eb8e64-6dd8-4f6d-8740-0f59b7c4b105|Executed endpoint 'SmartLoan.Api.Controllers.AuthController.GetCurrentUser (SmartLoan.Api)' 
+2026-09-05 05:04:02.8416|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request starting HTTP/1.1 GET http://localhost:5176/api/v1/Auth/me - - - 
+2026-09-05 05:04:02.8547|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request finished HTTP/1.1 GET http://localhost:5176/api/v1/Auth/me - 200 - application/json;+charset=utf-8 107.9873ms 
+2026-09-05 05:04:02.8547|Info|Microsoft.AspNetCore.Routing.EndpointMiddleware|CorrelationId=a37eb78f-96e0-4288-a492-6a691786a277|Executing endpoint 'SmartLoan.Api.Controllers.AuthController.GetCurrentUser (SmartLoan.Api)' 
+2026-09-05 05:04:02.8547|Info|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|CorrelationId=a37eb78f-96e0-4288-a492-6a691786a277|Route matched with {action = "GetCurrentUser", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetCurrentUser() on controller SmartLoan.Api.Controllers.AuthController (SmartLoan.Api). 
+2026-09-05 05:04:02.8547|Info|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|CorrelationId=a37eb78f-96e0-4288-a492-6a691786a277|Executing OkObjectResult, writing value of type '<>f__AnonymousType0`2[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'. 
+2026-09-05 05:04:02.8547|Info|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|CorrelationId=a37eb78f-96e0-4288-a492-6a691786a277|Executed action SmartLoan.Api.Controllers.AuthController.GetCurrentUser (SmartLoan.Api) in 0.8967ms 
+2026-09-05 05:04:02.8695|Info|Microsoft.AspNetCore.Routing.EndpointMiddleware|CorrelationId=a37eb78f-96e0-4288-a492-6a691786a277|Executed endpoint 'SmartLoan.Api.Controllers.AuthController.GetCurrentUser (SmartLoan.Api)' 
+2026-09-05 05:04:02.8695|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request finished HTTP/1.1 GET http://localhost:5176/api/v1/Auth/me - 200 - application/json;+charset=utf-8 17.0258ms 
+2026-09-05 05:04:18.5372|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request starting HTTP/1.1 POST http://localhost:5176/api/v1/Auth/logout - application/json 2 
+2026-09-05 05:04:18.5372|Info|Microsoft.AspNetCore.Cors.Infrastructure.CorsService|CorrelationId=fe9e1ee5-198d-4812-ab89-caa774800a2b|CORS policy execution successful. 
+2026-09-05 05:04:18.5372|Info|Microsoft.AspNetCore.Routing.EndpointMiddleware|CorrelationId=fe9e1ee5-198d-4812-ab89-caa774800a2b|Executing endpoint 'SmartLoan.Api.Controllers.AuthController.Logout (SmartLoan.Api)' 
+2026-09-05 05:04:18.5414|Info|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|CorrelationId=fe9e1ee5-198d-4812-ab89-caa774800a2b|Route matched with {action = "Logout", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Logout() on controller SmartLoan.Api.Controllers.AuthController (SmartLoan.Api). 
+2026-09-05 05:04:18.5414|Info|Microsoft.EntityFrameworkCore.Database.Command|CorrelationId=fe9e1ee5-198d-4812-ab89-caa774800a2b|Executed DbCommand (3ms) [Parameters=[@userId='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT u."Id", u."Email", u."FullName", u."PasswordHash", u."RefreshToken", u."RefreshTokenExpiryTime", u."Role"
+FROM "Users" AS u
+WHERE u."Id" = @userId
+LIMIT 1 
+2026-09-05 05:04:18.5641|Info|Microsoft.EntityFrameworkCore.Database.Command|CorrelationId=fe9e1ee5-198d-4812-ab89-caa774800a2b|Executed DbCommand (12ms) [Parameters=[@p2='?' (DbType = Int32), @p0='?', @p1='?' (DbType = DateTime)], CommandType='Text', CommandTimeout='30']
+UPDATE "Users" SET "RefreshToken" = @p0, "RefreshTokenExpiryTime" = @p1
+WHERE "Id" = @p2; 
+2026-09-05 05:04:18.5641|Info|Microsoft.AspNetCore.Mvc.StatusCodeResult|CorrelationId=fe9e1ee5-198d-4812-ab89-caa774800a2b|Executing StatusCodeResult, setting HTTP status code 204 
+2026-09-05 05:04:18.5641|Info|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|CorrelationId=fe9e1ee5-198d-4812-ab89-caa774800a2b|Executed action SmartLoan.Api.Controllers.AuthController.Logout (SmartLoan.Api) in 29.6801ms 
+2026-09-05 05:04:18.5737|Info|Microsoft.AspNetCore.Routing.EndpointMiddleware|CorrelationId=fe9e1ee5-198d-4812-ab89-caa774800a2b|Executed endpoint 'SmartLoan.Api.Controllers.AuthController.Logout (SmartLoan.Api)' 
+2026-09-05 05:04:18.5737|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request finished HTTP/1.1 POST http://localhost:5176/api/v1/Auth/logout - 204 - - 38.2065ms 
+2026-09-05 05:04:23.0448|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request starting HTTP/1.1 GET http://localhost:5176/api/v1/Auth/me - - - 
+2026-09-05 05:04:23.0448|Info|Microsoft.AspNetCore.Authorization.DefaultAuthorizationService|CorrelationId=77b42de1-59b4-4eec-b8b1-f08302b03c5b|Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user. 
+2026-09-05 05:04:23.0448|Info|Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler|CorrelationId=77b42de1-59b4-4eec-b8b1-f08302b03c5b|AuthenticationScheme: Bearer was challenged. 
+2026-09-05 05:04:23.0448|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request finished HTTP/1.1 GET http://localhost:5176/api/v1/Auth/me - 401 0 - 2.1502ms 
+2026-09-05 05:04:23.0570|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request starting HTTP/1.1 GET http://localhost:5176/api/v1/Auth/me - - - 
+2026-09-05 05:04:23.0570|Info|Microsoft.AspNetCore.Authorization.DefaultAuthorizationService|CorrelationId=97a71326-1ece-4963-971b-3ec7d7e3a750|Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user. 
+2026-09-05 05:04:23.0570|Info|Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler|CorrelationId=97a71326-1ece-4963-971b-3ec7d7e3a750|AuthenticationScheme: Bearer was challenged. 
+2026-09-05 05:04:23.0570|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request finished HTTP/1.1 GET http://localhost:5176/api/v1/Auth/me - 401 0 - 1.4448ms 
+2026-09-05 05:04:25.7773|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request starting HTTP/1.1 GET http://localhost:5176/api/v1/Auth/me - - - 
+2026-09-05 05:04:25.7773|Info|Microsoft.AspNetCore.Authorization.DefaultAuthorizationService|CorrelationId=960579f3-77b2-4c6f-bbe8-b9461ce484d8|Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user. 
+2026-09-05 05:04:25.7773|Info|Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler|CorrelationId=960579f3-77b2-4c6f-bbe8-b9461ce484d8|AuthenticationScheme: Bearer was challenged. 
+2026-09-05 05:04:25.7773|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request finished HTTP/1.1 GET http://localhost:5176/api/v1/Auth/me - 401 0 - 12.0132ms 
+2026-09-05 05:04:25.8177|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request starting HTTP/1.1 GET http://localhost:5176/api/v1/Auth/me - - - 
+2026-09-05 05:04:25.8266|Info|Microsoft.AspNetCore.Authorization.DefaultAuthorizationService|CorrelationId=34194d9d-9bb3-4810-b511-0e71c83fa513|Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user. 
+2026-09-05 05:04:25.8436|Info|Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler|CorrelationId=34194d9d-9bb3-4810-b511-0e71c83fa513|AuthenticationScheme: Bearer was challenged. 
+2026-09-05 05:04:25.8436|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request finished HTTP/1.1 GET http://localhost:5176/api/v1/Auth/me - 401 0 - 34.4137ms 
+2026-09-05 05:04:40.5475|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request starting HTTP/1.1 GET http://localhost:5176/api/v1/Auth/me - - - 
+2026-09-05 05:04:40.5475|Info|Microsoft.AspNetCore.Authorization.DefaultAuthorizationService|CorrelationId=5d908d80-bb62-497e-a21c-ddc705c81018|Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user. 
+2026-09-05 05:04:40.5475|Info|Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler|CorrelationId=5d908d80-bb62-497e-a21c-ddc705c81018|AuthenticationScheme: Bearer was challenged. 
+2026-09-05 05:04:40.5475|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request finished HTTP/1.1 GET http://localhost:5176/api/v1/Auth/me - 401 0 - 1.6516ms 
+2026-09-05 05:04:40.5475|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request starting HTTP/1.1 GET http://localhost:5176/api/v1/Auth/me - - - 
+2026-09-05 05:04:40.5475|Info|Microsoft.AspNetCore.Authorization.DefaultAuthorizationService|CorrelationId=f10bdef1-be23-4a64-a420-3bb40276c324|Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user. 
+2026-09-05 05:04:40.5475|Info|Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler|CorrelationId=f10bdef1-be23-4a64-a420-3bb40276c324|AuthenticationScheme: Bearer was challenged. 
+2026-09-05 05:04:40.5559|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request finished HTTP/1.1 GET http://localhost:5176/api/v1/Auth/me - 401 0 - 1.2335ms 
+2026-09-05 05:04:49.1485|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request starting HTTP/1.1 POST http://localhost:5176/api/v1/auth/login - application/json 49 
+2026-09-05 05:04:49.1485|Info|Microsoft.AspNetCore.Cors.Infrastructure.CorsService|CorrelationId=016762ab-c41e-4cf5-a6ae-f498b03aacd6|CORS policy execution successful. 
+2026-09-05 05:04:49.1485|Info|Microsoft.AspNetCore.Routing.EndpointMiddleware|CorrelationId=016762ab-c41e-4cf5-a6ae-f498b03aacd6|Executing endpoint 'SmartLoan.Api.Controllers.AuthController.Login (SmartLoan.Api)' 
+2026-09-05 05:04:49.1485|Info|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|CorrelationId=016762ab-c41e-4cf5-a6ae-f498b03aacd6|Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] Login(SmartLoan.Application.Users.LoginCommand) on controller SmartLoan.Api.Controllers.AuthController (SmartLoan.Api). 
+2026-09-05 05:04:49.1485|Info|SmartLoan.Application.Common.Behaviors.LoggingBehavior|CorrelationId=016762ab-c41e-4cf5-a6ae-f498b03aacd6|smartloan Request:LoginCommand starting... 
+2026-09-05 05:04:49.1552|Info|Microsoft.EntityFrameworkCore.Database.Command|CorrelationId=016762ab-c41e-4cf5-a6ae-f498b03aacd6|Executed DbCommand (3ms) [Parameters=[@request_Email='?'], CommandType='Text', CommandTimeout='30']
+SELECT u."Id", u."Email", u."FullName", u."PasswordHash", u."RefreshToken", u."RefreshTokenExpiryTime", u."Role"
+FROM "Users" AS u
+WHERE u."Email" = @request_Email
+LIMIT 1 
+2026-09-05 05:04:49.6818|Info|Microsoft.EntityFrameworkCore.Database.Command|CorrelationId=016762ab-c41e-4cf5-a6ae-f498b03aacd6|Executed DbCommand (3ms) [Parameters=[@p2='?' (DbType = Int32), @p0='?', @p1='?' (DbType = DateTime)], CommandType='Text', CommandTimeout='30']
+UPDATE "Users" SET "RefreshToken" = @p0, "RefreshTokenExpiryTime" = @p1
+WHERE "Id" = @p2; 
+2026-09-05 05:04:49.6818|Info|SmartLoan.Application.Common.Behaviors.LoggingBehavior|CorrelationId=016762ab-c41e-4cf5-a6ae-f498b03aacd6|Smarloan Request:LoginCommand finished in 532ms 
+2026-09-05 05:04:49.6818|Info|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|CorrelationId=016762ab-c41e-4cf5-a6ae-f498b03aacd6|Executing OkObjectResult, writing value of type '<>f__AnonymousType0`2[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'. 
+2026-09-05 05:04:49.6818|Info|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|CorrelationId=016762ab-c41e-4cf5-a6ae-f498b03aacd6|Executed action SmartLoan.Api.Controllers.AuthController.Login (SmartLoan.Api) in 534.5753ms 
+2026-09-05 05:04:49.6818|Info|Microsoft.AspNetCore.Routing.EndpointMiddleware|CorrelationId=016762ab-c41e-4cf5-a6ae-f498b03aacd6|Executed endpoint 'SmartLoan.Api.Controllers.AuthController.Login (SmartLoan.Api)' 
+2026-09-05 05:04:49.6818|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request finished HTTP/1.1 POST http://localhost:5176/api/v1/auth/login - 200 - application/json;+charset=utf-8 537.1377ms 
+2026-09-05 05:04:57.8660|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request starting HTTP/1.1 GET http://localhost:5176/api/v1/Loan?pageNumber=1&pageSize=5&search= - - - 
+2026-09-05 05:04:57.8660|Info|Microsoft.AspNetCore.Routing.EndpointMiddleware|CorrelationId=aeac848b-0fff-4411-959d-bfab89f11eea|Executing endpoint 'SmartLoan.Api.Controllers.LoanController.GetAll (SmartLoan.Api)' 
+2026-09-05 05:04:57.8660|Info|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|CorrelationId=aeac848b-0fff-4411-959d-bfab89f11eea|Route matched with {action = "GetAll", controller = "Loan"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SmartLoan.Application.Common.PagedResponse`1[SmartLoan.Application.Loans.Queries.LoanDto]]] GetAll(SmartLoan.Application.Common.PagedRequest) on controller SmartLoan.Api.Controllers.LoanController (SmartLoan.Api). 
+2026-09-05 05:04:57.8702|Info|SmartLoan.Application.Common.Behaviors.LoggingBehavior|CorrelationId=aeac848b-0fff-4411-959d-bfab89f11eea|smartloan Request:GetLoansQuery starting... 
+2026-09-05 05:04:57.8896|Info|Microsoft.EntityFrameworkCore.Database.Command|CorrelationId=aeac848b-0fff-4411-959d-bfab89f11eea|Executed DbCommand (16ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT count(*)::int
+FROM "LoanApplications" AS l
+WHERE NOT (l."IsDeleted") 
+2026-09-05 05:04:57.9157|Info|Microsoft.EntityFrameworkCore.Database.Command|CorrelationId=aeac848b-0fff-4411-959d-bfab89f11eea|Executed DbCommand (20ms) [Parameters=[@p1='?' (DbType = Int32), @p='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT l0."Id", c0."FullName", l0."DailyAmount", l0."LoanAmount", l0."ServiceFee", l0."Status", l0."CreatedAt", CAST((
+    SELECT COALESCE(sum(p."Amount"), 0.0)
+    FROM "Payments" AS p
+    WHERE l0."Id" = p."LoanApplicationId") / l0."DailyAmount" AS integer)
+FROM (
+    SELECT l."Id", l."CreatedAt", l."CustomerId", l."DailyAmount", l."LoanAmount", l."ServiceFee", l."Status"
+    FROM "LoanApplications" AS l
+    WHERE NOT (l."IsDeleted")
+    ORDER BY l."CreatedAt" DESC
+    LIMIT @p1 OFFSET @p
+) AS l0
+INNER JOIN (
+    SELECT c."Id", c."FullName"
+    FROM "Customers" AS c
+    WHERE NOT (c."IsDeleted")
+) AS c0 ON l0."CustomerId" = c0."Id"
+ORDER BY l0."CreatedAt" DESC 
+2026-09-05 05:04:57.9429|Info|SmartLoan.Application.Common.Behaviors.LoggingBehavior|CorrelationId=aeac848b-0fff-4411-959d-bfab89f11eea|Smarloan Request:GetLoansQuery finished in 48ms 
+2026-09-05 05:04:57.9429|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request starting HTTP/1.1 GET http://localhost:5176/api/v1/Dashboard/summary - - - 
+2026-09-05 05:04:57.9429|Info|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|CorrelationId=aeac848b-0fff-4411-959d-bfab89f11eea|Executing ObjectResult, writing value of type 'SmartLoan.Application.Common.PagedResponse`1[[SmartLoan.Application.Loans.Queries.LoanDto, SmartLoan.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'. 
+2026-09-05 05:04:57.9429|Info|Microsoft.AspNetCore.Routing.EndpointMiddleware|CorrelationId=b0bf5501-d0cc-4b1f-8f0c-b217eb497c0c|Executing endpoint 'SmartLoan.Api.Controllers.DashboardController.GetSummary (SmartLoan.Api)' 
+2026-09-05 05:04:57.9429|Info|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|CorrelationId=b0bf5501-d0cc-4b1f-8f0c-b217eb497c0c|Route matched with {action = "GetSummary", controller = "Dashboard"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SmartLoan.Application.Dashboard.Queries.GetLoanSummary.LoanSummaryDto]] GetSummary() on controller SmartLoan.Api.Controllers.DashboardController (SmartLoan.Api). 
+2026-09-05 05:04:57.9478|Info|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|CorrelationId=aeac848b-0fff-4411-959d-bfab89f11eea|Executed action SmartLoan.Api.Controllers.LoanController.GetAll (SmartLoan.Api) in 78.8659ms 
+2026-09-05 05:04:57.9478|Info|Microsoft.AspNetCore.Routing.EndpointMiddleware|CorrelationId=aeac848b-0fff-4411-959d-bfab89f11eea|Executed endpoint 'SmartLoan.Api.Controllers.LoanController.GetAll (SmartLoan.Api)' 
+2026-09-05 05:04:57.9478|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request finished HTTP/1.1 GET http://localhost:5176/api/v1/Loan?pageNumber=1&pageSize=5&search= - 200 - application/json;+charset=utf-8 82.2989ms 
+2026-09-05 05:04:57.9478|Info|SmartLoan.Application.Common.Behaviors.LoggingBehavior|CorrelationId=b0bf5501-d0cc-4b1f-8f0c-b217eb497c0c|smartloan Request:GetLoansummatyQuery starting... 
+2026-09-05 05:04:57.9478|Info|Microsoft.EntityFrameworkCore.Database.Command|CorrelationId=b0bf5501-d0cc-4b1f-8f0c-b217eb497c0c|Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COALESCE(sum(p."Amount"), 0.0)
+FROM "Payments" AS p 
+2026-09-05 05:04:57.9646|Info|Microsoft.EntityFrameworkCore.Database.Command|CorrelationId=b0bf5501-d0cc-4b1f-8f0c-b217eb497c0c|Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COALESCE(sum(l."ServiceFee"), 0.0)
+FROM "LoanApplications" AS l
+WHERE NOT (l."IsDeleted") AND l."Status" = 'Approved' 
+2026-09-05 05:04:57.9832|Info|Microsoft.EntityFrameworkCore.Database.Command|CorrelationId=b0bf5501-d0cc-4b1f-8f0c-b217eb497c0c|Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT count(*)::int
+FROM "LoanApplications" AS l
+WHERE NOT (l."IsDeleted") AND l."Status" = 'Saving' 
+2026-09-05 05:04:57.9832|Info|Microsoft.EntityFrameworkCore.Database.Command|CorrelationId=b0bf5501-d0cc-4b1f-8f0c-b217eb497c0c|Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT count(*)::int
+FROM "LoanApplications" AS l
+WHERE NOT (l."IsDeleted") AND l."Status" = 'Approved' 
+2026-09-05 05:04:57.9832|Info|SmartLoan.Application.Common.Behaviors.LoggingBehavior|CorrelationId=b0bf5501-d0cc-4b1f-8f0c-b217eb497c0c|Smarloan Request:GetLoansummatyQuery finished in 38ms 
+2026-09-05 05:04:57.9832|Info|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|CorrelationId=b0bf5501-d0cc-4b1f-8f0c-b217eb497c0c|Executing ObjectResult, writing value of type 'SmartLoan.Application.Dashboard.Queries.GetLoanSummary.LoanSummaryDto'. 
+2026-09-05 05:04:57.9942|Info|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|CorrelationId=b0bf5501-d0cc-4b1f-8f0c-b217eb497c0c|Executed action SmartLoan.Api.Controllers.DashboardController.GetSummary (SmartLoan.Api) in 46.2345ms 
+2026-09-05 05:04:57.9942|Info|Microsoft.AspNetCore.Routing.EndpointMiddleware|CorrelationId=b0bf5501-d0cc-4b1f-8f0c-b217eb497c0c|Executed endpoint 'SmartLoan.Api.Controllers.DashboardController.GetSummary (SmartLoan.Api)' 
+2026-09-05 05:04:57.9942|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request finished HTTP/1.1 GET http://localhost:5176/api/v1/Dashboard/summary - 200 - application/json;+charset=utf-8 52.0962ms 
+2026-09-05 05:05:58.6503|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request starting HTTP/1.1 POST http://localhost:5176/api/v1/Auth/register - application/json 99 
+2026-09-05 05:05:58.6503|Info|Microsoft.AspNetCore.Cors.Infrastructure.CorsService|CorrelationId=0145a4eb-4cde-4a4c-bfcb-0d0ec78a3f32|CORS policy execution successful. 
+2026-09-05 05:05:58.6503|Info|Microsoft.AspNetCore.Routing.EndpointMiddleware|CorrelationId=0145a4eb-4cde-4a4c-bfcb-0d0ec78a3f32|Executing endpoint 'SmartLoan.Api.Controllers.AuthController.Register (SmartLoan.Api)' 
+2026-09-05 05:05:58.6968|Info|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|CorrelationId=0145a4eb-4cde-4a4c-bfcb-0d0ec78a3f32|Route matched with {action = "Register", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Int32]] Register(SmartLoan.Application.Users.RegisterUserCommand) on controller SmartLoan.Api.Controllers.AuthController (SmartLoan.Api). 
+2026-09-05 05:05:58.7849|Info|SmartLoan.Application.Common.Behaviors.LoggingBehavior|CorrelationId=0145a4eb-4cde-4a4c-bfcb-0d0ec78a3f32|smartloan Request:RegisterUserCommand starting... 
+2026-09-05 05:05:58.8589|Info|Microsoft.EntityFrameworkCore.Database.Command|CorrelationId=0145a4eb-4cde-4a4c-bfcb-0d0ec78a3f32|Executed DbCommand (3ms) [Parameters=[@request_Email='?'], CommandType='Text', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Users" AS u
+    WHERE u."Email" = @request_Email) 
+2026-09-05 05:05:59.3905|Info|Microsoft.EntityFrameworkCore.Database.Command|CorrelationId=0145a4eb-4cde-4a4c-bfcb-0d0ec78a3f32|Executed DbCommand (29ms) [Parameters=[@p0='?', @p1='?', @p2='?', @p3='?', @p4='?' (DbType = DateTime), @p5='?'], CommandType='Text', CommandTimeout='30']
+INSERT INTO "Users" ("Email", "FullName", "PasswordHash", "RefreshToken", "RefreshTokenExpiryTime", "Role")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5)
+RETURNING "Id"; 
+2026-09-05 05:05:59.4470|Info|SmartLoan.Application.Common.Behaviors.LoggingBehavior|CorrelationId=0145a4eb-4cde-4a4c-bfcb-0d0ec78a3f32|Smarloan Request:RegisterUserCommand finished in 662ms 
+2026-09-05 05:05:59.4470|Info|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|CorrelationId=0145a4eb-4cde-4a4c-bfcb-0d0ec78a3f32|Executing OkObjectResult, writing value of type 'System.Int32'. 
+2026-09-05 05:05:59.4470|Info|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|CorrelationId=0145a4eb-4cde-4a4c-bfcb-0d0ec78a3f32|Executed action SmartLoan.Api.Controllers.AuthController.Register (SmartLoan.Api) in 753.5665ms 
+2026-09-05 05:05:59.4470|Info|Microsoft.AspNetCore.Routing.EndpointMiddleware|CorrelationId=0145a4eb-4cde-4a4c-bfcb-0d0ec78a3f32|Executed endpoint 'SmartLoan.Api.Controllers.AuthController.Register (SmartLoan.Api)' 
+2026-09-05 05:05:59.4470|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request finished HTTP/1.1 POST http://localhost:5176/api/v1/Auth/register - 200 - application/json;+charset=utf-8 801.7139ms 
+2026-09-05 05:05:59.7328|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request starting HTTP/1.1 GET http://localhost:5176/api/v1/Loan?pageNumber=1&pageSize=5&search= - - - 
+2026-09-05 05:05:59.7328|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request starting HTTP/1.1 GET http://localhost:5176/api/v1/Dashboard/summary - - - 
+2026-09-05 05:05:59.7328|Info|Microsoft.AspNetCore.Routing.EndpointMiddleware|CorrelationId=7b0dc3eb-3c5e-4db5-ad77-55defe52aeb7|Executing endpoint 'SmartLoan.Api.Controllers.LoanController.GetAll (SmartLoan.Api)' 
+2026-09-05 05:05:59.7328|Info|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|CorrelationId=7b0dc3eb-3c5e-4db5-ad77-55defe52aeb7|Route matched with {action = "GetAll", controller = "Loan"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SmartLoan.Application.Common.PagedResponse`1[SmartLoan.Application.Loans.Queries.LoanDto]]] GetAll(SmartLoan.Application.Common.PagedRequest) on controller SmartLoan.Api.Controllers.LoanController (SmartLoan.Api). 
+2026-09-05 05:05:59.7328|Info|Microsoft.AspNetCore.Routing.EndpointMiddleware|CorrelationId=50c70bdd-0ba5-48c3-ac1a-9c62db7595e2|Executing endpoint 'SmartLoan.Api.Controllers.DashboardController.GetSummary (SmartLoan.Api)' 
+2026-09-05 05:05:59.7328|Info|SmartLoan.Application.Common.Behaviors.LoggingBehavior|CorrelationId=7b0dc3eb-3c5e-4db5-ad77-55defe52aeb7|smartloan Request:GetLoansQuery starting... 
+2026-09-05 05:05:59.7328|Info|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|CorrelationId=50c70bdd-0ba5-48c3-ac1a-9c62db7595e2|Route matched with {action = "GetSummary", controller = "Dashboard"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SmartLoan.Application.Dashboard.Queries.GetLoanSummary.LoanSummaryDto]] GetSummary() on controller SmartLoan.Api.Controllers.DashboardController (SmartLoan.Api). 
+2026-09-05 05:05:59.7328|Info|SmartLoan.Application.Common.Behaviors.LoggingBehavior|CorrelationId=50c70bdd-0ba5-48c3-ac1a-9c62db7595e2|smartloan Request:GetLoansummatyQuery starting... 
+2026-09-05 05:05:59.7328|Info|Microsoft.EntityFrameworkCore.Database.Command|CorrelationId=7b0dc3eb-3c5e-4db5-ad77-55defe52aeb7|Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT count(*)::int
+FROM "LoanApplications" AS l
+WHERE NOT (l."IsDeleted") 
+2026-09-05 05:05:59.7509|Info|Microsoft.EntityFrameworkCore.Database.Command|CorrelationId=7b0dc3eb-3c5e-4db5-ad77-55defe52aeb7|Executed DbCommand (6ms) [Parameters=[@p1='?' (DbType = Int32), @p='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT l0."Id", c0."FullName", l0."DailyAmount", l0."LoanAmount", l0."ServiceFee", l0."Status", l0."CreatedAt", CAST((
+    SELECT COALESCE(sum(p."Amount"), 0.0)
+    FROM "Payments" AS p
+    WHERE l0."Id" = p."LoanApplicationId") / l0."DailyAmount" AS integer)
+FROM (
+    SELECT l."Id", l."CreatedAt", l."CustomerId", l."DailyAmount", l."LoanAmount", l."ServiceFee", l."Status"
+    FROM "LoanApplications" AS l
+    WHERE NOT (l."IsDeleted")
+    ORDER BY l."CreatedAt" DESC
+    LIMIT @p1 OFFSET @p
+) AS l0
+INNER JOIN (
+    SELECT c."Id", c."FullName"
+    FROM "Customers" AS c
+    WHERE NOT (c."IsDeleted")
+) AS c0 ON l0."CustomerId" = c0."Id"
+ORDER BY l0."CreatedAt" DESC 
+2026-09-05 05:05:59.7509|Info|SmartLoan.Application.Common.Behaviors.LoggingBehavior|CorrelationId=7b0dc3eb-3c5e-4db5-ad77-55defe52aeb7|Smarloan Request:GetLoansQuery finished in 18ms 
+2026-09-05 05:05:59.7509|Info|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|CorrelationId=7b0dc3eb-3c5e-4db5-ad77-55defe52aeb7|Executing ObjectResult, writing value of type 'SmartLoan.Application.Common.PagedResponse`1[[SmartLoan.Application.Loans.Queries.LoanDto, SmartLoan.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'. 
+2026-09-05 05:05:59.7509|Info|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|CorrelationId=7b0dc3eb-3c5e-4db5-ad77-55defe52aeb7|Executed action SmartLoan.Api.Controllers.LoanController.GetAll (SmartLoan.Api) in 22.8953ms 
+2026-09-05 05:05:59.7597|Info|Microsoft.AspNetCore.Routing.EndpointMiddleware|CorrelationId=7b0dc3eb-3c5e-4db5-ad77-55defe52aeb7|Executed endpoint 'SmartLoan.Api.Controllers.LoanController.GetAll (SmartLoan.Api)' 
+2026-09-05 05:05:59.7597|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request finished HTTP/1.1 GET http://localhost:5176/api/v1/Loan?pageNumber=1&pageSize=5&search= - 200 - application/json;+charset=utf-8 27.8070ms 
+2026-09-05 05:05:59.8350|Info|Microsoft.EntityFrameworkCore.Database.Command|CorrelationId=50c70bdd-0ba5-48c3-ac1a-9c62db7595e2|Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COALESCE(sum(p."Amount"), 0.0)
+FROM "Payments" AS p 
+2026-09-05 05:05:59.8350|Info|Microsoft.EntityFrameworkCore.Database.Command|CorrelationId=50c70bdd-0ba5-48c3-ac1a-9c62db7595e2|Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COALESCE(sum(l."ServiceFee"), 0.0)
+FROM "LoanApplications" AS l
+WHERE NOT (l."IsDeleted") AND l."Status" = 'Approved' 
+2026-09-05 05:05:59.8403|Info|Microsoft.EntityFrameworkCore.Database.Command|CorrelationId=50c70bdd-0ba5-48c3-ac1a-9c62db7595e2|Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT count(*)::int
+FROM "LoanApplications" AS l
+WHERE NOT (l."IsDeleted") AND l."Status" = 'Saving' 
+2026-09-05 05:05:59.8403|Info|Microsoft.EntityFrameworkCore.Database.Command|CorrelationId=50c70bdd-0ba5-48c3-ac1a-9c62db7595e2|Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT count(*)::int
+FROM "LoanApplications" AS l
+WHERE NOT (l."IsDeleted") AND l."Status" = 'Approved' 
+2026-09-05 05:05:59.8403|Info|SmartLoan.Application.Common.Behaviors.LoggingBehavior|CorrelationId=50c70bdd-0ba5-48c3-ac1a-9c62db7595e2|Smarloan Request:GetLoansummatyQuery finished in 105ms 
+2026-09-05 05:05:59.8403|Info|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|CorrelationId=50c70bdd-0ba5-48c3-ac1a-9c62db7595e2|Executing ObjectResult, writing value of type 'SmartLoan.Application.Dashboard.Queries.GetLoanSummary.LoanSummaryDto'. 
+2026-09-05 05:05:59.8403|Info|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|CorrelationId=50c70bdd-0ba5-48c3-ac1a-9c62db7595e2|Executed action SmartLoan.Api.Controllers.DashboardController.GetSummary (SmartLoan.Api) in 106.5247ms 
+2026-09-05 05:05:59.8403|Info|Microsoft.AspNetCore.Routing.EndpointMiddleware|CorrelationId=50c70bdd-0ba5-48c3-ac1a-9c62db7595e2|Executed endpoint 'SmartLoan.Api.Controllers.DashboardController.GetSummary (SmartLoan.Api)' 
+2026-09-05 05:05:59.8403|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request finished HTTP/1.1 GET http://localhost:5176/api/v1/Dashboard/summary - 200 - application/json;+charset=utf-8 109.5858ms 
+2026-09-05 05:06:11.8086|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request starting HTTP/1.1 POST http://localhost:5176/api/v1/Auth/logout - application/json 2 
+2026-09-05 05:06:11.8086|Info|Microsoft.AspNetCore.Cors.Infrastructure.CorsService|CorrelationId=eaf4c203-d337-4773-8ea3-e1b104a66ca7|CORS policy execution successful. 
+2026-09-05 05:06:11.8086|Info|Microsoft.AspNetCore.Routing.EndpointMiddleware|CorrelationId=eaf4c203-d337-4773-8ea3-e1b104a66ca7|Executing endpoint 'SmartLoan.Api.Controllers.AuthController.Logout (SmartLoan.Api)' 
+2026-09-05 05:06:11.8086|Info|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|CorrelationId=eaf4c203-d337-4773-8ea3-e1b104a66ca7|Route matched with {action = "Logout", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Logout() on controller SmartLoan.Api.Controllers.AuthController (SmartLoan.Api). 
+2026-09-05 05:06:11.8243|Info|Microsoft.EntityFrameworkCore.Database.Command|CorrelationId=eaf4c203-d337-4773-8ea3-e1b104a66ca7|Executed DbCommand (9ms) [Parameters=[@userId='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT u."Id", u."Email", u."FullName", u."PasswordHash", u."RefreshToken", u."RefreshTokenExpiryTime", u."Role"
+FROM "Users" AS u
+WHERE u."Id" = @userId
+LIMIT 1 
+2026-09-05 05:06:11.8243|Info|Microsoft.EntityFrameworkCore.Database.Command|CorrelationId=eaf4c203-d337-4773-8ea3-e1b104a66ca7|Executed DbCommand (12ms) [Parameters=[@p2='?' (DbType = Int32), @p0='?', @p1='?' (DbType = DateTime)], CommandType='Text', CommandTimeout='30']
+UPDATE "Users" SET "RefreshToken" = @p0, "RefreshTokenExpiryTime" = @p1
+WHERE "Id" = @p2; 
+2026-09-05 05:06:11.8243|Info|Microsoft.AspNetCore.Mvc.StatusCodeResult|CorrelationId=eaf4c203-d337-4773-8ea3-e1b104a66ca7|Executing StatusCodeResult, setting HTTP status code 204 
+2026-09-05 05:06:11.8243|Info|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|CorrelationId=eaf4c203-d337-4773-8ea3-e1b104a66ca7|Executed action SmartLoan.Api.Controllers.AuthController.Logout (SmartLoan.Api) in 26.7537ms 
+2026-09-05 05:06:11.8243|Info|Microsoft.AspNetCore.Routing.EndpointMiddleware|CorrelationId=eaf4c203-d337-4773-8ea3-e1b104a66ca7|Executed endpoint 'SmartLoan.Api.Controllers.AuthController.Logout (SmartLoan.Api)' 
+2026-09-05 05:06:11.8243|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request finished HTTP/1.1 POST http://localhost:5176/api/v1/Auth/logout - 204 - - 32.5013ms 
+2026-09-05 05:06:17.1671|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request starting HTTP/1.1 GET http://localhost:5176/api/v1/Auth/me - - - 
+2026-09-05 05:06:17.1671|Info|Microsoft.AspNetCore.Authorization.DefaultAuthorizationService|CorrelationId=237c571e-f3dc-4f92-b490-e091e85824ee|Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user. 
+2026-09-05 05:06:17.1671|Info|Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler|CorrelationId=237c571e-f3dc-4f92-b490-e091e85824ee|AuthenticationScheme: Bearer was challenged. 
+2026-09-05 05:06:17.1671|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request finished HTTP/1.1 GET http://localhost:5176/api/v1/Auth/me - 401 0 - 1.8475ms 
+2026-09-05 05:06:17.1671|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request starting HTTP/1.1 GET http://localhost:5176/api/v1/Auth/me - - - 
+2026-09-05 05:06:17.1671|Info|Microsoft.AspNetCore.Authorization.DefaultAuthorizationService|CorrelationId=2b4e74b0-c5fb-44fb-aedc-184a42d50350|Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user. 
+2026-09-05 05:06:17.1671|Info|Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler|CorrelationId=2b4e74b0-c5fb-44fb-aedc-184a42d50350|AuthenticationScheme: Bearer was challenged. 
+2026-09-05 05:06:17.1671|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request finished HTTP/1.1 GET http://localhost:5176/api/v1/Auth/me - 401 0 - 1.1790ms 
+2026-09-05 05:06:26.4894|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request starting HTTP/1.1 POST http://localhost:5176/api/v1/auth/login - application/json 53 
+2026-09-05 05:06:26.4894|Info|Microsoft.AspNetCore.Cors.Infrastructure.CorsService|CorrelationId=3a2bbcdb-9f29-4e4e-8ae3-e962a962578e|CORS policy execution successful. 
+2026-09-05 05:06:26.4894|Info|Microsoft.AspNetCore.Routing.EndpointMiddleware|CorrelationId=3a2bbcdb-9f29-4e4e-8ae3-e962a962578e|Executing endpoint 'SmartLoan.Api.Controllers.AuthController.Login (SmartLoan.Api)' 
+2026-09-05 05:06:26.4894|Info|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|CorrelationId=3a2bbcdb-9f29-4e4e-8ae3-e962a962578e|Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] Login(SmartLoan.Application.Users.LoginCommand) on controller SmartLoan.Api.Controllers.AuthController (SmartLoan.Api). 
+2026-09-05 05:06:26.4987|Info|SmartLoan.Application.Common.Behaviors.LoggingBehavior|CorrelationId=3a2bbcdb-9f29-4e4e-8ae3-e962a962578e|smartloan Request:LoginCommand starting... 
+2026-09-05 05:06:26.4987|Info|Microsoft.EntityFrameworkCore.Database.Command|CorrelationId=3a2bbcdb-9f29-4e4e-8ae3-e962a962578e|Executed DbCommand (2ms) [Parameters=[@request_Email='?'], CommandType='Text', CommandTimeout='30']
+SELECT u."Id", u."Email", u."FullName", u."PasswordHash", u."RefreshToken", u."RefreshTokenExpiryTime", u."Role"
+FROM "Users" AS u
+WHERE u."Email" = @request_Email
+LIMIT 1 
+2026-09-05 05:06:27.0369|Info|Microsoft.EntityFrameworkCore.Database.Command|CorrelationId=3a2bbcdb-9f29-4e4e-8ae3-e962a962578e|Executed DbCommand (2ms) [Parameters=[@p2='?' (DbType = Int32), @p0='?', @p1='?' (DbType = DateTime)], CommandType='Text', CommandTimeout='30']
+UPDATE "Users" SET "RefreshToken" = @p0, "RefreshTokenExpiryTime" = @p1
+WHERE "Id" = @p2; 
+2026-09-05 05:06:27.0369|Info|SmartLoan.Application.Common.Behaviors.LoggingBehavior|CorrelationId=3a2bbcdb-9f29-4e4e-8ae3-e962a962578e|Smarloan Request:LoginCommand finished in 538ms 
+2026-09-05 05:06:27.0369|Info|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|CorrelationId=3a2bbcdb-9f29-4e4e-8ae3-e962a962578e|Executing OkObjectResult, writing value of type '<>f__AnonymousType0`2[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'. 
+2026-09-05 05:06:27.0369|Info|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|CorrelationId=3a2bbcdb-9f29-4e4e-8ae3-e962a962578e|Executed action SmartLoan.Api.Controllers.AuthController.Login (SmartLoan.Api) in 544.3897ms 
+2026-09-05 05:06:27.0369|Info|Microsoft.AspNetCore.Routing.EndpointMiddleware|CorrelationId=3a2bbcdb-9f29-4e4e-8ae3-e962a962578e|Executed endpoint 'SmartLoan.Api.Controllers.AuthController.Login (SmartLoan.Api)' 
+2026-09-05 05:06:27.0369|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request finished HTTP/1.1 POST http://localhost:5176/api/v1/auth/login - 200 - application/json;+charset=utf-8 549.6219ms 
+2026-09-05 05:07:39.5705|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request starting HTTP/1.1 GET http://localhost:5176/api/v1/customers?pageNumber=1&pageSize=20&search=&status= - - - 
+2026-09-05 05:07:39.5705|Info|Microsoft.AspNetCore.Routing.EndpointMiddleware|CorrelationId=68204bb3-0149-44c1-9796-ea501cc06471|Executing endpoint 'SmartLoan.Api.Controllers.CustomersController.GetAll (SmartLoan.Api)' 
+2026-09-05 05:07:39.5918|Info|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|CorrelationId=68204bb3-0149-44c1-9796-ea501cc06471|Route matched with {action = "GetAll", controller = "Customers"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SmartLoan.Application.Common.PagedResponse`1[SmartLoan.Application.Customers.CustomerDetailsDto]]] GetAll(SmartLoan.Application.Common.PagedRequest) on controller SmartLoan.Api.Controllers.CustomersController (SmartLoan.Api). 
+2026-09-05 05:07:39.5918|Info|SmartLoan.Application.Common.Behaviors.LoggingBehavior|CorrelationId=68204bb3-0149-44c1-9796-ea501cc06471|smartloan Request:GetCustomersQuery starting... 
+2026-09-05 05:07:39.6138|Info|Microsoft.EntityFrameworkCore.Database.Command|CorrelationId=68204bb3-0149-44c1-9796-ea501cc06471|Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT count(*)::int
+FROM "Customers" AS c
+WHERE NOT (c."IsDeleted") 
+2026-09-05 05:07:39.6267|Info|Microsoft.EntityFrameworkCore.Database.Command|CorrelationId=68204bb3-0149-44c1-9796-ea501cc06471|Executed DbCommand (1ms) [Parameters=[@p1='?' (DbType = Int32), @p='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT c."Id", c."FullName", c."Phone", c."Address"
+FROM "Customers" AS c
+WHERE NOT (c."IsDeleted")
+ORDER BY c."FullName"
+LIMIT @p1 OFFSET @p 
+2026-09-05 05:07:39.6267|Info|SmartLoan.Application.Common.Behaviors.LoggingBehavior|CorrelationId=68204bb3-0149-44c1-9796-ea501cc06471|Smarloan Request:GetCustomersQuery finished in 32ms 
+2026-09-05 05:07:39.6267|Info|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|CorrelationId=68204bb3-0149-44c1-9796-ea501cc06471|Executing ObjectResult, writing value of type 'SmartLoan.Application.Common.PagedResponse`1[[SmartLoan.Application.Customers.CustomerDetailsDto, SmartLoan.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'. 
+2026-09-05 05:07:39.6365|Info|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|CorrelationId=68204bb3-0149-44c1-9796-ea501cc06471|Executed action SmartLoan.Api.Controllers.CustomersController.GetAll (SmartLoan.Api) in 44.2897ms 
+2026-09-05 05:07:39.6365|Info|Microsoft.AspNetCore.Routing.EndpointMiddleware|CorrelationId=68204bb3-0149-44c1-9796-ea501cc06471|Executed endpoint 'SmartLoan.Api.Controllers.CustomersController.GetAll (SmartLoan.Api)' 
+2026-09-05 05:07:39.6365|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request finished HTTP/1.1 GET http://localhost:5176/api/v1/customers?pageNumber=1&pageSize=20&search=&status= - 200 - application/json;+charset=utf-8 66.4462ms 
+2026-09-05 05:07:46.4457|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request starting HTTP/1.1 POST http://localhost:5176/api/v1/Auth/logout - application/json 2 
+2026-09-05 05:07:46.4457|Info|Microsoft.AspNetCore.Cors.Infrastructure.CorsService|CorrelationId=7ad84eef-5ebd-4af6-ae10-afc0a4323f1d|CORS policy execution successful. 
+2026-09-05 05:07:46.4457|Info|Microsoft.AspNetCore.Routing.EndpointMiddleware|CorrelationId=7ad84eef-5ebd-4af6-ae10-afc0a4323f1d|Executing endpoint 'SmartLoan.Api.Controllers.AuthController.Logout (SmartLoan.Api)' 
+2026-09-05 05:07:46.4457|Info|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|CorrelationId=7ad84eef-5ebd-4af6-ae10-afc0a4323f1d|Route matched with {action = "Logout", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Logout() on controller SmartLoan.Api.Controllers.AuthController (SmartLoan.Api). 
+2026-09-05 05:07:46.4519|Info|Microsoft.EntityFrameworkCore.Database.Command|CorrelationId=7ad84eef-5ebd-4af6-ae10-afc0a4323f1d|Executed DbCommand (2ms) [Parameters=[@userId='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT u."Id", u."Email", u."FullName", u."PasswordHash", u."RefreshToken", u."RefreshTokenExpiryTime", u."Role"
+FROM "Users" AS u
+WHERE u."Id" = @userId
+LIMIT 1 
+2026-09-05 05:07:46.4662|Info|Microsoft.EntityFrameworkCore.Database.Command|CorrelationId=7ad84eef-5ebd-4af6-ae10-afc0a4323f1d|Executed DbCommand (12ms) [Parameters=[@p2='?' (DbType = Int32), @p0='?', @p1='?' (DbType = DateTime)], CommandType='Text', CommandTimeout='30']
+UPDATE "Users" SET "RefreshToken" = @p0, "RefreshTokenExpiryTime" = @p1
+WHERE "Id" = @p2; 
+2026-09-05 05:07:46.4662|Info|Microsoft.AspNetCore.Mvc.StatusCodeResult|CorrelationId=7ad84eef-5ebd-4af6-ae10-afc0a4323f1d|Executing StatusCodeResult, setting HTTP status code 204 
+2026-09-05 05:07:46.4662|Info|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|CorrelationId=7ad84eef-5ebd-4af6-ae10-afc0a4323f1d|Executed action SmartLoan.Api.Controllers.AuthController.Logout (SmartLoan.Api) in 18.5337ms 
+2026-09-05 05:07:46.4662|Info|Microsoft.AspNetCore.Routing.EndpointMiddleware|CorrelationId=7ad84eef-5ebd-4af6-ae10-afc0a4323f1d|Executed endpoint 'SmartLoan.Api.Controllers.AuthController.Logout (SmartLoan.Api)' 
+2026-09-05 05:07:46.4662|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request finished HTTP/1.1 POST http://localhost:5176/api/v1/Auth/logout - 204 - - 22.9054ms 
+2026-09-05 05:14:55.4290|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request starting HTTP/1.1 GET http://localhost:5176/api/v1/Auth/me - - - 
+2026-09-05 05:14:55.4290|Info|Microsoft.AspNetCore.Authorization.DefaultAuthorizationService|CorrelationId=d5d03ebc-8b6f-4178-847e-79deeebde0a5|Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user. 
+2026-09-05 05:14:55.4290|Info|Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler|CorrelationId=d5d03ebc-8b6f-4178-847e-79deeebde0a5|AuthenticationScheme: Bearer was challenged. 
+2026-09-05 05:14:55.4290|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request finished HTTP/1.1 GET http://localhost:5176/api/v1/Auth/me - 401 0 - 1.1434ms 
+2026-09-05 05:14:55.4339|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request starting HTTP/1.1 GET http://localhost:5176/api/v1/Auth/me - - - 
+2026-09-05 05:14:55.4339|Info|Microsoft.AspNetCore.Authorization.DefaultAuthorizationService|CorrelationId=7248d465-98de-46a7-9dd2-7f39ad6f1399|Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user. 
+2026-09-05 05:14:55.4339|Info|Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler|CorrelationId=7248d465-98de-46a7-9dd2-7f39ad6f1399|AuthenticationScheme: Bearer was challenged. 
+2026-09-05 05:14:55.4339|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request finished HTTP/1.1 GET http://localhost:5176/api/v1/Auth/me - 401 0 - 0.7012ms 
+2026-09-05 05:14:55.6173|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request starting HTTP/1.1 GET http://localhost:5176/api/v1/customers?pageNumber=1&pageSize=20&search=&status= - - - 
+2026-09-05 05:14:55.6173|Info|Microsoft.AspNetCore.Authorization.DefaultAuthorizationService|CorrelationId=50762320-7c65-4f2c-af00-b982c8424ce9|Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user. 
+2026-09-05 05:14:55.6173|Info|Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler|CorrelationId=50762320-7c65-4f2c-af00-b982c8424ce9|AuthenticationScheme: Bearer was challenged. 
+2026-09-05 05:14:55.6173|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request finished HTTP/1.1 GET http://localhost:5176/api/v1/customers?pageNumber=1&pageSize=20&search=&status= - 401 0 - 0.8125ms 
+2026-09-05 05:14:55.6440|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request starting HTTP/1.1 POST http://localhost:5176/api/v1/Auth/refresh - application/json 2 
+2026-09-05 05:14:55.6440|Info|Microsoft.AspNetCore.Cors.Infrastructure.CorsService|CorrelationId=ee09308d-47ed-4a28-baaf-f85fa25446af|CORS policy execution successful. 
+2026-09-05 05:14:55.6440|Info|Microsoft.AspNetCore.Routing.EndpointMiddleware|CorrelationId=ee09308d-47ed-4a28-baaf-f85fa25446af|Executing endpoint 'SmartLoan.Api.Controllers.AuthController.Refresh (SmartLoan.Api)' 
+2026-09-05 05:14:55.6440|Info|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|CorrelationId=ee09308d-47ed-4a28-baaf-f85fa25446af|Route matched with {action = "Refresh", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] Refresh(SmartLoan.Application.Users.Commands.RefreshToken.RefreshTokenRequest) on controller SmartLoan.Api.Controllers.AuthController (SmartLoan.Api). 
+2026-09-05 05:14:55.6440|Info|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|CorrelationId=ee09308d-47ed-4a28-baaf-f85fa25446af|Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'. 
+2026-09-05 05:14:55.6440|Info|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|CorrelationId=ee09308d-47ed-4a28-baaf-f85fa25446af|Executed action SmartLoan.Api.Controllers.AuthController.Refresh (SmartLoan.Api) in 1.448ms 
+2026-09-05 05:14:55.6440|Info|Microsoft.AspNetCore.Routing.EndpointMiddleware|CorrelationId=ee09308d-47ed-4a28-baaf-f85fa25446af|Executed endpoint 'SmartLoan.Api.Controllers.AuthController.Refresh (SmartLoan.Api)' 
+2026-09-05 05:14:55.6440|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request finished HTTP/1.1 POST http://localhost:5176/api/v1/Auth/refresh - 400 - application/problem+json;+charset=utf-8 2.6771ms 
+2026-09-05 05:15:07.8418|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request starting HTTP/1.1 GET http://localhost:5176/api/v1/Auth/me - - - 
+2026-09-05 05:15:07.8418|Info|Microsoft.AspNetCore.Authorization.DefaultAuthorizationService|CorrelationId=78bb0e52-5e37-4c1b-af77-13ca4fa74678|Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user. 
+2026-09-05 05:15:07.8418|Info|Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler|CorrelationId=78bb0e52-5e37-4c1b-af77-13ca4fa74678|AuthenticationScheme: Bearer was challenged. 
+2026-09-05 05:15:07.8418|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request finished HTTP/1.1 GET http://localhost:5176/api/v1/Auth/me - 401 0 - 0.8831ms 
+2026-09-05 05:15:07.8418|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request starting HTTP/1.1 GET http://localhost:5176/api/v1/Auth/me - - - 
+2026-09-05 05:15:07.8418|Info|Microsoft.AspNetCore.Authorization.DefaultAuthorizationService|CorrelationId=e4cdc23d-de89-4a9a-84dd-792926b0476e|Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user. 
+2026-09-05 05:15:07.8418|Info|Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler|CorrelationId=e4cdc23d-de89-4a9a-84dd-792926b0476e|AuthenticationScheme: Bearer was challenged. 
+2026-09-05 05:15:07.8418|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request finished HTTP/1.1 GET http://localhost:5176/api/v1/Auth/me - 401 0 - 0.7842ms 
+2026-09-05 05:15:12.0661|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request starting HTTP/1.1 GET http://localhost:5176/api/v1/Auth/me - - - 
+2026-09-05 05:15:12.0661|Info|Microsoft.AspNetCore.Authorization.DefaultAuthorizationService|CorrelationId=83add371-0506-4ff6-923e-8c32285500bc|Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user. 
+2026-09-05 05:15:12.0661|Info|Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler|CorrelationId=83add371-0506-4ff6-923e-8c32285500bc|AuthenticationScheme: Bearer was challenged. 
+2026-09-05 05:15:12.0661|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request finished HTTP/1.1 GET http://localhost:5176/api/v1/Auth/me - 401 0 - 0.9895ms 
+2026-09-05 05:15:12.0717|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request starting HTTP/1.1 GET http://localhost:5176/api/v1/Auth/me - - - 
+2026-09-05 05:15:12.0717|Info|Microsoft.AspNetCore.Authorization.DefaultAuthorizationService|CorrelationId=0d433f97-7bdf-4671-8d04-973c6a80c445|Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user. 
+2026-09-05 05:15:12.0717|Info|Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler|CorrelationId=0d433f97-7bdf-4671-8d04-973c6a80c445|AuthenticationScheme: Bearer was challenged. 
+2026-09-05 05:15:12.0717|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request finished HTTP/1.1 GET http://localhost:5176/api/v1/Auth/me - 401 0 - 1.2510ms 
+2026-09-05 05:15:16.0670|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request starting HTTP/1.1 GET http://localhost:5176/api/v1/Auth/me - - - 
+2026-09-05 05:15:16.0670|Info|Microsoft.AspNetCore.Authorization.DefaultAuthorizationService|CorrelationId=658f9e46-360c-4954-9c97-60f50eb85d01|Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user. 
+2026-09-05 05:15:16.0670|Info|Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler|CorrelationId=658f9e46-360c-4954-9c97-60f50eb85d01|AuthenticationScheme: Bearer was challenged. 
+2026-09-05 05:15:16.0670|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request finished HTTP/1.1 GET http://localhost:5176/api/v1/Auth/me - 401 0 - 0.8301ms 
+2026-09-05 05:15:16.0670|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request starting HTTP/1.1 GET http://localhost:5176/api/v1/Auth/me - - - 
+2026-09-05 05:15:16.0720|Info|Microsoft.AspNetCore.Authorization.DefaultAuthorizationService|CorrelationId=97960437-1f92-433b-ae92-47e40bc794d4|Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user. 
+2026-09-05 05:15:16.0720|Info|Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler|CorrelationId=97960437-1f92-433b-ae92-47e40bc794d4|AuthenticationScheme: Bearer was challenged. 
+2026-09-05 05:15:16.0720|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request finished HTTP/1.1 GET http://localhost:5176/api/v1/Auth/me - 401 0 - 0.6209ms 
+2026-09-05 05:15:19.1014|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request starting HTTP/1.1 GET http://localhost:5176/api/v1/Auth/me - - - 
+2026-09-05 05:15:19.1014|Info|Microsoft.AspNetCore.Authorization.DefaultAuthorizationService|CorrelationId=8b5b3d86-b375-40b2-9ce2-08b3acce3cf3|Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user. 
+2026-09-05 05:15:19.1029|Info|Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler|CorrelationId=8b5b3d86-b375-40b2-9ce2-08b3acce3cf3|AuthenticationScheme: Bearer was challenged. 
+2026-09-05 05:15:19.1029|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request finished HTTP/1.1 GET http://localhost:5176/api/v1/Auth/me - 401 0 - 1.9957ms 
+2026-09-05 05:15:19.1029|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request starting HTTP/1.1 GET http://localhost:5176/api/v1/Auth/me - - - 
+2026-09-05 05:15:19.1029|Info|Microsoft.AspNetCore.Authorization.DefaultAuthorizationService|CorrelationId=f0a489b0-dc7d-4b16-8175-4fab292a4030|Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user. 
+2026-09-05 05:15:19.1029|Info|Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler|CorrelationId=f0a489b0-dc7d-4b16-8175-4fab292a4030|AuthenticationScheme: Bearer was challenged. 
+2026-09-05 05:15:19.1029|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request finished HTTP/1.1 GET http://localhost:5176/api/v1/Auth/me - 401 0 - 0.6559ms 
+2026-09-05 05:15:25.0767|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request starting HTTP/1.1 GET http://localhost:5176/api/v1/Auth/me - - - 
+2026-09-05 05:15:25.0767|Info|Microsoft.AspNetCore.Authorization.DefaultAuthorizationService|CorrelationId=db6ee21f-6123-420f-b398-01e428c8042b|Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user. 
+2026-09-05 05:15:25.0767|Info|Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler|CorrelationId=db6ee21f-6123-420f-b398-01e428c8042b|AuthenticationScheme: Bearer was challenged. 
+2026-09-05 05:15:25.0767|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request finished HTTP/1.1 GET http://localhost:5176/api/v1/Auth/me - 401 0 - 0.8316ms 
+2026-09-05 05:15:25.0767|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request starting HTTP/1.1 GET http://localhost:5176/api/v1/Auth/me - - - 
+2026-09-05 05:15:25.0767|Info|Microsoft.AspNetCore.Authorization.DefaultAuthorizationService|CorrelationId=541315af-e14e-439b-b1f7-87b5c94c4d2d|Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user. 
+2026-09-05 05:15:25.0767|Info|Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler|CorrelationId=541315af-e14e-439b-b1f7-87b5c94c4d2d|AuthenticationScheme: Bearer was challenged. 
+2026-09-05 05:15:25.0767|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request finished HTTP/1.1 GET http://localhost:5176/api/v1/Auth/me - 401 0 - 0.9597ms 
+2026-09-05 05:15:31.0747|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request starting HTTP/1.1 GET http://localhost:5176/api/v1/Auth/me - - - 
+2026-09-05 05:15:31.0747|Info|Microsoft.AspNetCore.Authorization.DefaultAuthorizationService|CorrelationId=e3020d88-1854-437c-a42b-14e0c670b09b|Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user. 
+2026-09-05 05:15:31.0747|Info|Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler|CorrelationId=e3020d88-1854-437c-a42b-14e0c670b09b|AuthenticationScheme: Bearer was challenged. 
+2026-09-05 05:15:31.0747|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request finished HTTP/1.1 GET http://localhost:5176/api/v1/Auth/me - 401 0 - 0.8537ms 
+2026-09-05 05:15:31.0747|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request starting HTTP/1.1 GET http://localhost:5176/api/v1/Auth/me - - - 
+2026-09-05 05:15:31.0747|Info|Microsoft.AspNetCore.Authorization.DefaultAuthorizationService|CorrelationId=ebe6e79b-b21e-4029-a327-f21181ee0aac|Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user. 
+2026-09-05 05:15:31.0747|Info|Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler|CorrelationId=ebe6e79b-b21e-4029-a327-f21181ee0aac|AuthenticationScheme: Bearer was challenged. 
+2026-09-05 05:15:31.0747|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request finished HTTP/1.1 GET http://localhost:5176/api/v1/Auth/me - 401 0 - 0.7839ms 
+2026-09-05 05:15:34.0999|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request starting HTTP/1.1 GET http://localhost:5176/api/v1/Auth/me - - - 
+2026-09-05 05:15:34.0999|Info|Microsoft.AspNetCore.Authorization.DefaultAuthorizationService|CorrelationId=6b124668-b711-48b0-91a3-41475e984437|Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user. 
+2026-09-05 05:15:34.0999|Info|Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler|CorrelationId=6b124668-b711-48b0-91a3-41475e984437|AuthenticationScheme: Bearer was challenged. 
+2026-09-05 05:15:34.0999|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request finished HTTP/1.1 GET http://localhost:5176/api/v1/Auth/me - 401 0 - 0.7755ms 
+2026-09-05 05:15:34.1052|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request starting HTTP/1.1 GET http://localhost:5176/api/v1/Auth/me - - - 
+2026-09-05 05:15:34.1052|Info|Microsoft.AspNetCore.Authorization.DefaultAuthorizationService|CorrelationId=8e4b2d24-63c0-4e6f-a069-3e6285edf426|Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user. 
+2026-09-05 05:15:34.1052|Info|Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler|CorrelationId=8e4b2d24-63c0-4e6f-a069-3e6285edf426|AuthenticationScheme: Bearer was challenged. 
+2026-09-05 05:15:34.1052|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request finished HTTP/1.1 GET http://localhost:5176/api/v1/Auth/me - 401 0 - 2.5562ms 
+2026-09-05 05:15:38.0714|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request starting HTTP/1.1 GET http://localhost:5176/api/v1/Auth/me - - - 
+2026-09-05 05:15:38.0714|Info|Microsoft.AspNetCore.Authorization.DefaultAuthorizationService|CorrelationId=8bd56c90-1e56-4cd6-af27-90ea703fa1c7|Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user. 
+2026-09-05 05:15:38.0714|Info|Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler|CorrelationId=8bd56c90-1e56-4cd6-af27-90ea703fa1c7|AuthenticationScheme: Bearer was challenged. 
+2026-09-05 05:15:38.0722|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request finished HTTP/1.1 GET http://localhost:5176/api/v1/Auth/me - 401 0 - 0.7511ms 
+2026-09-05 05:15:38.0722|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request starting HTTP/1.1 GET http://localhost:5176/api/v1/Auth/me - - - 
+2026-09-05 05:15:38.0722|Info|Microsoft.AspNetCore.Authorization.DefaultAuthorizationService|CorrelationId=5d4764d4-fda1-4ecd-b84a-d40f2a6404e5|Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user. 
+2026-09-05 05:15:38.0722|Info|Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler|CorrelationId=5d4764d4-fda1-4ecd-b84a-d40f2a6404e5|AuthenticationScheme: Bearer was challenged. 
+2026-09-05 05:15:38.0722|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request finished HTTP/1.1 GET http://localhost:5176/api/v1/Auth/me - 401 0 - 1.8355ms 
+2026-09-05 05:15:44.0919|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request starting HTTP/1.1 GET http://localhost:5176/api/v1/Auth/me - - - 
+2026-09-05 05:15:44.0919|Info|Microsoft.AspNetCore.Authorization.DefaultAuthorizationService|CorrelationId=b86dd34f-2b7b-4ce9-be33-dd9f9d07d612|Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user. 
+2026-09-05 05:15:44.0919|Info|Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler|CorrelationId=b86dd34f-2b7b-4ce9-be33-dd9f9d07d612|AuthenticationScheme: Bearer was challenged. 
+2026-09-05 05:15:44.0919|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request finished HTTP/1.1 GET http://localhost:5176/api/v1/Auth/me - 401 0 - 1.2645ms 
+2026-09-05 05:15:44.0919|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request starting HTTP/1.1 GET http://localhost:5176/api/v1/Auth/me - - - 
+2026-09-05 05:15:44.0919|Info|Microsoft.AspNetCore.Authorization.DefaultAuthorizationService|CorrelationId=174e12b4-4e07-49f9-944f-676260c6ed03|Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user. 
+2026-09-05 05:15:44.0919|Info|Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler|CorrelationId=174e12b4-4e07-49f9-944f-676260c6ed03|AuthenticationScheme: Bearer was challenged. 
+2026-09-05 05:15:44.0919|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request finished HTTP/1.1 GET http://localhost:5176/api/v1/Auth/me - 401 0 - 0.5777ms 
+2026-09-05 05:15:49.0706|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request starting HTTP/1.1 GET http://localhost:5176/api/v1/Auth/me - - - 
+2026-09-05 05:15:49.0706|Info|Microsoft.AspNetCore.Authorization.DefaultAuthorizationService|CorrelationId=9fcdb364-bd3e-4b16-8802-4f37dfab7a4b|Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user. 
+2026-09-05 05:15:49.0706|Info|Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler|CorrelationId=9fcdb364-bd3e-4b16-8802-4f37dfab7a4b|AuthenticationScheme: Bearer was challenged. 
+2026-09-05 05:15:49.0712|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request finished HTTP/1.1 GET http://localhost:5176/api/v1/Auth/me - 401 0 - 0.6812ms 
+2026-09-05 05:15:49.0712|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request starting HTTP/1.1 GET http://localhost:5176/api/v1/Auth/me - - - 
+2026-09-05 05:15:49.0712|Info|Microsoft.AspNetCore.Authorization.DefaultAuthorizationService|CorrelationId=f2efa907-f7e9-4d9b-816f-506c9a51d453|Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user. 
+2026-09-05 05:15:49.0712|Info|Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler|CorrelationId=f2efa907-f7e9-4d9b-816f-506c9a51d453|AuthenticationScheme: Bearer was challenged. 
+2026-09-05 05:15:49.0712|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request finished HTTP/1.1 GET http://localhost:5176/api/v1/Auth/me - 401 0 - 0.8802ms 
+2026-09-05 05:15:55.1326|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request starting HTTP/1.1 GET http://localhost:5176/api/v1/Auth/me - - - 
+2026-09-05 05:15:55.1326|Info|Microsoft.AspNetCore.Authorization.DefaultAuthorizationService|CorrelationId=c012a35e-82b2-44ae-942a-1e0be12d4060|Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user. 
+2026-09-05 05:15:55.1326|Info|Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler|CorrelationId=c012a35e-82b2-44ae-942a-1e0be12d4060|AuthenticationScheme: Bearer was challenged. 
+2026-09-05 05:15:55.1352|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request finished HTTP/1.1 GET http://localhost:5176/api/v1/Auth/me - 401 0 - 2.6030ms 
+2026-09-05 05:15:55.1352|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request starting HTTP/1.1 GET http://localhost:5176/api/v1/Auth/me - - - 
+2026-09-05 05:15:55.1352|Info|Microsoft.AspNetCore.Authorization.DefaultAuthorizationService|CorrelationId=c9391061-e828-460d-bd82-1232670e1f87|Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user. 
+2026-09-05 05:15:55.1352|Info|Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler|CorrelationId=c9391061-e828-460d-bd82-1232670e1f87|AuthenticationScheme: Bearer was challenged. 
+2026-09-05 05:15:55.1352|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request finished HTTP/1.1 GET http://localhost:5176/api/v1/Auth/me - 401 0 - 4.1841ms 
+2026-09-05 05:17:06.1257|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request starting HTTP/1.1 GET http://localhost:5176/api/v1/Auth/me - - - 
+2026-09-05 05:17:06.1257|Info|Microsoft.AspNetCore.Authorization.DefaultAuthorizationService|CorrelationId=bd99832a-71fd-4818-b401-7b6f963e0eb4|Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user. 
+2026-09-05 05:17:06.1257|Info|Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler|CorrelationId=bd99832a-71fd-4818-b401-7b6f963e0eb4|AuthenticationScheme: Bearer was challenged. 
+2026-09-05 05:17:06.1257|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request finished HTTP/1.1 GET http://localhost:5176/api/v1/Auth/me - 401 0 - 0.7826ms 
+2026-09-05 05:17:06.1257|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request starting HTTP/1.1 GET http://localhost:5176/api/v1/Auth/me - - - 
+2026-09-05 05:17:06.1257|Info|Microsoft.AspNetCore.Authorization.DefaultAuthorizationService|CorrelationId=2e5c5e92-2e5b-482a-b468-626606d623f7|Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user. 
+2026-09-05 05:17:06.1257|Info|Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler|CorrelationId=2e5c5e92-2e5b-482a-b468-626606d623f7|AuthenticationScheme: Bearer was challenged. 
+2026-09-05 05:17:06.1257|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request finished HTTP/1.1 GET http://localhost:5176/api/v1/Auth/me - 401 0 - 0.5218ms 
+2026-09-05 05:17:07.0906|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request starting HTTP/1.1 GET http://localhost:5176/api/v1/Auth/me - - - 
+2026-09-05 05:17:07.0906|Info|Microsoft.AspNetCore.Authorization.DefaultAuthorizationService|CorrelationId=f8c6ec46-c6ca-4f40-8aba-2399e3416ce1|Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user. 
+2026-09-05 05:17:07.0906|Info|Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler|CorrelationId=f8c6ec46-c6ca-4f40-8aba-2399e3416ce1|AuthenticationScheme: Bearer was challenged. 
+2026-09-05 05:17:07.0906|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request finished HTTP/1.1 GET http://localhost:5176/api/v1/Auth/me - 401 0 - 0.6945ms 
+2026-09-05 05:17:07.0906|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request starting HTTP/1.1 GET http://localhost:5176/api/v1/Auth/me - - - 
+2026-09-05 05:17:07.0906|Info|Microsoft.AspNetCore.Authorization.DefaultAuthorizationService|CorrelationId=e304221d-4644-408a-afb8-e8ea3d0e9ba4|Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user. 
+2026-09-05 05:17:07.0906|Info|Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler|CorrelationId=e304221d-4644-408a-afb8-e8ea3d0e9ba4|AuthenticationScheme: Bearer was challenged. 
+2026-09-05 05:17:07.0906|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request finished HTTP/1.1 GET http://localhost:5176/api/v1/Auth/me - 401 0 - 0.5639ms 
+2026-09-05 05:18:09.0724|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request starting HTTP/1.1 GET http://localhost:5176/api/v1/Auth/me - - - 
+2026-09-05 05:18:09.0724|Info|Microsoft.AspNetCore.Authorization.DefaultAuthorizationService|CorrelationId=3ab7f171-7f50-4440-abf5-13586c98f82e|Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user. 
+2026-09-05 05:18:09.0724|Info|Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler|CorrelationId=3ab7f171-7f50-4440-abf5-13586c98f82e|AuthenticationScheme: Bearer was challenged. 
+2026-09-05 05:18:09.0724|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request finished HTTP/1.1 GET http://localhost:5176/api/v1/Auth/me - 401 0 - 0.6798ms 
+2026-09-05 05:18:09.0724|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request starting HTTP/1.1 GET http://localhost:5176/api/v1/Auth/me - - - 
+2026-09-05 05:18:09.0724|Info|Microsoft.AspNetCore.Authorization.DefaultAuthorizationService|CorrelationId=1fae0455-b67b-495d-9369-8170dc771b28|Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user. 
+2026-09-05 05:18:09.0724|Info|Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler|CorrelationId=1fae0455-b67b-495d-9369-8170dc771b28|AuthenticationScheme: Bearer was challenged. 
+2026-09-05 05:18:09.0724|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request finished HTTP/1.1 GET http://localhost:5176/api/v1/Auth/me - 401 0 - 0.4488ms 
+2026-09-05 05:18:16.8041|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request starting HTTP/1.1 GET http://localhost:5176/api/v1/Auth/me - - - 
+2026-09-05 05:18:16.8041|Info|Microsoft.AspNetCore.Authorization.DefaultAuthorizationService|CorrelationId=d96641a1-2392-4ec6-b1aa-1c455f90ecb5|Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user. 
+2026-09-05 05:18:16.8041|Info|Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler|CorrelationId=d96641a1-2392-4ec6-b1aa-1c455f90ecb5|AuthenticationScheme: Bearer was challenged. 
+2026-09-05 05:18:16.8041|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request finished HTTP/1.1 GET http://localhost:5176/api/v1/Auth/me - 401 0 - 0.5226ms 
+2026-09-05 05:18:16.8074|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request starting HTTP/1.1 GET http://localhost:5176/api/v1/Auth/me - - - 
+2026-09-05 05:18:16.8074|Info|Microsoft.AspNetCore.Authorization.DefaultAuthorizationService|CorrelationId=e550d123-b080-47a0-bdc0-d9d138102315|Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user. 
+2026-09-05 05:18:16.8074|Info|Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler|CorrelationId=e550d123-b080-47a0-bdc0-d9d138102315|AuthenticationScheme: Bearer was challenged. 
+2026-09-05 05:18:16.8074|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request finished HTTP/1.1 GET http://localhost:5176/api/v1/Auth/me - 401 0 - 0.4177ms 
+2026-09-05 05:18:37.7374|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request starting HTTP/1.1 GET http://localhost:5176/api/v1/Auth/me - - - 
+2026-09-05 05:18:37.7374|Info|Microsoft.AspNetCore.Authorization.DefaultAuthorizationService|CorrelationId=de5e85f9-ab93-4d6d-a15b-46b26dfd6933|Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user. 
+2026-09-05 05:18:37.7374|Info|Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler|CorrelationId=de5e85f9-ab93-4d6d-a15b-46b26dfd6933|AuthenticationScheme: Bearer was challenged. 
+2026-09-05 05:18:37.7374|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request finished HTTP/1.1 GET http://localhost:5176/api/v1/Auth/me - 401 0 - 0.6579ms 
+2026-09-05 05:18:37.7374|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request starting HTTP/1.1 GET http://localhost:5176/api/v1/Auth/me - - - 
+2026-09-05 05:18:37.7374|Info|Microsoft.AspNetCore.Authorization.DefaultAuthorizationService|CorrelationId=b4e372cf-22bd-486f-bf8f-6005e134d705|Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user. 
+2026-09-05 05:18:37.7374|Info|Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler|CorrelationId=b4e372cf-22bd-486f-bf8f-6005e134d705|AuthenticationScheme: Bearer was challenged. 
+2026-09-05 05:18:37.7374|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request finished HTTP/1.1 GET http://localhost:5176/api/v1/Auth/me - 401 0 - 0.5461ms 
+2026-09-05 05:19:09.0461|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request starting HTTP/1.1 GET http://localhost:5176/api/v1/Auth/me - - - 
+2026-09-05 05:19:09.0461|Info|Microsoft.AspNetCore.Authorization.DefaultAuthorizationService|CorrelationId=37d257ce-3465-4dbc-a17c-6392ddc94828|Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user. 
+2026-09-05 05:19:09.0461|Info|Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler|CorrelationId=37d257ce-3465-4dbc-a17c-6392ddc94828|AuthenticationScheme: Bearer was challenged. 
+2026-09-05 05:19:09.0461|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request finished HTTP/1.1 GET http://localhost:5176/api/v1/Auth/me - 401 0 - 0.5550ms 
+2026-09-05 05:19:09.0461|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request starting HTTP/1.1 GET http://localhost:5176/api/v1/Auth/me - - - 
+2026-09-05 05:19:09.0461|Info|Microsoft.AspNetCore.Authorization.DefaultAuthorizationService|CorrelationId=490a70fd-2efa-41d5-8766-e4e419f40079|Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user. 
+2026-09-05 05:19:09.0461|Info|Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler|CorrelationId=490a70fd-2efa-41d5-8766-e4e419f40079|AuthenticationScheme: Bearer was challenged. 
+2026-09-05 05:19:09.0461|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request finished HTTP/1.1 GET http://localhost:5176/api/v1/Auth/me - 401 0 - 0.8011ms 
+2026-09-05 05:19:13.0618|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request starting HTTP/1.1 GET http://localhost:5176/api/v1/Auth/me - - - 
+2026-09-05 05:19:13.0618|Info|Microsoft.AspNetCore.Authorization.DefaultAuthorizationService|CorrelationId=1789c760-9f57-4596-894c-4727a054b465|Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user. 
+2026-09-05 05:19:13.0618|Info|Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler|CorrelationId=1789c760-9f57-4596-894c-4727a054b465|AuthenticationScheme: Bearer was challenged. 
+2026-09-05 05:19:13.0618|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request finished HTTP/1.1 GET http://localhost:5176/api/v1/Auth/me - 401 0 - 0.9042ms 
+2026-09-05 05:19:13.0618|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request starting HTTP/1.1 GET http://localhost:5176/api/v1/Auth/me - - - 
+2026-09-05 05:19:13.0618|Info|Microsoft.AspNetCore.Authorization.DefaultAuthorizationService|CorrelationId=f6e9273e-9661-48bc-9caf-c4771578a0c5|Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user. 
+2026-09-05 05:19:13.0618|Info|Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler|CorrelationId=f6e9273e-9661-48bc-9caf-c4771578a0c5|AuthenticationScheme: Bearer was challenged. 
+2026-09-05 05:19:13.0618|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request finished HTTP/1.1 GET http://localhost:5176/api/v1/Auth/me - 401 0 - 0.7574ms 
+2026-09-05 05:19:53.6646|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request starting HTTP/1.1 POST http://localhost:5176/api/v1/auth/login - application/json 53 
+2026-09-05 05:19:53.6646|Info|Microsoft.AspNetCore.Cors.Infrastructure.CorsService|CorrelationId=7ed6c69a-4ac5-4343-a055-185a05200c3b|CORS policy execution successful. 
+2026-09-05 05:19:53.6646|Info|Microsoft.AspNetCore.Routing.EndpointMiddleware|CorrelationId=7ed6c69a-4ac5-4343-a055-185a05200c3b|Executing endpoint 'SmartLoan.Api.Controllers.AuthController.Login (SmartLoan.Api)' 
+2026-09-05 05:19:53.6654|Info|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|CorrelationId=7ed6c69a-4ac5-4343-a055-185a05200c3b|Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] Login(SmartLoan.Application.Users.LoginCommand) on controller SmartLoan.Api.Controllers.AuthController (SmartLoan.Api). 
+2026-09-05 05:19:53.6654|Info|SmartLoan.Application.Common.Behaviors.LoggingBehavior|CorrelationId=7ed6c69a-4ac5-4343-a055-185a05200c3b|smartloan Request:LoginCommand starting... 
+2026-09-05 05:19:53.7213|Info|Microsoft.EntityFrameworkCore.Database.Command|CorrelationId=7ed6c69a-4ac5-4343-a055-185a05200c3b|Executed DbCommand (4ms) [Parameters=[@request_Email='?'], CommandType='Text', CommandTimeout='30']
+SELECT u."Id", u."Email", u."FullName", u."PasswordHash", u."RefreshToken", u."RefreshTokenExpiryTime", u."Role"
+FROM "Users" AS u
+WHERE u."Email" = @request_Email
+LIMIT 1 
+2026-09-05 05:19:53.8827|Info|Microsoft.EntityFrameworkCore.Database.Command|CorrelationId=7ed6c69a-4ac5-4343-a055-185a05200c3b|Executed DbCommand (2ms) [Parameters=[@p2='?' (DbType = Int32), @p0='?', @p1='?' (DbType = DateTime)], CommandType='Text', CommandTimeout='30']
+UPDATE "Users" SET "RefreshToken" = @p0, "RefreshTokenExpiryTime" = @p1
+WHERE "Id" = @p2; 
+2026-09-05 05:19:53.8827|Info|SmartLoan.Application.Common.Behaviors.LoggingBehavior|CorrelationId=7ed6c69a-4ac5-4343-a055-185a05200c3b|Smarloan Request:LoginCommand finished in 216ms 
+2026-09-05 05:19:53.8827|Info|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|CorrelationId=7ed6c69a-4ac5-4343-a055-185a05200c3b|Executing OkObjectResult, writing value of type '<>f__AnonymousType0`2[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'. 
+2026-09-05 05:19:53.8827|Info|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|CorrelationId=7ed6c69a-4ac5-4343-a055-185a05200c3b|Executed action SmartLoan.Api.Controllers.AuthController.Login (SmartLoan.Api) in 217.9539ms 
+2026-09-05 05:19:53.8827|Info|Microsoft.AspNetCore.Routing.EndpointMiddleware|CorrelationId=7ed6c69a-4ac5-4343-a055-185a05200c3b|Executed endpoint 'SmartLoan.Api.Controllers.AuthController.Login (SmartLoan.Api)' 
+2026-09-05 05:19:53.8827|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request finished HTTP/1.1 POST http://localhost:5176/api/v1/auth/login - 200 - application/json;+charset=utf-8 219.1458ms 
+2026-09-05 05:19:57.5295|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request starting HTTP/1.1 POST http://localhost:5176/api/v1/Auth/logout - application/json 2 
+2026-09-05 05:19:57.5295|Info|Microsoft.AspNetCore.Cors.Infrastructure.CorsService|CorrelationId=e8015373-b5bc-4f6b-ab5b-e3b5f9a0c7a0|CORS policy execution successful. 
+2026-09-05 05:19:57.5295|Info|Microsoft.AspNetCore.Routing.EndpointMiddleware|CorrelationId=e8015373-b5bc-4f6b-ab5b-e3b5f9a0c7a0|Executing endpoint 'SmartLoan.Api.Controllers.AuthController.Logout (SmartLoan.Api)' 
+2026-09-05 05:19:57.5295|Info|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|CorrelationId=e8015373-b5bc-4f6b-ab5b-e3b5f9a0c7a0|Route matched with {action = "Logout", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Logout() on controller SmartLoan.Api.Controllers.AuthController (SmartLoan.Api). 
+2026-09-05 05:19:57.5295|Info|Microsoft.EntityFrameworkCore.Database.Command|CorrelationId=e8015373-b5bc-4f6b-ab5b-e3b5f9a0c7a0|Executed DbCommand (0ms) [Parameters=[@userId='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT u."Id", u."Email", u."FullName", u."PasswordHash", u."RefreshToken", u."RefreshTokenExpiryTime", u."Role"
+FROM "Users" AS u
+WHERE u."Id" = @userId
+LIMIT 1 
+2026-09-05 05:19:57.5295|Info|Microsoft.EntityFrameworkCore.Database.Command|CorrelationId=e8015373-b5bc-4f6b-ab5b-e3b5f9a0c7a0|Executed DbCommand (4ms) [Parameters=[@p2='?' (DbType = Int32), @p0='?', @p1='?' (DbType = DateTime)], CommandType='Text', CommandTimeout='30']
+UPDATE "Users" SET "RefreshToken" = @p0, "RefreshTokenExpiryTime" = @p1
+WHERE "Id" = @p2; 
+2026-09-05 05:19:57.5295|Info|Microsoft.AspNetCore.Mvc.StatusCodeResult|CorrelationId=e8015373-b5bc-4f6b-ab5b-e3b5f9a0c7a0|Executing StatusCodeResult, setting HTTP status code 204 
+2026-09-05 05:19:57.5295|Info|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|CorrelationId=e8015373-b5bc-4f6b-ab5b-e3b5f9a0c7a0|Executed action SmartLoan.Api.Controllers.AuthController.Logout (SmartLoan.Api) in 10.0537ms 
+2026-09-05 05:19:57.5295|Info|Microsoft.AspNetCore.Routing.EndpointMiddleware|CorrelationId=e8015373-b5bc-4f6b-ab5b-e3b5f9a0c7a0|Executed endpoint 'SmartLoan.Api.Controllers.AuthController.Logout (SmartLoan.Api)' 
+2026-09-05 05:19:57.5412|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request finished HTTP/1.1 POST http://localhost:5176/api/v1/Auth/logout - 204 - - 11.7299ms 
+2026-09-05 05:19:57.6419|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request starting HTTP/1.1 GET http://localhost:5176/api/v1/Auth/me - - - 
+2026-09-05 05:19:57.6419|Info|Microsoft.AspNetCore.Authorization.DefaultAuthorizationService|CorrelationId=a677d7c4-6673-436d-b75e-c46577b01404|Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user. 
+2026-09-05 05:19:57.6419|Info|Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler|CorrelationId=a677d7c4-6673-436d-b75e-c46577b01404|AuthenticationScheme: Bearer was challenged. 
+2026-09-05 05:19:57.6419|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request finished HTTP/1.1 GET http://localhost:5176/api/v1/Auth/me - 401 0 - 0.4570ms 
+2026-09-05 05:19:57.6419|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request starting HTTP/1.1 GET http://localhost:5176/api/v1/Auth/me - - - 
+2026-09-05 05:19:57.6419|Info|Microsoft.AspNetCore.Authorization.DefaultAuthorizationService|CorrelationId=ccbfc23a-ac89-4269-8600-4c1e91b27bd6|Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user. 
+2026-09-05 05:19:57.6419|Info|Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler|CorrelationId=ccbfc23a-ac89-4269-8600-4c1e91b27bd6|AuthenticationScheme: Bearer was challenged. 
+2026-09-05 05:19:57.6419|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request finished HTTP/1.1 GET http://localhost:5176/api/v1/Auth/me - 401 0 - 0.4646ms 
+2026-09-05 05:20:21.9099|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request starting HTTP/1.1 POST http://localhost:5176/api/v1/auth/login - application/json 49 
+2026-09-05 05:20:21.9099|Info|Microsoft.AspNetCore.Cors.Infrastructure.CorsService|CorrelationId=005918f0-6a3b-4455-93f1-52b599a0079f|CORS policy execution successful. 
+2026-09-05 05:20:21.9099|Info|Microsoft.AspNetCore.Routing.EndpointMiddleware|CorrelationId=005918f0-6a3b-4455-93f1-52b599a0079f|Executing endpoint 'SmartLoan.Api.Controllers.AuthController.Login (SmartLoan.Api)' 
+2026-09-05 05:20:21.9099|Info|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|CorrelationId=005918f0-6a3b-4455-93f1-52b599a0079f|Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] Login(SmartLoan.Application.Users.LoginCommand) on controller SmartLoan.Api.Controllers.AuthController (SmartLoan.Api). 
+2026-09-05 05:20:21.9099|Info|SmartLoan.Application.Common.Behaviors.LoggingBehavior|CorrelationId=005918f0-6a3b-4455-93f1-52b599a0079f|smartloan Request:LoginCommand starting... 
+2026-09-05 05:20:21.9099|Info|Microsoft.EntityFrameworkCore.Database.Command|CorrelationId=005918f0-6a3b-4455-93f1-52b599a0079f|Executed DbCommand (1ms) [Parameters=[@request_Email='?'], CommandType='Text', CommandTimeout='30']
+SELECT u."Id", u."Email", u."FullName", u."PasswordHash", u."RefreshToken", u."RefreshTokenExpiryTime", u."Role"
+FROM "Users" AS u
+WHERE u."Email" = @request_Email
+LIMIT 1 
+2026-09-05 05:20:22.0638|Info|Microsoft.EntityFrameworkCore.Database.Command|CorrelationId=005918f0-6a3b-4455-93f1-52b599a0079f|Executed DbCommand (4ms) [Parameters=[@p2='?' (DbType = Int32), @p0='?', @p1='?' (DbType = DateTime)], CommandType='Text', CommandTimeout='30']
+UPDATE "Users" SET "RefreshToken" = @p0, "RefreshTokenExpiryTime" = @p1
+WHERE "Id" = @p2; 
+2026-09-05 05:20:22.0638|Info|SmartLoan.Application.Common.Behaviors.LoggingBehavior|CorrelationId=005918f0-6a3b-4455-93f1-52b599a0079f|Smarloan Request:LoginCommand finished in 152ms 
+2026-09-05 05:20:22.0638|Info|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|CorrelationId=005918f0-6a3b-4455-93f1-52b599a0079f|Executing OkObjectResult, writing value of type '<>f__AnonymousType0`2[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'. 
+2026-09-05 05:20:22.0638|Info|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|CorrelationId=005918f0-6a3b-4455-93f1-52b599a0079f|Executed action SmartLoan.Api.Controllers.AuthController.Login (SmartLoan.Api) in 153.9569ms 
+2026-09-05 05:20:22.0638|Info|Microsoft.AspNetCore.Routing.EndpointMiddleware|CorrelationId=005918f0-6a3b-4455-93f1-52b599a0079f|Executed endpoint 'SmartLoan.Api.Controllers.AuthController.Login (SmartLoan.Api)' 
+2026-09-05 05:20:22.0638|Info|Microsoft.AspNetCore.Hosting.Diagnostics|CorrelationId=|Request finished HTTP/1.1 POST http://localhost:5176/api/v1/auth/login - 200 - application/json;+charset=utf-8 155.3348ms 
+2026-09-05 05:28:39.6763|Info|Microsoft.Hosting.Lifetime|CorrelationId=|Application is shutting down... 

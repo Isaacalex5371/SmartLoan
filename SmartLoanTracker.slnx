@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="SmartLoan.Api/SmartLoan.Api.csproj" />
+  <Project Path="SmartLoan.Application/SmartLoan.Application.csproj" />
+  <Project Path="SmartLoan.Domain/SmartLoan.Domain.csproj" />
+  <Project Path="SmartLoan.Infrastructure/SmartLoan.Infrastructure.csproj" />
+</Solution>

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "5Cm+gek0MAE=",
+  "dgSpecHash": "hLaZjgFGbVo=",
   "success": true,
-  "projectFilePath": "D:\\isaac\\educational purpose only\\.net\\kyas pro\\SmartLoanTracker\\SmartLoan.Infrastructure\\SmartLoan.Infrastructure.csproj",
+  "projectFilePath": "d:\\isaac\\educational purpose only\\.net\\kyas pro\\SmartLoanTracker\\SmartLoan.Infrastructure\\SmartLoan.Infrastructure.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\isaac\\.nuget\\packages\\bcrypt.net-next\\4.2.0\\bcrypt.net-next.4.2.0.nupkg.sha512",
     "C:\\Users\\isaac\\.nuget\\packages\\fluentvalidation\\12.1.1\\fluentvalidation.12.1.1.nupkg.sha512",
@@ -50,9 +50,9 @@
       "code": "NU1510",
       "level": "Warning",
       "message": "PackageReference Microsoft.Extensions.Hosting will not be pruned. Consider removing this package from your dependencies, as it is likely unnecessary.",
-      "projectPath": "D:\\isaac\\educational purpose only\\.net\\kyas pro\\SmartLoanTracker\\SmartLoan.Infrastructure\\SmartLoan.Infrastructure.csproj",
+      "projectPath": "d:\\isaac\\educational purpose only\\.net\\kyas pro\\SmartLoanTracker\\SmartLoan.Infrastructure\\SmartLoan.Infrastructure.csproj",
       "warningLevel": 1,
-      "filePath": "D:\\isaac\\educational purpose only\\.net\\kyas pro\\SmartLoanTracker\\SmartLoan.Infrastructure\\SmartLoan.Infrastructure.csproj",
+      "filePath": "d:\\isaac\\educational purpose only\\.net\\kyas pro\\SmartLoanTracker\\SmartLoan.Infrastructure\\SmartLoan.Infrastructure.csproj",
       "libraryId": "Microsoft.Extensions.Hosting",
       "targetGraphs": [
         "net10.0"
